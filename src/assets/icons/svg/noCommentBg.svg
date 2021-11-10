@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="151px" height="86px" viewBox="0 0 151 86" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="4.24900773%" y1="50%" x2="100%" y2="50%" id="linearGradient-1">
+            <stop stop-color="#0C87DC" stop-opacity="0.16" offset="0%"></stop>
+            <stop stop-color="#96E0FA" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="4.24900773%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#0C87DC" stop-opacity="0.16" offset="0%"></stop>
+            <stop stop-color="#96E0FA" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="4.24900773%" y1="50%" x2="100%" y2="50%" id="linearGradient-3">
+            <stop stop-color="#0C87DC" stop-opacity="0.16" offset="0%"></stop>
+            <stop stop-color="#96E0FA" stop-opacity="0.02" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="试玩vip需求" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="游戏介绍-详情页+评论备份-3" transform="translate(-349.000000, -1046.000000)">
+            <g id="编组-29" transform="translate(349.000000, 1046.000000)">
+                <path d="M146.028807,2 L4.97119342,2 C4.15056369,2 3.40756097,2.33229278 2.86975631,2.86972792 C2.33244935,3.40666571 2,4.14840574 2,4.9677778 L2,66.4440281 C2,67.2634002 2.33244935,68.0051402 2.86975631,68.542078 C3.40756097,69.0795132 4.15056369,69.4118059 4.97119342,69.4118059 L61.6847878,69.4118059 C64.4524863,69.4118059 67.0235769,70.8423702 68.4827112,73.1941956 L74.2913722,82.5565665 C74.9408864,83.4086856 75.449326,84 75.9844509,84 C76.6917925,84 77.0021325,83.0850653 77.2799917,82.6372131 L83.138056,73.194444 C84.5971592,70.8424769 87.168331,69.4118059 89.9361336,69.4118059 L146.028807,69.4118059 C146.849436,69.4118059 147.592439,69.0795132 148.130244,68.542078 C148.667551,68.0051402 149,67.2634002 149,66.4440281 L149,4.9677778 C149,4.14840574 148.667551,3.40666571 148.130244,2.86972792 C147.592439,2.33229278 146.849436,2 146.028807,2 Z" id="路径" stroke-opacity="0.42" stroke="#358ED3" stroke-width="4" opacity="0.825497582"></path>
+                <rect id="矩形" fill="url(#linearGradient-1)" x="17" y="14" width="103" height="5" rx="2.5"></rect>
+                <rect id="矩形备份-12" fill="url(#linearGradient-2)" x="16" y="28" width="81" height="5" rx="2.5"></rect>
+                <rect id="矩形备份-13" fill="url(#linearGradient-3)" x="17" y="45" width="68" height="5" rx="2.5"></rect>
+            </g>
+        </g>
+    </g>
+</svg>

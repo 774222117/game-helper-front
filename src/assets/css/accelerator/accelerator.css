@@ -1,0 +1,70 @@
+/* 加速器球 */
+.acceleratorBall_bg{
+    background:url('../../image/accelerator/Ball.png') no-repeat center;
+    background-size: cover;
+}
+/* 加速器外圈 */
+.acceleratorOuterBall_bg{
+    background:url('../../image/accelerator/outerBall.png') no-repeat center;
+    background-size: cover;
+}
+/* 加速器背景 */
+.acceleratorBg_bg{
+    background:url('../../image/accelerator/acceleratorBg.png') no-repeat center;
+    background-size: cover;
+}
+/* 加速启动按钮 */
+.speedUp_bg{
+    background:url('../../image/accelerator/speedUp.png') no-repeat center;
+    background-size: cover;
+}
+/* 不加速按钮 */
+.noSpeedUp_bg{
+    background:url('../../image/accelerator/noSpeedUp.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏启动问题 */
+.startUpIssues_bg{
+    background:url('../../image/accelerator/startUpIssues.png') no-repeat center;
+    background-size: cover;
+}
+/* 重启游戏logo */
+.reseverGame_bg{
+    background:url('../../image/accelerator/reseverGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 修复游戏环境logo */
+.fixGame_bg{
+    background:url('../../image/accelerator/fixGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 问题反馈logo */
+.questionFeedback_bg{
+    background:url('../../image/accelerator/questionFeedback.png') no-repeat center;
+    background-size: cover;
+}
+/* 问题汇总logo */
+.questionLogo_bg{
+    background:url('../../image/accelerator/questionLogo.png') no-repeat center;
+    background-size: cover;
+}
+/* 问题帖子蓝色点 */
+.bluePoint_bg{
+    background:url('../../image/accelerator/bluePoint.png') no-repeat center;
+    background-size: cover;
+}
+/* 启动游戏之后背景图 */
+.Rectangle_bg{
+    background:url('../../image/accelerator/Rectangle.png') no-repeat center;
+    background-size: cover;
+}
+/* 启动游戏之后小背景图 */
+.rectangleSmall_bg{
+    background:url('../../image/accelerator/rectangleSmall.png') no-repeat center;
+    background-size: cover;
+}
+/* 结束游戏光效 */
+.GradualLine_bg{
+    background:url('../../image/accelerator/GradualLine.png') no-repeat center;
+    background-size: cover;
+}

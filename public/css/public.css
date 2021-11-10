@@ -1,0 +1,698 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, 
+strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, 
+tfoot, thead, tr, th, td ,textarea,input { margin:0; padding:0;  }
+address,cite,dfn,em,var, i {font-style:normal;}
+body {line-height: 1.5; color: #333;}
+table { border-collapse:collapse; border-spacing:0; }
+h1, h2, h3, h4, h5, h6, th { font-size: 100%; font-weight: normal; }
+button,input,select,textarea{font-size:100%;}
+fieldset,img{border:0;}
+a,
+img {
+    -webkit-touch-callout: none
+}
+a,
+a:active,
+a:focus,
+a:hover,
+a:visited {text-decoration: none}
+input[type=password],
+input[type=text],
+textarea {
+    resize: none;
+    outline: 0;
+    -webkit-appearance: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    background: #fff
+}
+ul, ol { list-style: none; }
+:focus{ outline:none;}
+.clearfix{ clear: both; content: ""; display: block; overflow: hidden }
+.clear{clear: both;}
+.fl{ float: left; }
+.fr{float: right;}
+.textCen{text-align: center;}
+html,body{font-size: 100px;font-family: "Microsoft YaHei";}
+.imgBlock{width: 100%;height: 100%;display: block;}
+.font_weight{font-weight: bold;}
+.textOver{
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+.textOver2{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+.textOver3{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+.textOver4{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+}
+.textOver5{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+}
+.textOver8{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 8;
+    overflow: hidden;
+}
+.textOver9{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 9;
+    overflow: hidden;
+}
+.topLabelIcon_yellow1{
+    width: 55px;
+    height: 24px;
+    background: url(../images/yellowHookUp1.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.topLabelIcon_yellow2{
+    width: 55px;
+    height: 28px;
+    background: url(../images/yellowHookUp2.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: -3px;
+    top: 0;
+    z-index: 1;
+}
+.topLabelIcon_yellow3{
+    width: 84px;
+    height: 36px;
+    background: url(../images/yellowHookUp3.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.topLabelIcon_red1{
+    width: 55px;
+    height: 24px;
+    background: url(../images/redHookUp1.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.topLabelIcon_red2{
+    width: 55px;
+    height: 28px;
+    background: url(../images/redHookUp2.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: -3px;
+    top: 0;
+    z-index: 1;
+}
+.topLabelIcon_red3{
+    width: 84px;
+    height: 36px;
+    background: url(../images/redHookUp3.png) no-repeat center;
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.color_white_1{color: rgba(255,255,255,1);}
+.color_white_02{color: rgba(255,255,255,0.2);}
+.color_white_04{color: rgba(255,255,255,0.4);}
+.color_white_06{color: rgba(255,255,255,0.6);}
+.color_white_08{color: rgba(255,255,255,0.8);}
+
+.color_red_1{color: rgba(255,0,54,1);}
+
+
+.bg_color_1{background-color:rgba(22,23,27,1);}
+.bg_color_2{background-color:rgba(41,43,51,1);}
+.bg_color_3{background-color:rgba(56,59,71,1);}
+.bg_color_4{background-color:rgba(255,0,54,1);}
+.bg_color_5{background-color:rgba(68,72,87,1);}
+
+.ft8{font-size: 8PX;}
+.ft10{font-size: 10PX;}
+.ft12{font-size: 12PX;}
+.ft14{font-size: 14PX;}
+.ft15{font-size: 15PX;}
+.ft16{font-size: 16PX;}
+.ft18{font-size: 18PX;}
+.ft20{font-size: 20PX;}
+.ft22{font-size: 22PX;}
+.ft24{font-size: 24PX;}
+.ft26{font-size: 26PX;}
+.ft28{font-size: 28PX;}
+.ft30{font-size: 30PX;}
+
+.ft_weight{font-weight: bold;}
+/*文本中划线*/
+.textDecor{text-decoration:line-through;}
+
+.margin_left_2{margin-left: 2px;}
+.margin_left_4{margin-left: 4px;}
+.margin_left_6{margin-left: 6px;}
+.margin_left_8{margin-left: 8px;}
+.margin_left_10{margin-left: 10px;}
+.margin_left_12{margin-left: 12px;}
+.margin_left_14{margin-left: 14px;}
+.margin_left_16{margin-left: 16px;}
+.margin_left_18{margin-left: 18px;}
+.margin_left_20{margin-left: 20px;}
+.margin_left_auto{margin-left: auto;}
+
+.margin_right_4{margin-right: 4px;}
+.margin_right_6{margin-right: 6px;}
+.margin_right_8{margin-right: 8px;}
+.margin_right_10{margin-right: 10px;}
+.margin_right_12{margin-right: 12px;}
+.margin_right_14{margin-right: 14px;}
+.margin_right_16{margin-right: 16px;}
+.margin_right_18{margin-right: 18px;}
+.margin_right_20{margin-right: 20px;}
+.margin_right_30{margin-right: 30px;}
+.margin_right_auto{margin-right: auto;}
+
+
+.margin_top_5{margin-top: 5px;}
+.margin_top_8{margin-top: 8px;}
+.margin_top_10{margin-top: 10px;}
+.margin_top_12{margin-top: 12px;}
+.margin_top_14{margin-top: 14px;}
+.margin_top_16{margin-top: 16px;}
+.margin_top_20{margin-top: 20px;}
+.margin_top_30{margin-top: 30px;}
+
+.border_radius_2{border-radius: 2px;}
+.border_radius_4{border-radius: 4px;}
+
+/* 鼠标画上取消样式 */
+.emptySty{ cursor: auto;}
+/* 夏季大促 */
+.summerPromotion{
+    width: 156px;
+    height: 74px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 5;
+}
+.summerPromotionB_bg{
+    background:url('https://grsource.we4game.com/activity/jiaobiao.png') no-repeat center;
+    background-size: cover;
+}
+/* 图标封装背景class */
+
+.hrederLogoBg_bg{
+    background:url('../images/hrederLogoBg.png') no-repeat center;
+    background-size: cover;
+}
+.arrow1_bg{
+    background:url('../images/arrow.png') no-repeat center;
+    background-size: cover;
+}
+.back_bg{
+    background:url('../images/back.png') no-repeat center;
+    background-size: cover;
+}
+.close_bg{
+    background:url('../images/close.png') no-repeat center;
+    background-size: cover;
+}
+.file_bg{
+    background:url('../images/file.png') no-repeat center;
+    background-size: cover;
+}
+.game_bg{
+    background:url('../images/game.png') no-repeat center;
+    background-size: cover;
+}
+.gift_bg{
+    background:url('../images/gift.png') no-repeat center;
+    background-size: cover;
+}
+.mail_bg{
+    background:url('../images/mail.png') no-repeat center;
+    background-size: cover;
+}
+.setUp_bg{
+    background:url('../images/setUp.png') no-repeat center;
+    background-size: cover;
+}
+.minimize_bg{
+    background:url('../images/minimize.png') no-repeat center;
+    background-size: cover;
+}
+.paymentIn_bg{
+    background:url('../images/paymentIn.png') no-repeat center;
+    background-size: cover;
+}
+.recovery_bg{
+    background:url('../images/recovery.png') no-repeat center;
+    background-size: cover;
+}
+.refresh_bg{
+    background:url('../images/refresh.png') no-repeat center;
+    background-size: cover;
+}
+.icon1_bg{
+    background:url('../images/icon1.png') no-repeat center;
+    background-size: cover;
+}
+.icon2_bg{
+    background:url('../images/icon2.png') no-repeat center;
+    background-size: cover;
+}
+.icon3_bg{
+    background:url('../images/icon3.png') no-repeat center;
+    background-size: cover;
+}
+.gouwuche_bg{
+    background:url('../images/gouwuche.png') no-repeat center;
+    background-size: cover;
+}
+.headerLogo_bg{
+    background:url('../images/headerLogo.png') no-repeat center;
+    background-size: cover;
+}
+.giftLogo_bg{
+    background:url('../images/giftLogo.png') no-repeat center;
+    background-size: cover;
+}
+.fabulousLogo_bg{
+    background:url('../images/fabulousLogo.png') no-repeat center;
+    background-size: cover;
+}
+.replaceLogo_bg{
+    background:url('../images/replaceLogo.png') no-repeat center;
+    background-size: cover;
+}
+.shieldLogo_bg{
+    background:url('../images/shieldLogo.png') no-repeat center;
+    background-size: cover;
+}
+.searchLogoActive_bg{
+    background:url('../images/searchLogoActive.png') no-repeat center;
+    background-size: cover;
+}
+.searchLogoDefault_bg{
+    background:url('../images/searchLogoDefault.png') no-repeat center;
+    background-size: cover;
+}
+.search_bg{
+    background:url('../images/search.png') no-repeat center;
+    background-size: cover;
+}
+.titleLogo_bg{
+    background:url('../images/titleLogo.png') no-repeat center;
+    background-size: cover;
+}
+.loading_bg{
+    background:url('../images/loading.png') no-repeat center;
+    background-size: cover;
+}
+.orderSuccess_bg{
+    background:url('../images/orderSuccess.png') no-repeat center;
+    background-size: cover;
+}
+.indexBgImg_bg{
+    background:url('../images/indexBgImg.png') no-repeat center;
+    background-size: cover;
+}
+.yellowHookUp1_bg{
+    background:url('../images/yellowHookUp1.png') no-repeat center;
+    background-size: cover;
+}
+.yellowHookUp2_bg{
+    background:url('../images/yellowHookUp2.png') no-repeat center;
+    background-size: cover;
+}
+.yellowHookUp3_bg{
+    background:url('../images/yellowHookUp3.png') no-repeat center;
+    background-size: cover;
+}
+.redHookUp1_bg{
+    background:url('../images/redHookUp1.png') no-repeat center;
+    background-size: cover;
+}
+.redHookUp2_bg{
+    background:url('../images/redHookUp2.png') no-repeat center;
+    background-size: cover;
+}
+.redHookUp3_bg{
+    background:url('../images/redHookUp3.png') no-repeat center;
+    background-size: cover;
+}
+.allGameEmpty_bg{
+    background:url('../images/allGameEmpty.png') no-repeat center;
+    background-size: cover;
+}
+.myOrderEmpty_bg{
+    background:url('../images/myOrderEmpty.png') no-repeat center;
+    background-size: cover;
+}
+.myGameEmpty_bg{
+    background:url('../images/myGameEmpty.png') no-repeat center;
+    background-size: cover;
+}
+.err404_bg{
+    background:url('../images/404.png') no-repeat center;
+    background-size: cover;
+}
+.err500_bg{
+    background:url('../images/500.png') no-repeat center;
+    background-size: cover;
+}
+.orderBg_bg{
+    background:url('../images/orderBgImg.png') no-repeat center;
+    background-size: cover;
+}
+.indexBgBtm_bg{
+    background:url('../images/indexBgBtm.png') no-repeat top left;
+    background-size: 100% 700px;
+}
+.indexVideoBg_bg{
+    background:url('../images/videoBg.png') no-repeat center;
+    background-size: cover;
+}
+.detailsBg_bg{
+    background:url('../images/detailsBg.png') no-repeat top left;
+    background-size: 100% 600px;
+}
+.detailsVideoBtnLeft_bg{
+    background:url('../images/detailsVideoBtnLeft.png') no-repeat center !important;
+    background-size: cover !important;
+}
+.detailsVideoBtnRight_bg{
+    background:url('../images/detailsVideoBtnRight.png') no-repeat center !important;
+    background-size: cover !important;
+}
+.indexVideoLeftBtn_bg{
+    background:url('../images/indexVideoLeftBtn.png') no-repeat center;
+    background-size: cover;
+}
+.indexVideoRightBtn_bg{
+    background:url('../images/indexVideoRightBtn.png') no-repeat center;
+    background-size: cover;
+}
+.noState_bg{
+    background:url('../images/noState.png') no-repeat center;
+    background-size: cover;
+}
+.noStock_bg{
+    background:url('../images/noStock.png') no-repeat center;
+    background-size: cover;
+}
+.userLoginSuccess_bg{
+    background:url('../images/userLoginSuccess.png') no-repeat center;
+    background-size: cover;
+}
+.playTogetherExplainModel_bg{
+    background:url('../images/playTogetherExplainModel.png') no-repeat center;
+    background-size: cover;
+}
+.indexBg_bg{
+    background:url('../images/myGameBg.png') no-repeat top center;
+    background-size: 100% 600px;
+}
+.myGameBg_bg{
+    background:url('../images/myGameBg.png') no-repeat top center;
+    background-size: 100% 600px;
+}
+.cloudAccount1_bg{
+    background:url('../images/cloudAccount1.png') no-repeat center;
+    background-size: cover;
+}
+.cloudAccount2_bg{
+    background:url('../images/cloudAccount2.png') no-repeat center;
+    background-size: cover;
+}
+.cloudAccount3_bg{
+    background:url('../images/cloudAccount3.png') no-repeat center;
+    background-size: cover;
+}
+.activityErrorImg_bg{
+    background:url('../images/activityErrorImg.png') no-repeat center;
+    background-size: cover;
+}
+.backHome_bg{
+    background:url('../images/backHome.png') no-repeat center;
+    background-size: cover;
+}
+/* 底部立即领活动按钮背景 */
+.footerBanner_bg{
+    background:url('../images/footerBanner.png') no-repeat center;
+    background-size: cover;   
+}
+.receiveBtn_bg{
+    background:url('../images/receiveBtn.png') no-repeat center;
+    background-size: cover;   
+}
+.receiveBtn1_bg{
+    background:url('../images/receiveBtn1.png') no-repeat center;
+    background-size: cover;   
+}
+.headerMember_bg{
+    background:url('../images/headerMember.png') no-repeat center;
+    background-size: cover; 
+}
+.memberMain_bg{
+    background:url('../images/memberMain.png') no-repeat center;
+    background-size: cover; 
+}
+.memberFooter_bg{
+    background:url('../images/memberFooter.png') no-repeat center;
+    background-size: cover; 
+}
+.memberItemsDiamonds_bg{
+    background:url('../images/memberItemsDiamonds.png') no-repeat center;
+    /* background-size: cover;  */
+}
+.discountFlagYellow_bg{
+    background:url('../images/discountFlagYellow.png') no-repeat center;
+    background-size: cover; 
+}
+.discountFlagBlue_bg{
+    background:url('../images/discountFlagBlue.png') no-repeat center;
+    background-size: cover; 
+}
+.detailsPurchaseBg_bg{
+    background:url('../images/detailsPurchaseBg.png') no-repeat center;
+    background-size: cover;
+}
+.timeDiscountL_bg{
+    background:url('../images/timeDiscountL.png') no-repeat center;
+    background-size: cover;
+}
+.timeDiscountD_bg{
+    background:url('../images/timeDiscountD.png') no-repeat center;
+    background-size: cover;
+}
+.bannerLabel_bg{
+    background:url('../images/bannerLabel.png') no-repeat center;
+    background-size: cover;
+}
+.indexTitleLine_bg{
+    background:url('../images/indexTitleLine.png') no-repeat center;
+    background-size: cover;
+}
+.chooseDiscountActive_bg{
+    background:url('../images/chooseDiscountActive.png') no-repeat center;
+    background-size: cover;
+}
+.chooseDiscountDefault_bg{
+    background:url('../images/chooseDiscountDefault.png') no-repeat center;
+    background-size: cover;
+}
+.detailsDiscount_bg{
+    background:url('../images/detailsDiscount.png') no-repeat center;
+    background-size: cover;
+}
+.detailsShareBgD_bg{
+    background:url('../images/detailsShareBgD.png') no-repeat center;
+    background-size: cover;
+}
+.detailsPrivateBgD_bg{
+    background:url('../images/detailsPrivateBgD.png') no-repeat center;
+    background-size: cover;
+}
+.detailsTrialBgD_bg{
+    background:url('../images/detailsTrialBgD.png') no-repeat center;
+    background-size: cover;
+}
+.detailsShareBgA_bg{
+    background:url('../images/detailsShareBgA.png') no-repeat center;
+    background-size: cover;
+}
+.detailsPrivateBgA_bg{
+    background:url('../images/detailsPrivateBgA.png') no-repeat center;
+    background-size: cover;
+}
+.detailsTrialBgA_bg{
+    background:url('../images/detailsTrialBgA.png') no-repeat center;
+    background-size: cover;
+}
+.detailsShareBgN_bg{
+    background:url('../images/detailsShareBgN.png') no-repeat center;
+    background-size: cover;
+}
+.detailsPrivateBgN_bg{
+    background:url('../images/detailsPrivateBgN.png') no-repeat center;
+    background-size: cover;
+}
+.detailsTrialBgN_bg{
+    background:url('../images/detailsTrialBgN.png') no-repeat center;
+    background-size: cover;
+}
+.indexItemHoverBg_bg{
+    background:url('../images/indexItemHoverBg.png') no-repeat center;
+    background-size: cover;
+}
+.bubble1_bg{
+    background:url('../images/bubble1.png') no-repeat center;
+    background-size: cover;
+}
+.bubble2_bg{
+    background:url('../images/bubble2.png') no-repeat center;
+    background-size: cover;
+}
+.bubble3_bg{
+    background:url('../images/bubble3.png') no-repeat center;
+    background-size: cover;
+}
+.bubble4_bg{
+    background:url('../images/bubble4.png') no-repeat center;
+    background-size: cover;
+}
+.arrowLogoActive_bg{
+    background:url('../images/arrowLogoActive.png') no-repeat center;
+    background-size: cover;
+}
+.backLogoActive_bg{
+    background:url('../images/backLogoActive.png') no-repeat center;
+    background-size: cover;
+}
+.seckillOrder_bg{
+    background:url('../images/seckillOrder.png') no-repeat center;
+    background-size: cover;
+}
+.myGameService_bg{
+    background:url('../images/myGameService.png') no-repeat center;
+    background-size: cover;
+}
+.myGameService1_bg{
+    background:url('../images/myGameService1.png') no-repeat center;
+    background-size: cover;
+}
+.packagesTemplatesVideoBg_bg{
+    background:url('../images/packagesTemplatesVideoBg.png') no-repeat center;
+    background-size: cover;
+}
+.packagesTemplatesLeft_bg{
+    background:url('../images/packagesTemplatesLeft.png') no-repeat center;
+    background-size: cover;
+}
+.packagesTemplatesRight_bg{
+    background:url('../images/packagesTemplatesRight.png') no-repeat center;
+    background-size: cover;
+}
+.elevenActivityAllOrder_bg{
+    background:url('../images/elevenActivityAllOrder.png') no-repeat center;
+    background-size: cover;
+}
+.testbg_bg{
+    background:url('../images/testbg.png') no-repeat center;
+    background-size: cover;
+}
+.itemFeedback_bg{
+    background: url('../images/itemFeedback.png') no-repeat center;
+    background-size: cover;
+}
+
+
+/* 划上变亮 */
+.opc_hover{opacity: 0.4;}
+.opc_hover:hover{opacity: 1;}
+/* 划上变亮 0.6*/
+.opc_hover6{opacity: 0.6;}
+.opc_hover6:hover{opacity: 1;}
+/* 划上变亮 0.8*/
+.opc_hover8{opacity: 0.8;}
+.opc_hover8:hover{opacity: 1;}
+/* 划上变亮 1*/
+.opc_hover1:hover{color:rgba(255,255,255,1) !important;opacity: 1 !important;}
+/* 获焦变亮 */
+.opc_focus{opacity: 0.4;}
+.opc_focus:focus{opacity: 1;}
+/* 点击变亮 */
+.btnBg_active{background-color: rgba(255, 0, 54, 1)}
+.btnBg_active:active{background-color: rgba(229, 0, 48, 1)}
+
+
+/*划上变法动画*/
+.animeScale{
+    transition: all 0.3s ease;
+}
+.animeScale:hover{
+    transform: scale(1.1);
+}
+
+
+/*弹性居中*/
+.dispCenter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*修改滚动条样式*/
+body::-webkit-scrollbar{
+width:8px;
+height:8px;
+}
+body::-webkit-scrollbar-track{
+/* background:rgba(42,44,52,1); */
+background:#16171B;
+}
+body::-webkit-scrollbar-thumb{
+background:rgba(56,59,71,1);
+border-radius:10px;
+}
+body::-webkit-scrollbar-thumb:hover{
+background:rgba(56,59,71,1);
+}
+body::-webkit-scrollbar-corner{
+/* background: #179a16; */
+}
+  /* 参数说明
+  ::-webkit-scrollbar 滚动条整体部分
+  ::-webkit-scrollbar-thumb  滚动条里面的小方块，能向上向下移动（或往左往右移动，取决于是垂直滚动条还是水平滚动条）
+  ::-webkit-scrollbar-track  滚动条的轨道（里面装有Thumb）
+  ::-webkit-scrollbar-button 滚动条的轨道的两端按钮，允许通过点击微调小方块的位置。
+  ::-webkit-scrollbar-track-piece 内层轨道，滚动条中间部分（除去）
+  ::-webkit-scrollbar-corner 边角，即两个滚动条的交汇处
+  ::-webkit-resizer 两个滚动条的交汇处上用于通过拖动调整元素大小的小控件 */

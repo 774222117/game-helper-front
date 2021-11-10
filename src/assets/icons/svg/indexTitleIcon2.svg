@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#8ADDFF" offset="0%"></stop>
+            <stop stop-color="#3D7AB1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页+秒杀9月6日" transform="translate(-57.000000, -725.000000)">
+            <g id="编组-17" transform="translate(57.000000, 725.000000)">
+                <rect id="矩形备份-17" x="0" y="0" width="30" height="30"></rect>
+                <path d="M9.38888889,11.7647059 L9.38888889,26 L3,26 L3,11.7647059 L9.38888889,11.7647059 Z M26,4 L26,26 L19.6111111,26 L19.6111111,4 L26,4 Z M17.6944444,7.88235294 L17.6944444,26 L11.3055556,26 L11.3055556,7.88235294 L17.6944444,7.88235294 Z" id="形状结合备份" fill="url(#linearGradient-1)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,191 @@
+
+/* 总体的大背景 */
+.activityRegisterMain_bg{
+    background:url('../../image/activityRegiste/activityRegisterMain.png') no-repeat center;
+    background-size: cover;
+}
+/* 登录背景 */
+.activityRegisterLogin_bg{
+    background:url('../../image/activityRegiste/activityRegisterLogin.png') no-repeat center;
+    background-size: cover;
+}
+/* 立即领取背景 */
+.getItNowLogin_bg{
+    background:url('../../image/activityRegiste/getItNowLogin.png') no-repeat center;
+    background-size: cover;
+}
+/* 装饰背景 */
+.activityRegisterDecorate_bg{
+    background:url('../../image/activityRegiste/activityRegisterDecorate.png') no-repeat center;
+    background-size: cover;
+}
+/* 空文案的 */
+.emptyBtn_bg{
+    background:url('../../image/activityRegiste/emptyBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 人物 */
+.character_bg{
+    background:url('../../image/activityRegiste/character.png') no-repeat center;
+    background-size: cover;
+}
+/* 注册并登录 */
+.registerBtn_bg{
+    background:url('../../image/activityRegiste/registerBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 立即领取 */
+.getItNowBtn_bg{
+    background:url('../../image/activityRegiste/getItNowBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 装饰背景 */
+.close_bg{
+    background:url('../../image/activityRegiste/close.png') no-repeat center;
+    background-size: cover;
+}
+/* 输入框 */
+.input_bg{
+    background:url('../../image/activityRegiste/input.png') no-repeat center;
+    background-size: cover;
+}
+/* 头部标题 抽奖中*/
+.topTitle_bg{
+    background:url('../../image/activityRegiste/topTitle.png') no-repeat center;
+    background-size: cover;
+}
+/* 头部标题 查看领取游戏*/
+.inStorageTitle_bg{
+    background:url('../../image/activityRegiste/inStorageTitle.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动背景 */
+.activityMain_bg{
+    background:url('../../image/activityRegiste/activityMain.png') no-repeat top;
+    background-size: 100% 100%;
+}
+/* 可选 免费游戏 */
+.getFreeBtn_bg{
+    background:url('../../image/activityRegiste/getFreeBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 不可选 免费游戏 */
+.getFreeBtnNo_bg{
+    background:url('../../image/activityRegiste/getFreeBtnNo.png') no-repeat center;
+    background-size: cover;
+}
+/* 抽奖游戏 */
+.luckDraw_bg{
+    background:url('../../image/activityRegiste/luckDraw.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动规则 */
+.activityRules_bg{
+    background:url('../../image/activityRegiste/activityRules.png') no-repeat center;
+    background-size: cover;
+}
+/* 价值锯齿背景 */
+.worth_bg{
+    background:url('../../image/activityRegiste/worth.png') no-repeat center;
+    background-size: cover;
+}
+/* 价值锯齿背景 小的 */
+.worthSmall_bg{
+    background:url('../../image/activityRegiste/worthSmall.png') no-repeat center;
+    background-size: cover;
+}
+/* 弹框title 恭喜中奖 */
+.congratulationsTitle_bg{
+    background:url('../../image/activityRegiste/congratulationsTitle.png') no-repeat center;
+    background-size: cover;
+}
+/* 中奖背景 */
+.winThePrize_bg{
+    background:url('../../image/activityRegiste/winThePrize.png') no-repeat center;
+    background-size: cover;
+}
+/* 选择一个领取 */
+.pickUp_bg{
+    background:url('../../image/activityRegiste/pickUp.png') no-repeat center;
+    background-size: cover;
+}
+/* 购买全部 */
+.purchaseAll_bg{
+    background:url('../../image/activityRegiste/purchaseAll.png') no-repeat center;
+    background-size: cover;
+}
+/* 查看我的中奖或购买游戏 */
+.viewMyGame_bg{
+    background:url('../../image/activityRegiste/viewMyGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 立省 */
+.saveMoney_bg{
+    background:url('../../image/activityRegiste/saveMoney.png') no-repeat center;
+    background-size: cover;
+}
+/* 抽奖游戏换一批 */
+.activityChangeGame_bg{
+    background:url('../../image/activityRegiste/activityChangeGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 视频播放 关闭 */
+.activityVideoClose_bg{
+    background:url('../../image/activityRegiste/activityVideoClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 新人礼包 支付框使用 */
+.newGiftBag_bg{
+    background:url('../../image/activityRegiste/newGiftBag.png') no-repeat center;
+    background-size: cover;
+}
+/* 用户抽奖轮询背景 */
+.buyUserPoll_bg{
+    background:url('../../image/activityRegiste/buyUserPoll.png') no-repeat center;
+    background-size: cover;
+}
+/* 永久 */
+.allDay_bg{
+    background:url('../../image/activityRegiste/allDay.png') no-repeat center;
+    background-size: cover;
+}
+/* 一天 */
+.oneDay_bg{
+    background:url('../../image/activityRegiste/oneDay.png') no-repeat center;
+    background-size: cover;
+}
+/* 挽留 */
+.detion_bg{
+    background:url('../../image/activityRegiste/detion.png') no-repeat center;
+    background-size: cover;
+}
+/* 立享优惠 */
+.immediateDiscount_bg{
+    background:url('../../image/activityRegiste/immediateDiscount.png') no-repeat center;
+    background-size: cover;
+}
+/* 打开礼物按钮 */
+.openGiftBtn_bg{
+    background:url('../../image/activityRegiste/openGiftBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 神秘礼物背景 */
+.giftBgImg_bg{
+    background:url('../../image/activityRegiste/giftBgImg.png') no-repeat center;
+    background-size: cover;
+}
+/* 领取礼物 */
+.claimGameBtn_bg{
+    background:url('../../image/activityRegiste/claimGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 查看领取礼物完成上面的说明文案 */
+.viewInfo_bg{
+    background:url('../../image/activityRegiste/viewInfo.png') no-repeat center;
+    background-size: cover;
+}
+/* 我知道了 查看礼物弹出的 */
+.iKnow_bg{
+    background:url('../../image/activityRegiste/iKnow.png') no-repeat center;
+    background-size: cover;
+}

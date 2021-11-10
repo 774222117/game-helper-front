@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <g id="第一版客户端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标切图" transform="translate(-101.000000, -495.000000)">
+            <g id="编组-2" transform="translate(101.000000, 495.000000)">
+                <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                <g id="编组-4" transform="translate(12.000000, 12.000000) rotate(-315.000000) translate(-12.000000, -12.000000) translate(7.000000, 4.000000)">
+                    <path d="M10,9.5 L10,10.4874699 C10,13.5319562 7.76142375,16 5,16 C2.23857625,16 0,13.5319562 0,10.4874699 L0,9.5 L0,9.5 M0,6.5 L0,5.49093466 C0,2.45837519 2.23857625,0 5,0 L5,0 C7.76142375,0 10,2.45837519 10,5.49093466 L10,6.5 L10,6.5" id="形状" stroke="#FFFFFF"></path>
+                    <rect id="矩形" fill="#FFFFFF" x="4.5" y="4" width="1" height="8"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

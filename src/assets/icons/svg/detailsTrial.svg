@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="22px" viewBox="0 0 31 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="0%" y1="39.0143605%" x2="90.5157009%" y2="44.0586853%" id="linearGradient-1">
+            <stop stop-color="#71E5FF" offset="0%"></stop>
+            <stop stop-color="#29C4FF" offset="75.4933578%"></stop>
+            <stop stop-color="#12BAFF" offset="100%"></stop>
+        </linearGradient>
+        <filter x="0.0%" y="0.0%" width="100.0%" height="100.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feGaussianBlur stdDeviation="0 0" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="游戏介绍-详情页+评论备份-8" transform="translate(-901.000000, -244.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="编组-15" transform="translate(901.000000, 244.000000)">
+                <path d="M26.5390829,22 C25.8419987,22 25.173504,21.7310228 24.6805659,21.2526042 L20.3017073,17.0022917 C20.2313139,16.9341372 20.1359526,16.8958538 20.0365268,16.8958333 L10.7634732,16.8958333 C10.6640474,16.8958538 10.5686861,16.9341372 10.4982927,17.0022917 L6.11943414,21.2526042 C5.626496,21.7310228 4.95800131,22 4.26091707,22 L2.62926828,22 C1.17716351,22 0,20.8573934 0,19.4479167 L0,2.55208332 C0,1.14260662 1.17716351,0 2.62926828,0 L28.1707317,0 C29.6228365,0 30.8,1.14260662 30.8,2.55208332 L30.8,19.4479167 C30.8,20.8573934 29.6228365,22 28.1707317,22 L26.5390829,22 Z" id="形状备份-5" filter="url(#filter-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

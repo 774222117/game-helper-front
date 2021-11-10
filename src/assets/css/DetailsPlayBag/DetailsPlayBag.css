@@ -1,0 +1,40 @@
+/* 背景图 */
+.backPic{
+    background:url('../../image/DetailsPlayBag/backPic.png') no-repeat center;
+    background-size: cover;
+}
+/* 畅享礼包文字底部样式 */
+.blueLine{
+    background: url('../../image/DetailsPlayBag/blueLine.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏下方橙色样式 */
+.orangeLine{
+    background: url('../../image/DetailsPlayBag/orangeLine.png') no-repeat center;
+    background-size:cover;
+}
+/* 畅享游戏文案 */
+.payGamePic{
+    background: url('../../image/DetailsPlayBag/payGamePic.png') no-repeat center;
+    background-size:cover;
+}
+/* 游戏测试图 */
+.testPic{
+    background: url('../../image/DetailsPlayBag/testPic.png') no-repeat center;
+    background-size:cover;
+}
+/* 蓝色按钮图 */
+.blueBtn{
+    background: url('../../image/DetailsPlayBag/blueBtn.png') no-repeat center;
+    background-size:cover;
+}
+/* 支付页橙色顶部图 */
+.orangeTop{
+    background: url('../../image/DetailsPlayBag/orangeTop.png') no-repeat center;
+    background-size:cover;
+}
+/* 订单支付游戏名称合集框 */
+.gameNameAll{
+    background: url('../../image/DetailsPlayBag/gameNameAll.png') no-repeat center;
+    background-size:cover;
+}

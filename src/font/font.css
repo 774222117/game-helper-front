@@ -1,0 +1,50 @@
+/* @font-face {
+    font-family: "Bangers-Regular";
+    src: url('Bangers-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto-Black";
+    src: url('Roboto-Black.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto-Bold";
+    src: url('Roboto-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src: url('Roboto-Medium.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url('Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+} */
+@font-face {
+    font-family: "simkai";
+    src: url('simkai.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* .BangersRegular{font-family: "Bangers-Regular";}
+.RobotoBlack{font-family: "Roboto-Black";}
+.RobotoBold{font-family: "Roboto-Bold";}
+.RobotoMedium{font-family: "Roboto-Medium";}
+.RobotoRegular{font-family: "Roboto-Regular";} */
+
+/* .BangersRegular{font-family: "Microsoft YaHei";}
+.RobotoBlack{font-family: "Microsoft YaHei";}
+.RobotoBold{font-family: "Microsoft YaHei";}
+.RobotoMedium{font-family: "Microsoft YaHei";}
+.RobotoRegular{font-family: "Microsoft YaHei";} */
+
+.simkai{font-family: "simkai";}

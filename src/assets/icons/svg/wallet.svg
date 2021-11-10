@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="试玩vip需求" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="小抽屉" transform="translate(-501.000000, -113.000000)">
+            <g id="编组-2备份-9" transform="translate(501.000000, 113.000000)">
+                <g id="编组-2备份-7">
+                    <g id="编组" transform="translate(4.000000, 4.000000)">
+                        <rect id="矩形" stroke="#FFFFFF" x="0.5" y="2.5" width="15" height="12"></rect>
+                        <path d="M9,0.5 L0.5,1 L0.5,2.5 L9.5,2.5 L9,0.5 Z" id="矩形备份" stroke="#FFFFFF"></path>
+                        <path d="M15.5,6.5 L12.5,6.5 C11.9477153,6.5 11.4477153,6.72385763 11.0857864,7.08578644 C10.7238576,7.44771525 10.5,7.94771525 10.5,8.5 C10.5,9.05228475 10.7238576,9.55228475 11.0857864,9.91421356 C11.4477153,10.2761424 11.9477153,10.5 12.5,10.5 L15.5,10.5 L15.5,6.5 Z" id="矩形" stroke="#FFFFFF"></path>
+                        <circle id="椭圆形" stroke="#979797" fill="#FFFFFF" cx="12.5" cy="8.5" r="1"></circle>
+                    </g>
+                    <rect id="矩形" x="0" y="0" width="24" height="24"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

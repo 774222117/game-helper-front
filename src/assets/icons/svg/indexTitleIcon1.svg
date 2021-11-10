@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#8ADDFF" offset="0%"></stop>
+            <stop stop-color="#3D7AB1" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页+秒杀9月6日" transform="translate(-56.000000, -413.000000)">
+            <g id="编组-27" transform="translate(56.000000, 413.000000)">
+                <rect id="矩形" x="0" y="0" width="30" height="30"></rect>
+                <g id="闪电备份" transform="translate(6.000000, 3.000000)" fill="url(#linearGradient-1)">
+                    <path d="M5.73097532,14.0462179 L0.900989914,14.0462179 C0.270391828,14.0462179 -0.164606869,13.4304098 0.0597924633,12.8558703 L4.85917797,0.565466294 C4.99210573,0.225043871 5.32668283,0 5.70007544,0 L13.798851,0 C14.437849,0 14.8734477,0.631612981 14.6322485,1.20907933 L11.8377569,7.90101582 L17.098541,7.90101582 C17.8722387,7.90101582 18.2850375,8.79077646 17.774739,9.35799886 L4.87657792,23.6966085 C4.24957982,24.3937827 3.08708332,23.7896821 3.33038259,22.8931897 L5.73097532,14.0462179 Z" id="路径"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

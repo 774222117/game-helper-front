@@ -1,0 +1,442 @@
+/* 背景图 */
+.background_bg{
+    background:url('../../newYear/images/background.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏等级 标识SSR*/
+.ssr_level_bg{
+    background:url('../../newYear/images/SSR_level.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏等级 标识SSR*/
+.ss_level_bg{
+    background:url('../../newYear/images/SS_level.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏等级 标识SSR*/
+.s_level_bg{
+    background:url('../../newYear/images/S_level.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏等级 标识SSR*/
+.a_level_bg{
+    background:url('../../newYear/images/A_level.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏等级 标识SSR*/
+.b_level_bg{
+    background:url('../../newYear/images/B_level.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 背景 */
+.synthesisViewBg_bg{
+    background:url('../../newYear/images/synthesisViewBg.png') no-repeat center;
+    background-size: cover;
+}
+
+/* 合成大赏 左边 等级A */
+.synthesisViewGrade_A_bg{
+    background:url('../../newYear/images/synthesisViewGrade_A.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 左边 等级S */
+.synthesisViewGrade_S_bg{
+    background:url('../../newYear/images/synthesisViewGrade_S.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 左边 等级SS */
+.synthesisViewGrade_SS_bg{
+    background:url('../../newYear/images/synthesisViewGrade_SS.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 左边 等级SSR */
+.synthesisViewGrade_SSR_bg{
+    background:url('../../newYear/images/synthesisViewGrade_SSR.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 左按钮 */
+.leftDefault_bg{
+    background:url('../../newYear/images/leftDefault.png') no-repeat center;
+    background-size: cover;
+}
+.rightDefault_bg{
+    transform:rotate(180deg);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    background:url('../../newYear/images/leftDefault.png') no-repeat center;
+    background-size: cover;
+}
+
+/* 合成大赏 右按钮 */
+.leftActive_bg{
+    transform:rotate(180deg);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    background:url('../../newYear/images/rightActive.png') no-repeat center;
+    background-size: cover;
+}
+.rightActive_bg{
+    background:url('../../newYear/images/rightActive.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 立即合成默认 */
+.immediateSynthesisDefault_bg{
+    background:url('../../newYear/images/immediateSynthesisDefault.png') no-repeat center;
+    background-size: cover;
+}
+/* 合成大赏 立即合成可以点击 */
+.immediateSynthesisActive_bg{
+    background:url('../../newYear/images/immediateSynthesisActive.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 我的金币 */
+.rechargePic_bg{
+    background:url('../../newYear/images/RechargePic.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 充值 */
+.recharge_bg{
+    background:url('../../newYear/images/Recharge.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 我的福袋 */
+.blessingbag_bg{
+    background:url('../../newYear/images/Blessingbag.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 我的福袋游戏数量 */
+.gameNum_bg{
+    background:url('../../newYear/images/gameNum.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 单抽 */
+.oncetake_bg{
+    background:url('../../newYear/images/oncetake.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 十连抽 */
+.tentake_bg{
+    background:url('../../newYear/images/tentake.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 五连抽 */
+.fivetake_bg{
+    background:url('../../newYear/images/fivetake.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 合成大赏标题 */
+.syntheticreward_bg{
+    background:url('../../newYear/images/Syntheticreward1.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 合成大赏标题2 */
+.syntheticreward2_bg{
+    background:url('../../newYear/images/Syntheticreward2.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 新春福袋回馈 */
+.newYearhk_bg{
+    background:url('../../newYear/images/newYearhk.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 规则需知 */
+.ruleknow_bg{
+    background:url('../../newYear/images/ruleknow.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 规则框 */
+.ruleBox_bg{
+    background:url('../../newYear/images/ruleBox.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 大赏一览 */
+.prizelinebox_bg{
+    background:url('../../newYear/images/prizelinebox.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 底部图片 */
+.buttomPic_bg{
+    background:url('../../newYear/images/buttomPic.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 SSS赏横线 */
+.sssline_bg{
+    background:url('../../newYear/images/SSSLine.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 SS赏横线 */
+.ssline_bg{
+    background:url('../../newYear/images/ssline.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 S赏横线 */
+.sline_bg{
+    background:url('../../newYear/images/sline.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 A赏横线 */
+.aline_bg{
+    background:url('../../newYear/images/aline.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 b赏横线 */
+.bline_bg{
+    background:url('../../newYear/images/bline.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 规则介绍text1 */
+.text1_bg{
+    background:url('../../newYear/images/text1.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 规则介绍text2 */
+.text2_bg{
+    background:url('../../newYear/images/text2.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 规则介绍text3 */
+.text3_bg{
+    background:url('../../newYear/images/text3.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 规则介绍text4 */
+.text4_bg{
+    background:url('../../newYear/images/text4.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 单个图片背景图 */
+.gameItem_bg{
+    background:url('../../newYear/images/gameItem.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 单个游戏背景渐变图 */
+.rectangle_bg{
+    background:url('../../newYear/images/Rectangle.png') no-repeat center;
+    background-size: cover;
+}
+
+/* 新年福袋回馈 */
+.luckDraw_3_bg{
+    background:url('../../newYear/images/luckDraw_3.png') no-repeat center;
+    background-size: cover;
+}
+.luckDraw_10_bg{
+    background:url('../../newYear/images/luckDraw_10.png') no-repeat center;
+    background-size: cover;
+}
+.luckDraw_20_bg{
+    background:url('../../newYear/images/luckDraw_20.png') no-repeat center;
+    background-size: cover;
+}
+.luckDraw_30_bg{
+    background:url('../../newYear/images/luckDraw_30.png') no-repeat center;
+    background-size: cover;
+}
+.luckDraw_40_bg{
+    background:url('../../newYear/images/luckDraw_40.png') no-repeat center;
+    background-size: cover;
+}
+/* 新年福袋回馈 立即领取 */
+.getNowBtnsDown_bg{
+    background:url('../../newYear/images/getNowBtnsDown.png') no-repeat center;
+    background-size: cover;
+}
+.getNowBtnsTop_bg{
+    background:url('../../newYear/images/getNowBtnsTop.png') no-repeat center;
+    background-size: cover;
+}
+/*光点*/
+.lightSpot_bg{
+    background:url('../../newYear/images/lightSpot.png') no-repeat center;
+    background-size: cover;
+}
+/*大圆*/
+.circular_bg{
+    background:url('../../newYear/images/circular.png') no-repeat center;
+    background-size: cover;
+}
+
+/*弹框背景光 小*/
+.bulletFrameBgLight_bg{
+    background:url('../../newYear/images/bulletFrameBgLight.png') no-repeat center;
+    background-size: cover;
+}
+/*弹框背景图片 小*/
+.bulletFrameBg_bg{
+    background:url('../../newYear/images/bulletFrameBg.png') no-repeat center;
+    background-size: cover;
+}
+/*弹框头部 左边图 */
+.alertTitleLine_left_bg{
+    background:url('../../newYear/images/alertTitleLine.png') no-repeat center;
+    background-size: cover;
+}
+/*弹框头部 右边图 */
+.alertTitleLine_right_bg{
+    transform:rotate(180deg);
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+    background:url('../../newYear/images/alertTitleLine.png') no-repeat center;
+    background-size: cover;
+}
+
+/*按钮 免费领取金币*/
+.freeGoldCoin_bg{
+    background:url('../../newYear/images/freeGoldCoin.png') no-repeat center;
+    background-size: cover;
+}
+
+/*金币 免费领取金币*/
+.freeGoldCoinBg10_bg{
+    background:url('../../newYear/images/freeGoldCoinBg10.png') no-repeat center;
+    background-size: cover;
+}
+
+/* 新年福袋领取金币数量20 */
+.freeGoldCoinBg20_bg{
+    background:url('../../newYear/images/freeGoldCoinBg20.png') no-repeat center;
+    background-size: cover;
+}
+
+/* 新年福袋领取金币数量20 */
+.freeGoldCoinBg30_bg{
+    background:url('../../newYear/images/freeGoldCoinBg30.png') no-repeat center;
+    background-size: cover;
+}
+
+/* 新年福袋领取金币数量20 */
+.freeGoldCoinBg40_bg{
+    background:url('../../newYear/images/freeGoldCoinBg40.png') no-repeat center;
+    background-size: cover;
+}
+
+/*代币不足 去充值*/
+.toRecharge_bg{
+    background:url('../../newYear/images/toRecharge.png') no-repeat center;
+    background-size: cover;
+}
+
+/*关闭*/
+.newYearClose_bg{
+    background:url('../../newYear/images/newYearClose.png') no-repeat center;
+    background-size: cover;
+}
+
+/*领取我的游戏  取消*/
+.getGameClose_bg{
+    background:url('../../newYear/images/getGameClose.png') no-repeat center;
+    background-size: cover;
+}
+
+/*领取我的游戏  确定领取*/
+.getGameGet_bg{
+    background:url('../../newYear/images/getGameGet.png') no-repeat center;
+    background-size: cover;
+}
+/*领取我的游戏  领取*/
+.TakeInBlessingBag_bg{
+    background:url('../../newYear/images/TakeInBlessingBag.png') no-repeat center;
+    background-size: cover;
+}
+
+/*领取我的游戏  领取*/
+.OneMoreTime_bg{
+    background:url('../../newYear/images/OneMoreTime.png') no-repeat center;
+    background-size: cover;
+}
+
+/*合成游戏  左边按钮*/
+.leftBtn_bg{
+    background:url('../../newYear/images/leftBtn.png') no-repeat center;
+    background-size: cover;
+}
+
+/*合成游戏  右边按钮*/
+.rightBtn_bg{
+    background:url('../../newYear/images/rightBtn.png') no-repeat center;
+    background-size: cover;
+}
+
+/*合成游戏  合成按钮*/
+.syntheticGame_bg{
+    background:url('../../newYear/images/syntheticGame.png') no-repeat center;
+    background-size: cover;
+}
+
+/*合成SSR赏  下一步按钮*/
+.nextStep_bg{
+    background:url('../../newYear/images/nextStep.png') no-repeat center;
+    background-size: cover;
+}
+
+/*选择奖品  合成按钮*/
+.synthesis_bg{
+    background:url('../../newYear/images/synthesis.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  背景图*/
+.rechargebulletFrameBg_bg{
+    background:url('../../newYear/images/rechargebulletFrameBg.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  背景光线*/
+.rechargebulletFrameBgLight_bg{
+    background:url('../../newYear/images/rechargebulletFrameBgLight.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  金币*/
+.gold_bg{
+    background:url('../../newYear/images/gold.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  充值金色边框*/
+.goldLine_bg{
+    background:url('../../newYear/images/goldLine.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  首充翻倍*/
+.doublePrice_bg{
+    background:url('../../newYear/images/doublePrice.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  超值!首充翻倍*/
+.superDoublePrice_bg{
+    background:url('../../newYear/images/superDoublePrice.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值中心  二维码样式*/
+.qrcode11_bg{
+    background:url('../../newYear/images/qrcode11.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值成功*/
+.voucherSuccess_bg{
+    background:url('../../newYear/images/voucherSuccess.png') no-repeat center;
+    background-size: cover;
+}
+
+/*充值成功  好的*/
+.finish_bg{
+    background:url('../../newYear/images/finish.png') no-repeat center;
+    background-size: cover;
+}
+/*我的福袋  没有数据*/
+.myLuckyBagNoData_bg{
+    background:url('../../newYear/images/myLuckyBagNoData.png') no-repeat center;
+    background-size: cover;
+}
+/*横向单个游戏  渐变框*/
+.gradientBox_bg{
+    background:url('../../newYear/images/gradientBox.png') no-repeat center;
+    background-size: cover;
+}
+/*动画红包弹窗  金光*/
+.gold_lighting_bg{
+    background:url('../../newYear/images/gold_lighting.png') no-repeat center;
+    background-size: cover;
+}

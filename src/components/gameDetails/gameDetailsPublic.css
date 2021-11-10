@@ -1,0 +1,149 @@
+/* 详情介绍 */
+.descriptionBox{
+    width: 100%;
+    height: auto;
+}
+.descriptionBox>.contents{
+    width: 100%;
+    height: 100%;
+}
+.descriptionBox>div{
+    font-size:14px;
+    line-height:22px;
+    letter-spacing:1.4px;
+}
+/* 配置信息 */
+.minimumRequirements{
+    width: 100%;
+    /* height: 377px; */
+    border-radius:4px;
+}
+.minimumRequirements .configBtnBox{
+    width: 100%;
+    height: 26px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.minimumRequirements .configBtnBox .titleBox{
+    flex-grow: 1;
+}
+.minimumRequirements .configBtnBox .minimumBox,
+.minimumRequirements .configBtnBox .adviceBox{
+    width:100px;
+    height:26px;
+    line-height: 26px;
+    text-align: center;
+    cursor: pointer;
+    border:1px solid rgba(255,255,255,0.2);
+}
+.minimumRequirements .configBtnBox>.active{
+    color: rgba(86, 159, 203, 1);
+    border:1px solid rgba(86, 159, 203, 1);
+}
+/* 配置信息盒子 */
+.minimumRequirements .configInfoBox{
+    width: 100%;
+    /* height: 342px; */
+    margin-top: 15px;
+}
+.minimumRequirements .configInfoBox .configItemBox{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.05); */
+}
+.minimumRequirements .configInfoBox .configItemBox:nth-child(3){height: 51px;}
+.minimumRequirements .configInfoBox .configItemBox:nth-last-child(1){border-bottom:none;}
+.minimumRequirements .configInfoBox .configItemBox .configItemLeft{width: 30%;line-height: 60px;}
+.minimumRequirements .configInfoBox .configItemBox .configItemRight{width: 70%;}
+/* 语言设置 */
+.contentLanguageBox{
+    width: 100%;
+}
+.contentLanguageBox .languageTitle{
+    width: 100%;
+    height: 20px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contentLanguageBox .languageTitle>div{
+    width: 258px;
+    height: 20px;
+    line-height: 20px;
+}
+.contentLanguageBox .languageTitle>div:nth-child(1){
+    width: 178px;
+    height: 20px;
+}
+.contentLanguageBox .languageContent{
+    width: 100%;
+    height: 51px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+}
+.contentLanguageBox .languageContent .firstBox1{
+    width: 77px;
+    height: 51px;
+    line-height: 51px;
+    border-right: 1px solid rgba(151, 151, 151, 0.1);
+}
+.contentLanguageBox .languageContent .firstBox2{
+    width: 33px;
+    height: 51px;
+    margin-left: 63px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;   
+}
+.contentLanguageBox .languageContent .firstBox3{
+    width: 56px;
+    height: 51px;
+    margin-left: 35px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+.contentLanguageBox .languageContent .firstBox4{
+    width: 32px;
+    height: 51px;
+    margin-left: 36px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+}
+.contentLanguageBox .languageContent:nth-last-of-type(1){
+    border: none;
+}
+.contentLanguageBox .languageContent>div>img{
+    width: 24px;
+    height: 24px;
+    display: block;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.hookUpSty{
+    width: 14px;
+    height: 10px;
+}
+/* .contentLanguageBox>div{
+    width: 100%;
+    height: 72px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.contentLanguageBox>div>div{
+    width: 258px;
+    height: 72px;
+    margin-right: 5px;
+    background-color: goldenrod;
+}
+.contentLanguageBox>div>div:nth-child(1){
+    width: 178px;
+    height: 72px;
+} */

@@ -1,0 +1,60 @@
+/* 问题反馈 */
+.feedback_bg{
+    background:url('../../image/itemFeedback/feedback.png') no-repeat center;
+    background-size: cover;
+}
+/* 联系客服 */
+.customerText_bg{
+    background: url('../../image//itemFeedback//customerText.png') no-repeat center;
+    background-size: cover;
+}
+/* 关闭按钮 */
+.close_bg {
+    background: url('../../image//itemFeedback//close.png') no-repeat center;
+    background-size: cover;
+}
+/* 400技术 */
+.phone_bg {
+    background: url('../../image//itemFeedback//phone.png') no-repeat center;
+    background-size: cover;
+}
+/* 邮件投诉 */
+.email_bg {
+    background: url('../../image//itemFeedback//email.png') no-repeat center;
+    background-size: cover;
+}
+/* 提交 */
+.submit_bg {
+    background: url('../../image//itemFeedback//submit.png') no-repeat center;
+    background-size: cover;
+}
+/* 联系在线客服 */
+.customer_bg {
+    background: url('../../image//itemFeedback//customer.png') no-repeat center;
+    background-size: cover;
+}
+/* 手指 */
+.hand_bg {
+    background: url('../../image//itemFeedback//hand.png') no-repeat center;
+    background-size: cover;
+}
+/* 电话 */
+.fourNum_bg {
+    background: url('../../image//itemFeedback//fourNum.png') no-repeat center;
+    background-size: cover;
+}
+/* 勾选 */
+.choice_bg {
+    background: url('../../image//itemFeedback//choice.png') no-repeat center;
+    background-size: cover;
+}
+/* 提交成功 */
+.successful_bg {
+    background: url('../../image//itemFeedback//successful.png') no-repeat center;
+    background-size: cover;
+}
+/* 好的 */
+.successBtn_bg {
+    background: url('../../image//itemFeedback//successBtn.png') no-repeat center;
+    background-size: cover;
+}

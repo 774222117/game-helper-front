@@ -1,0 +1,30 @@
+/* 首页红包 */
+.redBag_bg{
+    background:url('../../newYear/images/redBag.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页金色光 */
+.goldLighting_bg{
+    background:url('../../newYear/images/goldLighting.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页免费领取游戏 */
+.getFreeGame_bg{
+    background:url('../../newYear/images/getFreeGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页去看看 */
+.gotosee_bg{
+    background:url('../../newYear/images/gotosee.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页小红包 */
+.smallbag_bg{
+    background:url('../../newYear/images/smallbag.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页小领取 */
+.smallget_bg{
+    background:url('../../newYear/images/smallget.png') no-repeat center;
+    background-size: cover;
+}

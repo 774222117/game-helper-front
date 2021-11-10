@@ -1,0 +1,15 @@
+/* 背景图 */
+.backgroundline{
+    background:url('../../image/give/BackGroundLine.png') no-repeat center;
+    background-size: cover;
+}
+/* 礼物logo */
+.gift{
+    background: url('../../image/give/GiftLogo.png') no-repeat center;
+    background-size: cover;
+}
+/* 赠送礼物按钮 */
+.givegift{
+    background: url('../../image/give/GiveGift.png') no-repeat center;
+    background-size:cover;
+}

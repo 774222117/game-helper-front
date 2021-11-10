@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="302px" height="302px" viewBox="0 0 302 302" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-107.1%" y="-107.1%" width="314.3%" height="314.3%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="40" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="第一版客户端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标切图" transform="translate(-701.000000, -684.000000)">
+            <g id="编组" transform="translate(796.000000, 779.000000)">
+                <circle id="椭圆形" fill="#000000" opacity="0.400000006" filter="url(#filter-1)" cx="56" cy="56" r="56"></circle>
+                <g id="编组-8" transform="translate(32.000000, 32.000000)">
+                    <circle id="椭圆形" stroke="#FFFFFF" stroke-width="3.69230769" cx="24" cy="24" r="24"></circle>
+                    <g id="播放" transform="translate(12.923077, 9.230769)" fill-rule="nonzero">
+                        <rect id="矩形" fill="#000000" opacity="0" x="0" y="0" width="29.5384615" height="29.5384615"></rect>
+                        <polygon id="路径" fill="#FFFFFF" points="2.6709124 0.205507038 2.6709124 5.26540168 19.6346878 14.7692013 6.36224599 21.8648316 6.36224599 11.6012582 2.6709124 9.54323613 2.6709124 29.3329545 26.8675491 14.7692013"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

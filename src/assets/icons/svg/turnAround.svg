@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="17px" height="16px" viewBox="0 0 17 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 59.1 (86144) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="第一版客户端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标切图" transform="translate(-249.000000, -531.000000)">
+            <g id="编组-2" transform="translate(244.000000, 528.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="矩形"></g>
+                <path d="M7.10510204,7 L14.5,7 C17.5375661,7 20,9.23857625 20,12 C20,14.7614237 17.5375661,17 14.5,17 L6.54926656,17" id="路径" stroke="#FFFFFF" stroke-width="2.4" mask="url(#mask-2)"></path>
+                <path d="M7.23116839,9.14277345 L7.29447643,5.86861646 C7.29447643,5.54854234 7.55394777,5.289071 7.87402189,5.289071 L11.059254,5.31468781" id="路径" stroke="#FFFFFF" stroke-width="2.4" mask="url(#mask-2)" transform="translate(9.145211, 7.215922) scale(-1, 1) rotate(-225.000000) translate(-9.145211, -7.215922) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

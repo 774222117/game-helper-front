@@ -1,0 +1,5 @@
+/* 蓝色抢购按钮 */
+.blueButton{
+    background:url('../../image/elevenActivity/blueButton.png') no-repeat center;
+    background-size: cover;
+}

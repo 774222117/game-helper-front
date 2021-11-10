@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="42px" height="42px" viewBox="0 0 42 42" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 64 (93537) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <circle id="path-1" cx="19" cy="19" r="19"></circle>
+        <linearGradient x1="17.6362107%" y1="13.7880995%" x2="69.3384468%" y2="94.0890157%" id="linearGradient-3">
+            <stop stop-color="#31333A" offset="0%"></stop>
+            <stop stop-color="#16171B" offset="100%"></stop>
+        </linearGradient>
+        <path d="M22.7226252,5.68434189e-14 C24.7139623,5.68434189e-14 23.7992673,0.990114693 19.9785402,2.97034408 C21.2424034,3.74128291 22.6026943,3.99297697 24.0594129,3.72542626 C25.3919361,3.48068612 25.2201099,4.75895153 23.5439344,7.56022251 C24.2857076,9.14727552 24.7,10.9175327 24.7,12.7845531 C24.7,19.6052697 19.1707167,25.1345531 12.35,25.1345531 C5.52928334,25.1345531 0,19.6052697 0,12.7845531 C0,5.9638364 5.52928334,0.434553055 12.35,0.434553055 C12.8387855,0.434553055 13.3209389,0.462948285 13.7949006,0.518179156 C17.0089404,0.276545061 21.0446238,5.68434189e-14 22.7226252,5.68434189e-14 Z" id="path-4"></path>
+    </defs>
+    <g id="国内" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(-990.000000, -9.000000)">
+            <g id="编组-28" transform="translate(992.000000, 11.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <circle stroke="#383B47" stroke-width="2" cx="19" cy="19" r="20"></circle>
+                <g id="编组-29" mask="url(#mask-2)">
+                    <g transform="translate(6.650000, 6.215447)">
+                        <ellipse id="椭圆形" stroke="none" fill="#16171B" fill-rule="evenodd" cx="12.35" cy="29.4095531" rx="9.5" ry="9.975"></ellipse>
+                        <g id="形状结合-2" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <mask id="mask-5" fill="white">
+                                <use xlink:href="#path-4"></use>
+                            </mask>
+                            <use id="形状结合" fill="url(#linearGradient-3)" xlink:href="#path-4"></use>
+                        </g>
+                        <rect id="矩形" stroke="none" fill="#FFFFFF" fill-rule="evenodd" x="3.8" y="7.08455306" width="1.9" height="3.8" rx="0.95"></rect>
+                        <path d="M8.85,15.7845531 C10.7829966,15.7845531 12.35,14.4151143 12.35,12.2232445 C12.35,10.0313747 10.7829966,10.9959146 8.85,10.9959146 C6.91700338,10.9959146 5.35,10.0313747 5.35,12.2232445 C5.35,14.4151143 6.91700338,15.7845531 8.85,15.7845531 Z" id="椭圆形" stroke="none" fill="#FFFFFF" fill-rule="evenodd" transform="translate(8.850000, 13.284553) rotate(-1.000000) translate(-8.850000, -13.284553) "></path>
+                        <polyline id="路径-3" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" points="13.4772786 7.26309393 11.8266304 8.93560032 15.1279268 9.65958861"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

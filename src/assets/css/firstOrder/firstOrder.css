@@ -1,0 +1,20 @@
+/* 悬浮框 */
+.floatLaye_bg{
+    background:url('../../image/firstOrder/floatLaye.png') no-repeat center;
+    background-size: cover;
+}
+/* 大背景 */
+.firstMainBg_bg{
+    background:url('../../image/firstOrder/firstMainBg.png') no-repeat center;
+    background-size: cover;
+}
+/* 文字 */
+.timerText_bg{
+    background:url('../../image/firstOrder/timerText.png') no-repeat center;
+    background-size: cover;
+}
+/* 关闭 */
+.close_bg{
+    background:url('../../image/firstOrder/close.png') no-repeat center;
+    background-size: cover;
+}

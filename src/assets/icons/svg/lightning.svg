@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="24" height="24"></rect>
+    </defs>
+    <g id="第一版客户端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="图标切图" transform="translate(-370.000000, -678.000000)">
+            <g id="编组-22" transform="translate(370.000000, 678.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="矩形"></g>
+                <path d="M13.2411047,9.27738462 L15.919253,9.27738462 C16.3086846,9.27738462 16.6243812,9.59308127 16.6243812,9.98251282 C16.6243812,10.1510259 16.5640323,10.3139674 16.4542647,10.4418257 L7.3899649,21 L7.3899649,21 L10.7446343,12.7455462 L8.0263286,12.7455462 C7.63689705,12.7455462 7.3212004,12.4298495 7.3212004,12.0404179 C7.3212004,11.9539506 7.33710405,11.8682207 7.36811767,11.7875066 L10.3971141,3.90443371 C10.6064696,3.35957844 11.1298434,3 11.713536,3 L18,3 L18,3 L13.2411047,9.27738462 Z" id="路径" stroke="#FFFFFF" stroke-width="1.1" stroke-linejoin="round" fill-rule="nonzero" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

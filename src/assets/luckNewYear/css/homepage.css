@@ -1,0 +1,245 @@
+/* 首页大背景 */
+.newYearBack_bg{
+    background:url('../../luckNewYear/images/newYearBack.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页福袋规则logo */
+.blessingRule_bg{
+    background:url('../../luckNewYear/images/blessingRule.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页福袋规则底色图 */
+.ruleBack_bg{
+    background:url('../../luckNewYear/images/ruleBack.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页抽奖中心底图 */
+.lotteryCenterBack_bg{
+    background:url('../../luckNewYear/images/lotteryCenterBack.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页抽奖中心  按钮背景光 */
+.Btnlighting_bg{
+    background:url('../../luckNewYear/images/Btnlighting.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页抽奖中心  按钮默认样式 */
+.openDefault_bg{
+    background:url('../../luckNewYear/images/openDefault.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页抽奖中心  按钮选中样式 */
+.openActive_bg{
+    background:url('../../luckNewYear/images/openActive.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页抽奖中心  福袋记录箭头图标 */
+.arrow_bg{
+    background:url('../../luckNewYear/images/arrow.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页抽奖中心  我的金币充值按钮 */
+.Recharge_bg{
+    background:url('../../luckNewYear/images/Recharge.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏奖品展示   右上角价格背景图*/
+.gamePrice_bg{
+    background:url('../../luckNewYear/images/gamePrice.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏奖品展示   渐变底图*/
+.gradual_bg{
+    background:url('../../luckNewYear/images/Gradual.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏奖品展示   合玩包图标*/
+.bag_bg{
+    background:url('../../luckNewYear/images/bag.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏奖品展示   游戏已经获得粉底*/
+.pinkBack_bg{
+    background:url('../../luckNewYear/images/pinkBack.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   背景框*/
+.smallPopUp_bg{
+    background:url('../../luckNewYear/images/smallPopUp.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   关闭按钮*/
+.luckNewYearclose_bg{
+    background:url('../../luckNewYear/images/luckNewYearclose.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   背景框*/
+.BigPopUp_bg{
+    background:url('../../luckNewYear/images/bigPopUp.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   包含内容logo*/
+.includeContent_bg{
+    background:url('../../luckNewYear/images/includeContent.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   随机抽取logo*/
+.randomDrawOne_bg{
+    background:url('../../luckNewYear/images/randomDrawOne.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   左边按钮*/
+.leftBtn_bg{
+    background:url('../../luckNewYear/images/leftBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   右边按钮*/
+.rightBtn_bg{
+    background:url('../../luckNewYear/images/rightBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   恭喜抽中以下游戏logo*/
+.congratulationsGame_bg{
+    background:url('../../luckNewYear/images/congratulationsGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   好的 默认*/
+.ready_bg{
+    background:url('../../luckNewYear/images/ready.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   好的 选中*/
+.unready_bg{
+    background:url('../../luckNewYear/images/unready.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   去充值 默认*/
+.voucher_bg{
+    background:url('../../luckNewYear/images/voucher.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   去充值 选中*/
+.unvoucher_bg{
+    background:url('../../luckNewYear/images/unvoucher.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   恭喜获得新春好礼*/
+.getFreeGold_bg{
+    background:url('../../luckNewYear/images/getFreeGold.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   免费金币10*/
+.gold10_bg{
+    background:url('../../luckNewYear/images/gold10.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   领取金币 默认*/
+.getGold_bg{
+    background:url('../../luckNewYear/images/getGold.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   领取金币 选中*/
+.ungetGold_bg{
+    background:url('../../luckNewYear/images/ungetGold.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   充值成功*/
+.voucherSuccess_bg{
+    background:url('../../luckNewYear/images/voucherSuccess.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗大弹窗   充值金币边框线*/
+.goldLine_bg{
+    background:url('../../luckNewYear/images/goldLine.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗大弹窗   充值金币*/
+.gold_bg{
+    background:url('../../luckNewYear/images/gold.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动弹窗小弹窗   福袋记录logo*/
+.luckyBagRecord_bg{
+    background:url('../../luckNewYear/images/luckyBagRecord.png') no-repeat center;
+    background-size: cover;
+}
+/* 转盘活动   红包*/
+.turnRedBag_bg{
+    background:url('../../luckNewYear/images/turnRedBag.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页金色光 */
+.goldLighting_bg{
+    background:url('../../luckNewYear/images/goldLighting.png') no-repeat center;
+    background-size: cover;
+}
+/* 转盘活动   红包 免费领游戏  默认 */
+.freeGetGame_bg{
+    background:url('../../luckNewYear/images/freeGetGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 转盘活动   红包 免费领游戏  选中 */
+.unfreeGetGame_bg{
+    background:url('../../luckNewYear/images/unfreeGetGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 转盘活动   红包 去看看  选中 */
+.ungotoSee_bg{
+    background:url('../../luckNewYear/images/ungotoSee.png') no-repeat center;
+    background-size: cover;
+}
+/* 转盘活动   红包 去看看  默认 */
+.gotoSee_bg{
+    background:url('../../luckNewYear/images/gotoSee.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页小红包 */
+.smallbag_bg{
+    background:url('../../luckNewYear/images/smallbag.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页小领取 */
+.smallget_bg{
+    background:url('../../luckNewYear/images/smallget.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页  动画金光 */
+.gold_lighting_bg{
+    background:url('../../luckNewYear/images/gold_lighting.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页  跑马灯背景 */
+.horse_race_lamp_bg{
+    background:url('../../luckNewYear/images/horseRaceLamp.png') no-repeat center;
+    
+}
+/* 活动页 中间 右边装饰 */
+.rightImgs_bg{
+    background:url('../../luckNewYear/images/rightImgs.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 中间 下面边装饰 */
+.btmImgs_bg{
+    background:url('../../luckNewYear/images/btmImgs.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 中间 下面边装饰 */
+.leftTopHot_bg{
+    background:url('../../luckNewYear/images/leftTopHot.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 中间 我的金币 */
+.befGold_bg{
+    background:url('../../luckNewYear/images/befGold.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 下面规则的点点 */
+.listItem_bg{
+    background:url('../../luckNewYear/images/listItem.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动页 福袋概率 */
+.probability_bg{
+    background:url('../../luckNewYear/images/probability.png') no-repeat center;
+    background-size: cover;
+}

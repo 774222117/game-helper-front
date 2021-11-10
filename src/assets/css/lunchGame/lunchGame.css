@@ -1,0 +1,5 @@
+/* 游戏下载弹窗logo图 */
+.lunchgamelogo_bg{
+    background:url('../../image/lunchGame/lunchGameLogo.png') no-repeat center;
+    background-size: cover;
+}

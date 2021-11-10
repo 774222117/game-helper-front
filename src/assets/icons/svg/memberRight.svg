@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="15px" viewBox="0 0 16 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <linearGradient x1="50%" y1="0.583298142%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#9B9573" offset="0%"></stop>
+            <stop stop-color="#C0BA99" offset="21.6057855%"></stop>
+            <stop stop-color="#93864F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="试玩vip需求" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-581.000000, -170.000000)" fill="url(#linearGradient-1)">
+            <polygon id="三角形备份-6" transform="translate(589.000000, 177.500000) scale(-1, 1) rotate(-90.000000) translate(-589.000000, -177.500000) " points="589 169.5 596.5 185.5 589 174.833333 581.5 185.5"></polygon>
+        </g>
+    </g>
+</svg>

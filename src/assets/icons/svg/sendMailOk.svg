@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="134px" height="132px" viewBox="0 0 134 132" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="3" y="3" width="100" height="100" rx="50"></rect>
+        <filter x="-25.5%" y="-25.5%" width="151.0%" height="151.0%" filterUnits="objectBoundingBox" id="filter-2">
+            <feMorphology radius="1.5" operator="dilate" in="SourceAlpha" result="shadowSpreadOuter1"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowSpreadOuter1" result="shadowOffsetOuter1"></feOffset>
+            <feMorphology radius="5.5" operator="erode" in="SourceAlpha" result="shadowInner"></feMorphology>
+            <feOffset dx="0" dy="0" in="shadowInner" result="shadowInner"></feOffset>
+            <feComposite in="shadowOffsetOuter1" in2="shadowInner" operator="out" result="shadowOffsetOuter1"></feComposite>
+            <feGaussianBlur stdDeviation="7.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 1   0 0 0 0 0   0 0 0 0 0.176470588  0 0 0 0.39576049 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+        </filter>
+        <filter x="-24.5%" y="-24.5%" width="149.0%" height="149.0%" filterUnits="objectBoundingBox" id="filter-3">
+            <feMorphology radius="8" operator="erode" in="SourceAlpha" result="shadowSpreadInner1"></feMorphology>
+            <feGaussianBlur stdDeviation="4" in="shadowSpreadInner1" result="shadowBlurInner1"></feGaussianBlur>
+            <feOffset dx="0" dy="0" in="shadowBlurInner1" result="shadowOffsetInner1"></feOffset>
+            <feComposite in="shadowOffsetInner1" in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1" result="shadowInnerInner1"></feComposite>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.201322115 0" type="matrix" in="shadowInnerInner1"></feColorMatrix>
+        </filter>
+        <rect id="path-4" x="0" y="0" width="106" height="106" rx="53"></rect>
+    </defs>
+    <g id="第一版客户端" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="发送至邮箱弹框" transform="translate(-573.000000, -238.000000)">
+            <g id="编组" transform="translate(587.000000, 251.000000)">
+                <g id="编组-18">
+                    <g id="编组-29">
+                        <g id="编组-13">
+                            <g id="矩形备份-7">
+                                <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                                <use fill="black" fill-opacity="1" filter="url(#filter-3)" xlink:href="#path-1"></use>
+                                <rect stroke="#FF002D" stroke-width="4" stroke-linejoin="square" x="5" y="5" width="96" height="96" rx="48"></rect>
+                            </g>
+                            <g id="矩形备份-7">
+                                <rect stroke-opacity="0.600114729" stroke="#000000" stroke-width="1" stroke-linejoin="square" x="0.5" y="0.5" width="105" height="105" rx="52.5"></rect>
+                                <rect stroke-opacity="0.15" stroke="#FFFFFF" stroke-width="2" x="-1" y="-1" width="108" height="108" rx="54"></rect>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+                <g id="编组-3" transform="translate(26.000000, 39.000000)" stroke="#FFFFFF" stroke-width="3">
+                    <g id="编组-2" transform="translate(0.500000, 0.000000)">
+                        <rect id="矩形" x="1.5" y="1.5" width="42" height="33"></rect>
+                        <polyline id="形状" points="2.01468594 1.5591276 22.5167242 18 43.1728181 2.75178627"></polyline>
+                    </g>
+                </g>
+                <g id="编组-3" transform="translate(38.000000, 32.000000)" stroke="#FFFFFF" stroke-width="3">
+                    <g id="编组-2" transform="translate(0.500000, 0.000000)">
+                        <polyline id="路径" points="0.421875 9.9047619 0.421875 0 32.5 0 40.5 8 40.421875 32 30.6235052 32"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

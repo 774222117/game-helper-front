@@ -1,0 +1,35 @@
+/* 认证背景图 */
+.backgroundPic_bg{
+    background:url('../../image/realNameAuthentication/backgroundPic.png') no-repeat center;
+    background-size: cover;
+}
+/* 提交图 */
+.sumbitButton_bg{
+    background:url('../../image/realNameAuthentication/submitButton.png') no-repeat center;
+    background-size: cover;
+}
+/* 关闭按钮 */
+.close_bg{
+    background:url('../../image/realNameAuthentication/close.png') no-repeat center;
+    background-size: cover;
+}
+/* 提交成功图片 */
+.successPic_bg {
+    background:url('../../image/realNameAuthentication/success.png') no-repeat center;
+    background-size: cover;
+}
+/* 好的按钮 */
+.rightButton_bg{
+    background:url('../../image/realNameAuthentication/rightButton.png') no-repeat center;
+    background-size: cover;
+}
+/* 强制未成年人弹窗图片 */
+.underAgePic_bg{
+    background:url('../../image/realNameAuthentication/underAgePic.png') no-repeat center;
+    background-size: cover;
+}
+/* 强制未成年人弹窗 好的 按钮 */
+.rightBtn_bg{
+    background:url('../../image/realNameAuthentication/rightBtn.png') no-repeat center;
+    background-size: cover;
+}
