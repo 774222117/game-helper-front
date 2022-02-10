@@ -32,6 +32,8 @@ const routerList = {
     22:'/luckNewYear',
     // 2021国庆活动
     23:'/NationalDay',
+    // 2022新年折扣活动
+    24:'/discountNewYear',
     //404
     404:'/err404',
     //500

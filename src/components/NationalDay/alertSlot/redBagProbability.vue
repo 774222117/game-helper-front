@@ -33,11 +33,11 @@ export default {
       },
   data(){
     return {
-        gameProbability:[{chinaName:'神秘奖品',probability:'24%'},{chinaName:'空洞骑士',probability:'15%'},{chinaName:'糖豆人',probability:'15%'},
-                        {chinaName:'方舟',probability:'10%'},{chinaName:'欧洲卡车模拟2',probability:'10%'},{chinaName:'联机合作大礼包',probability:'10%'},
-                        {chinaName:'巫师3',probability:'3.75%'},{chinaName:'热门新品大礼包',probability:'3.75%'},{chinaName:'以撒的结合:重生+胎衣+忏悔',probability:'3.75%'},
-                        {chinaName:'古墓丽影大礼包',probability:'1.25%'},{chinaName:'只狼',probability:'1.25%'},{chinaName:'赛博朋克2077',probability:'1.25%'},
-                        {chinaName:'怪物猎人世界（包含冰原）',probability:'0.5%'},{chinaName:'三国游戏大礼包',probability:'0.5%'}],
+        gameProbability:[{chinaName:'春节福利礼包',probability:'24%'},{chinaName:'城市：天际线',probability:'15%'},{chinaName:'觅长生',probability:'15%'},
+                        {chinaName:'方舟',probability:'10%'},{chinaName:'欢乐共斗',probability:'10%'},{chinaName:'狙击精英4标准版',probability:'10%'},
+                        {chinaName:'文明6',probability:'3.75%'},{chinaName:'红色警戒：重制版/红警',probability:'3.75%'},{chinaName:'漫漫长路',probability:'3.75%'},
+                        {chinaName:'帝国时代大礼包',probability:'1.25%'},{chinaName:'极限竞速：地平线 5',probability:'1.25%'},{chinaName:'赛博朋克2077',probability:'1.25%'},
+                        {chinaName:'三国志14 威力加强版',probability:'0.5%'},{chinaName:'使命召唤大礼包',probability:'0.5%'}],
       }
   },
 }
@@ -53,18 +53,16 @@ export default {
     left: 0px;
     // 文案
     .title {
-        width: 170px;
-        height: 54px;
-        margin-top: -2px;
-        margin-left: 260px;
+        width: 691px;
+        height: 46px;
+        margin-top: 9px;
     }
     .title2 {
         width: 300px;
         height: 20px;
-        color: #852d00;
+        color: #FFE6B2;
         position: absolute;
-        left: 190px;
-        top: 65px;
+        left: 192px;
     }
     .freeGoldCoin{
         width: 616px;
@@ -82,7 +80,7 @@ export default {
                 height: 48px;
                 margin-left: 24px;
                 display: flex;
-                color: rgba(53,29,5,1);
+                color: #D0442C;
                 .gameName {
                     width: 183px;
                     line-height: 48px;
@@ -91,12 +89,12 @@ export default {
                 .gameType {
                     width: 56px;
                     line-height: 48px;
-                    margin-left: 3px;
+                    margin-left: 23px;
                 }
                 .drawTime {
                     width: 108px;
                     line-height: 48px;
-                    margin-left: 130px;
+                    margin-left: 148px;
                 }
             }
         }
@@ -117,12 +115,12 @@ export default {
                 .gameType {
                     width: 56px;
                     line-height: 48px;
-                    margin-left: 3px;
+                    margin-left: 33px;
                 }
                 .drawTime {
                     width: 108px;
                     line-height: 48px;
-                    margin-left: 130px;
+                    margin-left: 140px;
                 }
             }
         }
@@ -159,9 +157,10 @@ export default {
 //其他区域底色
 .elseColor {background-color: rgba(255,238,149,1);}
 //顶部底色
-.topColor {background-color: rgba(255,162,0,1);}
+.topColor {background-color: #FED47E;}
 // 底边框线
 .bottomLine {border-bottom: 0.5px solid rgba(207,161,44,0.34);}
-.white {background-color: #ffe9c5;}
-.block {background-color: #FFDE9A;}
+.white {background-color: #FFE6B2;}
+.block {background-color: #FFE6B2;}
+// .block {background-color: #FFDE9A;}
 </style>

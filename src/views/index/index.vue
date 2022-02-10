@@ -14,11 +14,12 @@
 			<!-- 特惠 秒杀 -->
 			<div class="todaySpecialAddseckill">
 				<!-- 秒杀 -->
-				<div class="seckillMainBox">
+				<div class="seckillMainBox" >
 					<div class="titles"><indexTitle :text="'限量秒杀'" :labels="['低至2折']" :indexTitleIcon="'indexTitleIcon1'" /></div>
-					<div class="seckillContent">
-						<seckill v-if="partialrefresh" />
+					<div class="seckillContent" v-if="partialrefresh">
+						<seckill />
 					</div>
+					<div class="seckillContent seckillDefault_bg" v-else></div>
 				</div>
 				<!-- 今日特惠 -->
 				<div class="todaySpecial">
@@ -75,6 +76,7 @@
 		</div>
 	</div>
 	<rollVideo v-if="displayRollVideo" :appids="appidData[appidIndex]" @change="displayRollVideoFun" @wheel.native="handleScroll" />
+	<discountNewYearAlert v-if="discountNewYearAlert" /> 
 	<!-- <nationalDayAlert v-if="isActiveJoin" :loginState='isActiveJoin' :dailyLogin='activityAlert' :item='userInfo' @change="closeNewYear"></nationalDayAlert> -->
 </div>
 </template>
@@ -91,7 +93,8 @@ import seckill from '@/components/indexs/seckill/seckill';//秒杀
 import rollVideo from '@/components/indexs/rollVideo/rollVideo';//滚动视频
 import loading from '../../components/Loading/loading';  //加载中
 import JumpTo from '@/utils/jumpTo'  //跳转函数
-import nationalDayAlert from '@/components/NationalDay/nationalDayAlert';//新年活动弹窗
+// import nationalDayAlert from '@/components/NationalDay/nationalDayAlert';//新年活动弹窗
+import discountNewYearAlert from '@/components/discountNewYear/discountNewYearAlert';//2022年折扣活动弹窗
 import {setStore,getStore,removeStore}  from '@/utils/storage'
 export default {
 	components: {
@@ -105,7 +108,8 @@ export default {
 		seckill,
 		hotSaleAddDiscount,
 		rollVideo,
-		nationalDayAlert
+		// nationalDayAlert
+		discountNewYearAlert
 	},
 	inject:['reload','openRegister'],
 	data(){
@@ -127,6 +131,7 @@ export default {
 
 			receiveBtnShow:1,//底部按钮划上效果切换
 			footerBoxShow:false, //底部默认不显示
+			discountNewYearAlert:true,//2022新年折扣活动弹窗开关
 		}
 	},
 	watch:{
@@ -195,8 +200,8 @@ export default {
 			// 判断用户是否参加过新年转盘活动 下架_this.isActiveJoin  false
 			if(!!_this.$store.getters.getStorage && _this.isActiveJoin){//如果登陆成功
 				// _this.isActiveJoin = true;//显示新春活动弹窗
-				if(!!getStore({name:'loginTurn101',type:false})){//保存storage数据
-					var activeInfo = getStore({name:'loginTurn101',type:false})//用activeInfo值去保存storage数据
+				if(!!getStore({name:'loginDiscount',type:false})){//保存storage数据
+					var activeInfo = getStore({name:'loginDiscount',type:false})//用activeInfo值去保存storage数据
 				}else{
 					var activeInfo = {
 					'value':'',//当前用户是否参加过活动
@@ -218,21 +223,25 @@ export default {
 							activeInfo.active = 0;//并且将用户当天是否点击‘去看看’修改为0
 						}
 						// 保存storage信息，名字:'loginNewYear',content:'activeInfo',类型false
-						setStore({name:'loginTurn101',content:activeInfo,type:false})//创建用户信息
+						setStore({name:'loginDiscount',content:activeInfo,type:false})//创建用户信息
 					}else{
 						// 如果没有参加活动
 						console.log('没有获取到token信息')
 						// 也要保存用户信息
-						setStore({name:'loginTurn101',content:activeInfo,type:false})//也创建用户信息
+						setStore({name:'loginDiscount',content:activeInfo,type:false})//也创建用户信息
 					}
 					// 删除上一次活动的loginTurnNewYear  store
 					removeStore({name:'loginTurnNewYear'})
 					removeStore({name:'loginTurn51'})
+					removeStore({name:'loginTurn101'})
+					removeStore({name:'loginTurn1225'})
 				})
 			}else{
 				// 删除活动本地缓存
 				removeStore({name:'loginTurnNewYear'})
 				removeStore({name:'loginTurn51'})
+				removeStore({name:'loginTurn101'})
+				removeStore({name:'loginTurn1225'})
 			}
 		},
 		// 标题点击刷新
@@ -494,7 +503,7 @@ export default {
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	z-index: 99;
+	z-index: 19;
 	.receiveBtn{
 		width: 155px;
 		height: 58px;

@@ -1,6 +1,6 @@
 <template>
     <!-- 游戏展示，单抽到的游戏 -->
-    <div class="gameBox bigSpider_bg" v-if="true">
+    <div class="gameBox" v-if="true">
         <!-- 游戏图 -->
         <div class="gamePic">
             <img :src="item.image" alt="">
@@ -54,8 +54,8 @@ export default {
         position: relative;
         // 背景图
         .gamePic {
-            width: 205px;
-            height: 86px;
+            width: 211px;
+            height: 98px;
             position: absolute;
             right: 0;
             top: 0;
@@ -72,15 +72,15 @@ export default {
             position: absolute;
             right: 0;
             top: 0;
-            color: rgba(255,224,92,1);
+            color: #FFE05C;
             text-align: center;
         }
         // 背景渐变
         .Gradual {
-            width: 205px;
+            width: 211px;
             height: 54px;
             position: absolute;
-            bottom: 12px;
+            bottom: 0px;
             right: 0;
         }
         // 游戏名字
@@ -89,9 +89,9 @@ export default {
             line-height: 32px;
             position: absolute;
             z-index: 2;
-            bottom: 12px;
-            left: 20px;
-            color: rgba(255,216,9,1);
+            bottom: 0px;
+            left: 6px;
+            color: #FFD809;
             font-weight: 600;
             text-align: left;
             display: flex;

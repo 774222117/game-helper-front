@@ -4,8 +4,8 @@
         <!-- 充值不足 -->
         <div class="pager ft24 font_weight">您已抽取全部奖品，无法继续抽取</div>
         <!-- 好的 -->
-        <div class="ready">
-            <div class="BtnClick ready_bg" @click="close"></div>
+        <div class="ready mygold_bg">
+            <div class="BtnClick" @click="close"></div>
         </div>
     </div>
 </template>
@@ -44,9 +44,11 @@ export default {
         left: 0px;
         .pager {
             width: 360px;
-            height: 32px;
-            color: rgba(133,45,0,1);
-            margin: 161px 0 0 151px;
+            height: 32px;   
+            margin: 161px 0 0 171px;
+            background-image: linear-gradient(93deg,#ff947c 0%, rgba(254,255,191,0.88) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         // 好的
         .ready {
@@ -58,8 +60,8 @@ export default {
             justify-content: center;
             align-items: center;
             .BtnClick {
-                width: 240px;
-                height: 75px;
+                width: 179px;
+                height: 79px;
                 position: absolute;
                 z-index: 3;
                 cursor: pointer;

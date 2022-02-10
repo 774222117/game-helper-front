@@ -492,6 +492,26 @@ html,body{font-size: 100px;font-family: "Microsoft YaHei";}
     background:url('../images/memberItemsDiamonds.png') no-repeat center;
     /* background-size: cover;  */
 }
+/* 选中超级会员选中态 */
+.memberItemsDiamonds2_bg{
+    background:url('../images/memberItemsDiamonds2.png') no-repeat center;
+    background-size: cover; 
+}
+/* 选择超级会员未选中态 */
+.memberItemsDiamonds3_bg{
+    background:url('../images/memberItemsDiamonds3.png') no-repeat center;
+    background-size: cover; 
+}
+/* 超级会员购买介绍信息 */
+.showSuperMemberInfo_bg{
+    background:url('../images/showSuperMemberInfo.png') no-repeat center;
+    background-size: cover; 
+}
+/* 超级会员签到按钮 */
+.getSuperMemberGame_bg{
+    background:url('../images/getSuperMemberGame.png') no-repeat center;
+    background-size: cover; 
+}
 .discountFlagYellow_bg{
     background:url('../images/discountFlagYellow.png') no-repeat center;
     background-size: cover; 
@@ -632,7 +652,66 @@ html,body{font-size: 100px;font-family: "Microsoft YaHei";}
     background: url('../images/itemFeedback.png') no-repeat center;
     background-size: cover;
 }
-
+/* 签到领P币 */
+.getPcoins_bg{
+    background: url('../images/getPcoins.png') no-repeat center;
+    background-size: cover;
+}
+/* 超级会员 */
+.superMembers_bg{
+    background: url('../images/superMembers.png') no-repeat center;
+    background-size: cover;
+}
+/* 签到界面 */
+.checkPage_bg{
+    background: url('../images/checkPage.png') no-repeat center;
+    background-size: cover;
+}
+/* 普通会员签到 */
+.ordinaryCheck_bg{
+    background: url('../images/ordinaryCheck.png') no-repeat center;
+    background-size: cover;
+}
+/* 普通会员已经签到成功 */
+.alreadyOrdinary_bg{
+    background: url('../images/alreadyOrdinary.png') no-repeat center;
+    background-size: cover;
+}
+/* 超级会员已经签到成功 */
+.alreadySuper_bg{
+    background: url('../images/alreadySuper.png') no-repeat center;
+    background-size: cover;
+}
+/* 超级会员签到或者开通会员 */
+.superMemberCheck_bg{
+    background: url('../images/superMemberCheck.png') no-repeat center;
+    background-size: cover;
+}
+/* 关闭按钮 */
+.checkClose_bg{
+    background: url('../images/checkClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 签到成功界面 */
+.checkSuccessAlert_bg{
+    background: url('../images/checkSuccessAlert.png') no-repeat center;
+    background-size: cover;
+}
+/* 签到成功关闭按钮 */
+.checkCloseBtn_bg{
+    background: url('../images/checkCloseBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 好的 按钮 */
+.checkGoodBtn_bg {
+    background: url('../images/checkGoodBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 秒杀活动不显示时 */
+.seckillDefault_bg {
+    background: url('../images/seckillDefault.png') no-repeat center;
+    background-size: cover;
+}
 
 /* 划上变亮 */
 .opc_hover{opacity: 0.4;}

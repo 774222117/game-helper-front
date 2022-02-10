@@ -23,38 +23,40 @@
                         <!-- 上面的选择月季年 -->
                         <div class="leftMemberTypeTop">
                             <!-- 外层元素 -->
-                            <div class="memberTypeItems" v-for="(n,index) in memberLevelData" :class="[memberTypeItemsActive == index?'memberTypeItemsActive':'' ,n.recommend == 1?'recommend':'']" @click="memberTypeChange(index)">
-                                <div class="memberItemContents" :class="memberTypeItemsActive == index?'memberItemsDiamonds_bg':''" >
+                            <div class="memberTypeItems" v-for="(n,index) in memberLevelData" :class="[memberTypeItemsActive == index && index < 3 ?'memberTypeItemsActive noSuperMember':'' ,n.recommend == 1?'recommend':'',memberTypeItemsActive !== 3 && index == 3 ? 'memberItemsDiamonds3_bg' : '',memberTypeItemsActive == 3 && index == 3 ? 'memberItemsDiamonds2_bg' : '']" @click="memberTypeChange(index)">
+                                <div class="memberItemContents" :class="memberTypeItemsActive == index && index < 3?'memberItemsDiamonds_bg':''" >
                                     <div class="text1">
                                         <div class="iconLeft"> <svg-icon iconClass='memberLeft' className='svg_icon'></svg-icon> </div> 
-                                        <div class="textMiddle ft18 font_weight"> {{ n.levelName }} </div> 
+                                        <div class="textMiddle ft18 font_weight" :class="index == 3 ? 'superPriceColor' : 'ordinaryPriceColor'"> {{ n.levelName }} </div> 
                                         <div class="iconRight"> <svg-icon iconClass='memberRight' className='svg_icon'></svg-icon> </div> 
                                     </div>
                                     <div class="text2">
-                                        <div class="ft14">￥</div>
-                                        <div class="ft26 font_weight">{{ n.price }} </div>
+                                        <div class="ft14" :class="index == 3 ? 'superPriceColor' : ''">￥</div>
+                                        <div class="ft26 font_weight" :class="index == 3 ? 'superPriceColor' : ''">{{ n.price }}</div>
                                         <!-- <div class="ft16">/月</div> -->
                                     </div>
-                                    <div class="text3">
+                                    <div class="text3" v-if="index == 3 ? false : true">
                                         <div class="ft12">送</div>
                                         <div class="ft12 font_weight">{{n.gameNum}}</div>
                                         <div class="ft12">款</div>
                                     </div>
-                                    <div class="text4">
+                                    <div class="text4" v-if="index == 3 ? false : true">
                                         <div class="ft12">游戏总价值</div>
                                         <div class="ft12 font_weight">￥{{n.worth}}</div>
                                         <!-- <div class="ft12"></div> -->
                                     </div>
-                                    <div class="text5">
+                                    <div class="text5" v-if="index == 3 ? false : true">
                                         <div class="ft12">送</div>
                                         <div class="ft12 font_weight">{{n.ticketHour}}</div>
                                         <div class="ft12">小时试玩</div>
                                     </div>
                                 </div>
                             </div>
+
+                            
                         </div>
                         <!-- 下面的游戏价值展示 -->
-                        <div class="memberFooter memberFooter_bg">
+                        <div class="memberFooter memberFooter_bg" v-if="showSuperMemberInfo">
                             <div class="footerTitle">
                                 <div class="leftText ft16 font_weight">{{memberTypeItems.levelName}}赠送{{memberTypeItems.gameNum}}款游戏</div>
                                 <div class="rightPrice ft16">价值：¥{{memberTypeItems.worth}}</div>
@@ -66,6 +68,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="memberFooterSuper showSuperMemberInfo_bg" v-else></div>
                     </div>
                     <!-- 付款码 -->
                     <div class="rightMemberPayment">
@@ -120,8 +123,8 @@
     z-index: 51;
     background-color: rgba(0, 0, 0, 0.8);
     .alertContent {
-        width: 1040px;
-        height: 658px;
+        width: 1178px;
+        height: 659px;
         box-sizing: border-box;
         border-radius:6px;
         position: absolute;
@@ -195,12 +198,14 @@
                 width: 100%;
                 height: 417px;
                 margin-top: 20px;
+                margin-left: 100px;
                 display: flex;
                 justify-content: space-between;
                 // 左边会员类型
                 .leftMemberType{
-                    width: 612px;
+                    width: 811px;
                     height: 100%;
+                    margin-left: -200px;
                     //会员类型选择
                     .leftMemberTypeTop{
                         width: 100%;
@@ -212,7 +217,6 @@
                             width:178px;
                             height:230px;
                             box-sizing: border-box;
-                            background:linear-gradient(180deg,rgba(32,41,57,1) 0%,rgba(3,11,19,1) 100%);
                             box-shadow:0px 4px 20px 0px rgba(0,0,0,0.5);
                             border-radius:3px;
                             cursor: pointer;
@@ -232,7 +236,6 @@
                                         height: 16px;
                                     }
                                     .textMiddle{
-                                        color:rgba(203,201,161,1);
                                         line-height:24px;
                                         text-shadow:0px 2px 4px rgba(0,0,0,0.47); 
                                     }
@@ -294,25 +297,33 @@
                             content: '推荐';
                             width:48px;
                             height:22px;
-                            background:rgba(15,25,32,1);
-                            border-radius:0px 0px 0px 14px;
+                            // background:rgba(15,25,32,1);
+                            background: #c69371;
+                            box-shadow: 0px 2px 1px 0px rgba(97,73,35,0.53); 
+                            border-radius:11px 0px 14px 0px;
                             font-size:14px;
                             color:rgba(218,216,195,1);
                             text-align: center;
                             line-height: 22px;
                             position: absolute;
-                            right: 0;
+                            opacity: 0.8;
+                            left: 0;
                             top: 0;
                         }
                     }
-                    
+                    // 超级会员信息展示
+                    .memberFooterSuper {
+                        width: 591px;
+                        height: 160px;
+                        margin: 22px 0 0 120px;
+                    }
                     // 会有送的游戏展示
                     .memberFooter{
-                        width: 100%;
+                        width: 612px;
                         height: 168px;
                         padding-top: 1px;
                         box-sizing: border-box;
-                        margin-top: 17px;
+                        margin: 17px auto;
                         //底部
                         .footerTitle{
                             width: 100%;
@@ -443,9 +454,23 @@
         }
     }
 }
+
+// 选中非超级会员时
+.noSuperMember {
+    background:linear-gradient(180deg,rgba(32,41,57,1) 0%,rgba(3,11,19,1) 100%);
+}
+// 超级会员价格颜色
+.superPriceColor {
+    color: #482E12;
+}
+// 普通会员名称颜色
+.ordinaryPriceColor {
+    color:rgba(203,201,161,1);
+}
 </style>
 <script>
 import { setInterval, clearInterval } from "timers";
+import { EventBus } from "@/utils/eventBus.js";
 import JumpTo from "@/utils/jumpTo";
 import loading from "../../components/Loading/loading";
 import store from '@/store'
@@ -488,9 +513,10 @@ export default {
         memberOrderTimer:null, //定时器查询订单状态
 
         reductionOrder:false,//本单立减 是否详情页面打开
+        showSuperMemberInfo:true,//是否展示普通会员介绍
+        openSuperMember:true,//只能开通超级会员
     };
   },
-  
   created() {
     // this.memberClearInterval()
   },
@@ -498,19 +524,26 @@ export default {
     this.memberClearInterval()
   },
   mounted() {
-    this.init()
-    if(this.$route.path == '/gameDetails'){
-        this.reductionOrder = true
+    var _this = this
+    _this.init()
+    if(_this.$route.path == '/gameDetails'){
+        _this.reductionOrder = true
     }else{
-        this.reductionOrder = false
+        _this.reductionOrder = false
     }
+    // 接收从 签到 页面传递过来的参数
+    EventBus.$on("eventOpenMember",function(val){
+        _this.openSuperMember = val
+        // 销毁事件
+        EventBus.$off('eventOpenMember')
+    })
   },
   watch:{
     // reductionOrder
     
   },
   computed:{
-   
+      
   },
   methods: {
     //初始化 
@@ -524,7 +557,17 @@ export default {
     },
     // 切换会员购买类型
     memberTypeChange(index){
+        // 如果从签到页面跳转过来，则return 只能开通超级会员
+        if(!this.openSuperMember){
+            return
+        }
+        if(index == 3){
+            this.showSuperMemberInfo = false
+        }else{
+            this.showSuperMemberInfo = true
+        }
         this.memberTypeItemsActive = index
+        
         this.memberTypeItems = this.memberLevelData[index] //当前选中的数据
         this.memberOrderData.levelId = this.memberTypeItems.levelId//默认的等级id
         this.getQrCode()
@@ -538,6 +581,9 @@ export default {
                 response.data.forEach((v,n) => {
                     if(v.recommend == 1){
                         this.memberTypeItemsActive = n
+                        if(this.memberTypeItemsActive == 3){
+                            this.showSuperMemberInfo = false
+                        }
                     }
                 });
                 this.memberTypeItems = response.data[this.memberTypeItemsActive]  //当前选中的数据
@@ -566,13 +612,19 @@ export default {
     },
     //获取订单二维码
     getQrCode(){
-        this.memberClearInterval() //清楚定时器
-        this.memberOrderBackData.qrcode = ''  //二维码设置为空的
-        this.$fetch('/member/order/create',this.memberOrderData)
-            .then((response) => {
-                this.memberOrderBackData = response.data
-                this.setIntervalFun() //订单获取成功后开始查询订单状态
-            })
+        // 是否为黑名单用户
+        if(this.$store.getters.getBlackList.flag && this.$store.getters.getBlackList.data.isOpen == 1){
+            this.memberOrderBackData.qrcode = ''  //二维码设置为空的
+            return
+        }else{
+            this.memberClearInterval() //清楚定时器
+            this.memberOrderBackData.qrcode = ''  //二维码设置为空的
+            this.$fetch('/member/order/create',this.memberOrderData)
+                .then((response) => {
+                    this.memberOrderBackData = response.data
+                    this.setIntervalFun() //订单获取成功后开始查询订单状态
+                })
+        }
     },
     // 查询订单状态
     queryMemberOrderState(){

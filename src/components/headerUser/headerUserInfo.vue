@@ -5,7 +5,7 @@
             <div class="leftMember">
                 <div class="leftMemberTop"><div class="icons"> <svg-icon iconClass='vipvip' className='svg_icon'></svg-icon></div> <div class="texts ft16">会员享折上折</div></div>
                 <div class="leftMemberBtm ft12 color_white_06">
-                    {{$store.getters.getIsMember.flag? '到期时间：'+$store.getters.getIsMember.data: '畅享试玩，送至高价值¥'+$store.getters.getIsMember.data+'游戏'}}
+                    {{$store.getters.getIsMember.flag? '到期时间：'+$store.getters.getIsMember.data.memberExpireDate: '畅享试玩，送至高价值¥'+$store.getters.getIsMember.data+'游戏'}}
                 </div>
             </div>
             <div class="rightMember" @click="displayAlertMemberFun">{{$store.getters.getIsMember.flag? '续费会员': '开通会员'}} </div>

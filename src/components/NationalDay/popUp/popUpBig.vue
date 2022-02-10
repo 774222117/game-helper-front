@@ -99,8 +99,8 @@ export default {
             width: 48px;
             height: 48px;
             position: absolute;
-            right: -24px;
-            top: -28px;
+            right: -18px;
+            top: -22px;
             cursor: pointer;
             z-index: 22;
         }

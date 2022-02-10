@@ -8,6 +8,8 @@
             <!-- <div class="lighting "></div> -->
             <!-- 红包 -->
             <div class="envelopes redBagIndex_bg"></div>
+            <!-- 关闭按钮 -->
+            <div class="redbagClose redbagClose_bg"></div>
             <!-- 免费领取游戏 -->
             <div class="getGame" :class=" item ? lighting ? 'ungotoSee_bg' : 'gotoSee_bg' :lighting ? 'unfreeGetGame_bg' : 'freeGetGame_bg'" @click="goToNewYear">
             </div>
@@ -57,13 +59,13 @@ export default {
             var month = date.getMonth();//获取当前点击时间月份
             var strDate = date.getDate();//获取当前点击时间日期
             //建立loginInfo变量来保存已经创建的storage信息
-            var loginInfo =  getStore({name:'loginTurn101',type:false})
+            var loginInfo =  getStore({name:'loginDiscount',type:false})
             if(loginInfo.value && loginInfo.active == 0){//如果 用户已经参加活动 && 用户当前没有点击'去看看'
                 loginInfo.active = 1 //点击去看看变为1
                 loginInfo.newTime = {'month':month,'day':strDate} //重新获取用户点击去看看的时间(月份和日期)
                 // console.log(loginInfo.newTime)
                 // 重新记录更新之后的用户信息保存到storage中
-                setStore({name:'loginTurn101',content:loginInfo,type:false})
+                setStore({name:'loginDiscount',content:loginInfo,type:false})
             }
             JumpTo(23);
 
@@ -107,21 +109,32 @@ export default {
                 z-index: 1;
             }
             .envelopes {
-                width: 529px;
-                height: 509px;
+                width: 432px;
+                height: 524px;
                 position: absolute;
-                left: -40px;
+                left: 0px;
                 top: -20px;
                 margin: 37px auto 0;
             }
             .getGame {
-                // width: 105px;
-                // height: 48px;
+                // min-width: 226px;
+                // height: 60px;
                 top: 450px;
                 // margin: 385px auto 160px;
                 z-index: 2;
+                // left: 130px;
                 position: absolute;
                 cursor: pointer;
+                // border: 1px  red solid;
+            }
+            .redbagClose {
+                width: 24px;
+                height: 24px;
+                position: absolute;
+                right: 100px;
+                top: 40px;
+                cursor: pointer;
+                z-index: 33;
             }
         }
         .close {
@@ -139,15 +152,17 @@ export default {
             width: 236px;
             height: 230px;
             position: fixed;
-            bottom: 83px;
+            bottom: 3px;
             // right: 23px;
-            left: 23px;
+            left: 43px;
             z-index: 51;
             cursor: pointer;
             .smallbag {
-                width: 236px;
-                height: 230px;
+                width: 212px;
+                height: 258px;
                 position: absolute;
+                bottom: 10px;
+                left: 40px;
             }
             .smallget {
                 width: 115px;
@@ -158,13 +173,13 @@ export default {
          }
 
          .freeGetGame_bg {
-             width: 137px;
-             height: 47px;
-             left: 170px;
+             width: 206px;
+             height: 40px;
+             left: 126px;
          }
          .gotoSee_bg {
-             width: 105px;
-             height: 47px;
-             left: 184px;
+             width: 167px;
+             height: 45px;
+             left: 142px;
          }
 </style>

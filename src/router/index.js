@@ -90,7 +90,11 @@ const router = new VueRouter({
     path:'/NationalDay',
     // 2021年 国庆抽奖活动
     component: () => import('../views/NationalDay/index.vue')
-  },
+  },{
+    path:'/discountNewYear',
+    // 2022年 新春折扣活动
+    component: () => import('../views/discountNewYear/index.vue')
+  }
 
 
 

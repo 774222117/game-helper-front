@@ -4,7 +4,7 @@
         <!-- 充值 -->
         <div class="voucher">
             <!-- 充值title文案 -->
-            <div class="newYearText ft24 font_weight">国庆限时金币充值</div>
+            <div class="newYearText ft24 font_weight">新年限时金币充值</div>
             <!-- 选择充值金额 -->
             <div class="voucherBox">
                 <!-- 充值选项 -->
@@ -52,7 +52,7 @@
                 <div class="alipay" @click="paymentMethod(3)"><svg-icon :iconClass="createeOrderData.payType == 3 ? 'zfbNationActive' : 'zfbNationDefault'" className='svg_icon'></svg-icon></div>
             </div>
             <!-- 二维码价格展示区 -->
-            <div class="qrcodeBox">
+            <div class="qrcodeBox qrcode_bg">
                 <!-- 二维码 -->
                 <div class="qrcode" v-if="Object.keys(createeOrderSeccessData).length > 0">
                     <img class="imgBlock" :src="createeOrderSeccessData.qrcode"  alt="">
@@ -208,9 +208,12 @@ export default {
             //充值title文案
             .newYearText {
                 width: 192px;
+                height: 32px;
                 line-height: 32px;
                 margin: 43px 0 0 40px;
-                color: #852d00;
+                 background-image: linear-gradient(93deg,#ff947c 0%, rgba(254,255,191,0.88) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
             //选择充值金额
             .voucherBox {
@@ -228,9 +231,10 @@ export default {
                     position: relative;
                     cursor: pointer;
                     .voucherChange {
-                        width: 172px;
-                        height: 50px;
+                        width: 168px;
+                        height: 46px;
                         position: absolute;
+                        margin: 2px;
                         border-radius: 10px;
                         .priceBox {
                             width: 150px;
@@ -245,9 +249,10 @@ export default {
                                 .num {
                                     min-width: 25px;
                                     line-height: 24px;
-                                    color: #351D05;
+                                    color: #FFE6B2;
                                     font-weight: 600;
-                                    text-align: right;
+                                    text-align: center;
+                                    
                                 }
                             }
                             //金币兑换价格
@@ -257,8 +262,8 @@ export default {
                                 align-items: center;
                                 justify-content: space-between;
                                 display: flex;
-                                color: #351D05;
-                                border-left: 1px dashed #000000;
+                                color: #FFE6B2;
+                                // border-left: 1px dashed #000000;
                                 .gold {
                                     width: 17px;
                                     height: 14px;
@@ -294,13 +299,13 @@ export default {
                     width: 88px;
                     height: 22px;
                     margin-left: 6px;
-                    color: #351D05;
+                    color: #FFE6B2;
                 }
                 //金币数量
                 .goldNum {
                     min-width: 20px;
                     height: 22px;
-                    color: #351D05;
+                    color: #FFE6B2;
                     margin-top: 1px;
                 }
             }
@@ -309,7 +314,7 @@ export default {
                 width: 358px;
                 line-height: 17px;
                 margin: 6px 0 0 40px;
-                color: #852d00;
+                color: #FFE6B2;
             }
         }
         // 右侧支付
@@ -321,10 +326,13 @@ export default {
             // border: 1px pink solid;
             // 支付文案
             .choosePayment {
-                width: 168px;
+                width: 144px;
+                height: 32px;
                 line-height: 39px;
                 margin-left: 28px;
-                color: #852d00;
+                background-image: linear-gradient(93deg,#ff947c 0%, rgba(254,255,191,0.88) 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
             }
             // 支付方式
             .paymentBox {
@@ -351,7 +359,7 @@ export default {
                 width: 299px;
                 height: 223px;
                 margin: 21px 0 0 28px;
-                background: rgba(255,238,149,1);
+                // background: rgba(24,87,43,1);
                 border-radius: 8px;
                 display: flex;
                 align-items: center;
@@ -378,21 +386,21 @@ export default {
                         width: 56px;
                         line-height: 19px;
                         margin-left: 29px;
-                        color: #852d00;
+                        color: #4D380F;
                     }
                     // 价格
                     .price {
                         min-width: 42px;
                         height: 32px;
                         margin: 9px 0 0 29px;
-                        color: rgba(203,64,0,1);
+                        color: #CB4000;
                     }
                     // 用户服务协议
                     .userAgreement {
                         width: 101px;
                         line-height: 18px;
                         margin: 38px 0 0 22px;
-                        color: rgba(133,45,0,0.47);
+                        color: #4D380F;
                         cursor: pointer;
                     }
                 }
@@ -400,5 +408,5 @@ export default {
         }
     }
 
-.isVoucher {background-color: rgba(255,162,0,0.6);}
+.isVoucher {background-color: rgba(148,14,14,0.56);}
 </style>

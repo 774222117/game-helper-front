@@ -54,10 +54,9 @@ export default {
     left: 0px;
     // 文案
     .title {
-        width: 170px;
-        height: 54px;
+        width: 688px;
+        height: 46px;
         margin-top: 21px;
-        margin-left: 260px;
     }
     .freeGoldCoin{
         width: 617px;
@@ -75,7 +74,7 @@ export default {
                 height: 48px;
                 margin-left: 24px;
                 display: flex;
-                color: rgba(255,255,255,1);
+                color: #D0442C;
                 .gameName {
                     width: 183px;
                     line-height: 48px;
@@ -84,12 +83,12 @@ export default {
                 .gameType {
                     width: 56px;
                     line-height: 48px;
-                    margin-left: 3px;
+                    margin-left: 33px;
                 }
                 .drawTime {
                     width: 108px;
                     line-height: 48px;
-                    margin-left: 130px;
+                    margin-left: 150px;
                 }
             }
         }
@@ -101,7 +100,7 @@ export default {
                 height: 48px;
                 margin-left: 24px;
                 display: flex;
-                color: rgba(53,29,5,1);
+                color: #906F2A;
                 .gameName {
                     width: 183px;
                     line-height: 48px;
@@ -110,7 +109,7 @@ export default {
                 .gameType {
                     width: 56px;
                     line-height: 48px;
-                    margin-left: 3px;
+                    margin-left: 43px;
                 }
                 .drawTime {
                     width: 108px;
@@ -156,9 +155,9 @@ export default {
 //其他区域底色
 .elseColor {background-color: rgba(255,238,149,1);}
 //顶部底色
-.topColor {background-color: #852d00;}
+.topColor {background-color: #FED47E;}
 // 底边框线
 .bottomLine {border-bottom: 0.5px solid rgba(207,161,44,0.34);}
-.white {background-color: #ffe9c5;}
+.white {background-color: #FFE6B2;}
 .block {background-color: #FFDE9A;}
 </style>

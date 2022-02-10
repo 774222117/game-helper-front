@@ -1,0 +1,157 @@
+/* 新年折扣背景图 */
+.discountNewYearBox_bg{
+    background:url('../../discountNewYear/images/discountNewYearBox.png') no-repeat center;
+    background-size: cover;
+}
+/* 试试手气1 */
+.leftBtn1_bg{
+    background:url('../../discountNewYear/images/leftBtn1.png') no-repeat center;
+    background-size: cover;
+}
+/* 试试手气2 */
+.leftBtn2_bg{
+    background:url('../../discountNewYear/images/leftBtn2.png') no-repeat center;
+    background-size: cover;
+}
+/* 立即下单1 */
+.rightBtn1_bg{
+    background:url('../../discountNewYear/images/rightBtn1.png') no-repeat center;
+    background-size: cover;
+}
+/* 立即下单2 */
+.rightBtn2_bg{
+    background:url('../../discountNewYear/images/rightBtn2.png') no-repeat center;
+    background-size: cover;
+}
+/* 搜索框背景 */
+.serchGame_bg{
+    background:url('../../discountNewYear/images/serchGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 关闭按钮 */
+.serchClose_bg{
+    background:url('../../discountNewYear/images/serchClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 选项卡选中样式 */
+/* .rankingItem_bg{
+    background:url('../../discountNewYear/images/rankingItem.png') no-repeat center;
+    background-size: cover;
+} */
+/* 游戏边框 */
+.gameBorder_bg{
+    background:url('../../discountNewYear/images/gameBorder.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏底部阴影 */
+.bottomShadow_bg{
+    background:url('../../discountNewYear/images/bottomShadow.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏价格 */
+.gamePrice_bg{
+    background:url('../../discountNewYear/images/gamePrice.png') no-repeat center;
+    background-size: cover;
+}
+/* 充值中心背景框 */
+.voucherContent_bg{
+    background:url('../../discountNewYear/images/voucherContent.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏名称合集框 */
+.gameBagName_bg{
+    background:url('../../discountNewYear/images/gameBagName.png') no-repeat center;
+    background-size: cover;
+}
+/* 新春活动价格框 */
+.newYearContent_bg{
+    background:url('../../discountNewYear/images/newYearContent.png') no-repeat center;
+    background-size: cover;
+}
+/* 余额选中 */
+.isActive_bg{
+    background:url('../../discountNewYear/images/isActive.png') no-repeat center;
+    background-size: cover;
+}
+/* 余额未选中 */
+.unActive_bg{
+    background:url('../../discountNewYear/images/unActive.png') no-repeat center;
+    background-size: cover;
+}
+.prove1_bg{
+    background:url('../../discountNewYear/images/prove1.png') no-repeat center;
+    background-size: cover;
+}
+.prove2_bg{
+    background:url('../../discountNewYear/images/prove2.png') no-repeat center;
+    background-size: cover;
+}
+.prove3_bg{
+    background:url('../../discountNewYear/images/prove3.png') no-repeat center;
+    background-size: cover;
+}
+/* 二维码扫码背景 */
+.qrcodeContent_bg{
+    background:url('../../discountNewYear/images/qrcodeContent.png') no-repeat center;
+    background-size: cover;
+}
+/* 选择游戏默认 */
+.activeChange_bg{
+    background:url('../../discountNewYear/images/activeChange.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏框 */
+.gameBox_bg{
+    background:url('../../discountNewYear/images/gameBox.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏底部阴影 */
+.bottomShad_bg{
+    background:url('../../discountNewYear/images/bottomShad.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏价格背景图 */
+.gameTopPrice_bg{
+    background:url('../../discountNewYear/images/gameTopPrice.png') no-repeat center;
+    background-size: cover;
+}
+/* 删除游戏的样式 */
+.removeGame_bg{
+    background:url('../../discountNewYear/images/removeGame.png') no-repeat center;
+    background-size: cover;
+}
+/* 支付成功勾勾 */
+.success_bg{
+    background:url('../../discountNewYear/images/success.png') no-repeat center;
+    background-size: cover;
+}
+/* 支付成功背景框 */
+.successBottom_bg{
+    background:url('../../discountNewYear/images/successBottom.png') no-repeat center;
+    background-size: cover;
+}
+/* 重复游戏弹窗 */
+.changeReplayAlert_bg{
+    background:url('../../discountNewYear/images/changeReplayAlert.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页红包弹窗 */
+.redBagBox_bg{
+    background:url('../../discountNewYear/images/redBagBox.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页小红包弹窗 */
+.smallalert_bg{
+    background:url('../../discountNewYear/images/smallalert.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页弹窗关闭按钮 */
+.alertClose_bg {
+    background:url('../../discountNewYear/images/alertClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 没有游戏显示的图 */
+.noGamePic_bg {
+    background:url('../../discountNewYear/images/noGamePic.png') no-repeat center;
+    background-size: cover;
+}

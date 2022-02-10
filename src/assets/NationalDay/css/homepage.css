@@ -45,12 +45,17 @@
 }
 /* 首页抽奖中心  福袋记录箭头图标 */
 .arrow_bg{
-    background:url('../../luckNewYear/images/arrow.png') no-repeat center;
+    background:url('../../NationalDay/images/arrow.png') no-repeat center;
     background-size: cover;
 }
 /* 首页抽奖中心  我的金币充值按钮 */
 .Recharge_bg{
     background:url('../../NationalDay/images/Recharge.png') no-repeat center;
+    background-size: cover;
+}
+/* 充值中心 二维码背景图 */
+.qrcode_bg{
+    background:url('../../NationalDay/images/qrcode.png') no-repeat center;
     background-size: cover;
 }
 /* 游戏奖品展示   右上角价格背景图*/
@@ -100,12 +105,12 @@
 }
 /* 活动弹窗小弹窗   左边按钮*/
 .leftBtn_bg{
-    background:url('../../luckNewYear/images/leftBtn.png') no-repeat center;
+    background:url('../../NationalDay/images/leftBtn.png') no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗小弹窗   右边按钮*/
 .rightBtn_bg{
-    background:url('../../luckNewYear/images/rightBtn.png') no-repeat center;
+    background:url('../../NationalDay/images/rightBtn.png') no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗小弹窗   恭喜抽中以下游戏logo*/
@@ -115,7 +120,7 @@
 }
 /* 活动弹窗小弹窗   好的 默认*/
 .ready_bg{
-    background:url('../../luckNewYear/images/ready.png') no-repeat center;
+    background:url('../../NationalDay/images/ready.png') no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗小弹窗   好的 选中*/
@@ -135,17 +140,17 @@
 }
 /* 活动弹窗小弹窗   恭喜获得新春好礼*/
 .getFreeGold_bg{
-    background:url('../../luckNewYear/images/getFreeGold.png') no-repeat center;
+    background:url('../../NationalDay/images/getFreeGold.png') no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗小弹窗   免费金币10*/
 .gold10_bg{
-    background:url('../../luckNewYear/images/gold10.png') no-repeat center;
+    background:url('../../NationalDay/images/gold10.png') no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗小弹窗   领取金币 默认*/
 .getGold_bg{
-    background:url('../../luckNewYear/images/getGold.png') no-repeat center;
+    background:url('../../NationalDay/images/getGold.png') no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗小弹窗   领取金币 选中*/
@@ -156,11 +161,6 @@
 /* 活动弹窗小弹窗   充值成功*/
 .voucherSuccess_bg{
     background:url('../../NationalDay/images/voucherSuccess.png') no-repeat center;
-    background-size: cover;
-}
-/* 免费领金币 */
-.rotate_bg{
-    background: url('../../NationalDay/images/rotate.png')no-repeat center;
     background-size: cover;
 }
 /* 活动弹窗大弹窗   充值金币边框线*/
@@ -263,3 +263,36 @@
     background:url('../../NationalDay/images/probability.png') no-repeat center;
     background-size: cover;
 }
+/* 滚动信息背景图 */
+.scroll_background_bg{
+    background:url('../../NationalDay/images/scroll_background.png') no-repeat center;
+    background-size: cover;
+}
+/* 活动文案图 */
+.blessingLogo_bg{
+    background:url('../../NationalDay/images/blessingLogo.png') no-repeat center;
+    background-size: cover;
+}
+/* 规则背景图 */
+.blessingInfo_bg{
+    background:url('../../NationalDay/images/blessingInfo.png') no-repeat center;
+    background-size: cover;
+}
+/* 包含以下游戏最价值 */
+.mygold_bg{
+    background:url('../../NationalDay/images/mygold.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏小框价格背景图 */
+.gamePrice2_bg{
+    background:url('../../NationalDay/images/gamePrice2.png') no-repeat center;
+    background-size: cover;
+}
+/* 首页弹窗关闭按钮 */
+.redbagClose_bg{
+    background:url('../../NationalDay/images/regbagClose.png') no-repeat center;
+    background-size: cover;
+}
+
+
+

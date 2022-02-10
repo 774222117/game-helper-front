@@ -1,8 +1,8 @@
 <template>
     <!-- 顶部玩家抽游戏滚动信息 -->
-    <div class="content horse_lamp_bg">
+    <div class="content">
         <div class="InfoBox">
-            <div class="gameInfo ft14" v-text="scrollInfo"></div>
+            <div class="gameInfo ft14 ft_weight" v-text="scrollInfo"></div>
         </div>
     </div>
 </template>
@@ -15,7 +15,7 @@ export default {
         return {
             timer:null,//设置时间为null
             scrollInfo:"",//保存获取到的数据
-            randomGameBag:['三国游戏大礼包','赛博朋克2077','只狼','古墓丽影大礼包','方舟','巫师3','糖豆人','欧洲卡车模拟2','热门新品大礼包','赛博朋克2077','空洞骑士','怪物猎人世界（包含冰原）','以撒的结合:重生+胎衣+忏悔'],
+            randomGameBag:['三国志14 威力加强版','使命召唤大礼包','帝国时代大礼包','极限竞速：地平线 5','漫漫长路','红色警戒：重制版/红警','文明6','方舟','欢乐共斗','赛博朋克2077','狙击精英4标准版','觅长生','城市：天际线','春节福利礼包'],
             randomNumBag:['138','158','177','176','153','139','199','186','188'],
         }
     },
@@ -117,7 +117,7 @@ export default {
             .gameInfo {
                 min-width: 200px;
                 height: 20px;
-                color: #852d00;
+                color: #FFFFFF;
                 line-height: 30px;
                 margin: 8px 0 0 0px;
             }

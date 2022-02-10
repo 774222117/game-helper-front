@@ -2,7 +2,7 @@
 <!-- 小 的弹框 -->
 <div class="bulletFrameSmallMain">
     <!-- 背景主体 -->
-    <div class="bulletFrameSmallContent" :class="[changeluck == 1 ? 'luckdraw' : '',changeSolt == 'getFreeGold' ? '' : 'smallPopUp_bg']"></div>
+    <div class="bulletFrameSmallContent" :class="[changeluck == 1 ? 'luckdraw' : '',changeSolt == '' ? '' : 'smallPopUp_bg']"></div>
     <!-- 背景光 -->
     <!-- <div class="bulletFrameSmallLight"></div> -->
     <!-- 插槽内容 -->
@@ -116,8 +116,8 @@ export default {
             width: 48px;
             height: 48px;
             position: absolute;
-            right: -25px;
-            top: 64px;
+            right: -20px;
+            top: 66px;
             cursor: pointer;
             z-index: 22;
         }

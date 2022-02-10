@@ -1,6 +1,6 @@
 <template>
     <!-- 游戏展示 -->
-    <div class="gameBox" v-if="!!item" @mouseenter="watchBag(true,item)" @mouseleave="watchBag(false,item)">
+    <div class="gameBox" v-if="!!item" @mouseenter="watchBag(true,item)" @mouseleave="watchBag(false,item)" :class="item.bag == 1 ? 'isbag' : 'nobag'">
         <!-- 游戏图 -->
         <div  v-if="item.got == 0 && !isHover">
             <div class="gamePic">
@@ -89,9 +89,9 @@ export default {
             width: 77px;
             line-height: 24px;
             position: absolute;
-            right: 0;
-            top: 0;
-            color: rgba(255,224,92,1);
+            right: -1px;
+            top: -1px;
+            color: #FFE05C;
             text-align: center;
         }
         // 背景渐变
@@ -110,7 +110,7 @@ export default {
             z-index: 2;
             bottom: 0;
             left: 10px;
-            color: rgba(255,216,9,1);
+            color: #FFD809;
             font-weight: 600;
             text-align: left;
             display: flex;
@@ -173,5 +173,12 @@ export default {
             color: #FFFFFF;
             font-weight: 600;
         } 
+    }
+
+    .isbag {
+        border: 1px solid #F9D88F;
+    }
+    .nobag {
+        border: 1px solid #000000;
     }
 </style>

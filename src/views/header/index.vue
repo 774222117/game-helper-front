@@ -21,7 +21,7 @@
 			<!-- myGame 我的游戏 -->
 			<div class="myGameBtn ft20 color_white_1 fl BangersRegular opc_hover1 no_draggable" :class="isMyGame==0?'isMyGameActive':''"  @click="headerMyGameClick" @mousedown.stop="''">我的游戏</div>
 			<!-- 搜索框 -->
-			<div class="searchBox fl no_draggable" :style="isUserLogin ? 'margin-left:100px;': 'margin-left:5px;'" @mousedown.stop="''">
+			<div class="searchBox fl no_draggable" :style="isUserLogin ? 'margin-left:40px;': 'margin-left:5px;'" @mousedown.stop="''">
 				<input class="hraderSearch ft12 color_white_1" type="text" v-model="searchGameName" placeholder="搜索游戏" @keyup.enter="searchGame">
 				<div class="searchBtn dispCenter back2 opc_hover8" @click="searchGame"><svg-icon iconClass='search' className='svg_icon_search'></svg-icon></div>
 			</div>
@@ -55,6 +55,8 @@
 					</div>
 				</div>
 			</div>
+			<!-- 签到按钮 -->
+			<div class="checkBtn" :class="superMemberUserBtn ? 'superMembers_bg' : 'getPcoins_bg'" @click="openCheckPage" v-if="isUserLogin" @mousedown.stop="''"></div>
 			<!-- 联系客服 -->
 			<div class="contactService" @mousedown.stop="''" @click="sendContactService">
 				<div class="contactServiceSvg"> <svg-icon iconClass='customerService' className='svg_icon'></svg-icon> </div>
@@ -79,6 +81,8 @@
 		</div> -->
 	</div>
 	<sevenWy7yuAlert v-if="displaySevenWy7yuAlert" @change="displaySevenWy7yuAlertFun"/>
+	<checkAlert v-if="checkAlertBtn" @change="closeCheckAlert" :superMemberBtn='superMemberVip' @ordinaryCheck='ordinaryCheck' :ordinaryBtn='alreadyOrdinaryMember' :superBtn='alreadySuperMember' @superMemberUser='superMemberUser' @changeMemberState='changeMemberState'/>
+	<checkSuccessAlert v-if="checkSuccessBtn" @change='closeCheckSuccessAlert' :ordinaryGold='ordinaryNum'/>
 </div>
 	
 </template>
@@ -87,6 +91,8 @@
 
 import headerUserInfo from '@/components/headerUser/headerUserInfo'
 import sevenWy7yuAlert from '@/components/sevenWy7yuAlert/sevenWy7yuAlert'
+import checkAlert from '@/components/indexs/checkAlert/checkAlert.vue'//签到弹窗
+import checkSuccessAlert from '@/components/indexs/checkAlert/checkSuccessAlert'//签到成功弹窗
 import {setStore,getStore,removeStore} from '@/utils/storage.js'
 import JumpTo from '@/utils/jumpTo'
 import store from '@/store'
@@ -95,7 +101,9 @@ export default {
 	components: {
 		JumpTo,
 		headerUserInfo,
-		sevenWy7yuAlert
+		sevenWy7yuAlert,
+		checkAlert,
+		checkSuccessAlert
 	},
 	store,
 	inject:['reload','openRegister'],
@@ -112,6 +120,14 @@ export default {
 			imgTimes: 'https://grsource.we4game.com/activity/logo.svg?times=' +( +new Date()),
 			logoImgIsType:'png',
 			displaySevenWy7yuAlert:false,//网易七鱼客服系统
+			checkAlertBtn:false,//会员签到界面开关
+			checkSuccessBtn:false,//会员签到成功弹窗
+			superMemberVip:false,//是否是超级会员
+			ordinaryNum:0,//普通会员签到的金币
+			superUserNum:0,//超级会员签到的金币
+			alreadySuperMember:false,//超级会员是否签到
+			alreadyOrdinaryMember:false,//普通用户是否签到
+			superMemberUserBtn:false,//该用户今日是否已全部签到
 		}
 	},
 	watch:{
@@ -123,7 +139,91 @@ export default {
 			}
 		}
 	},
+	mounted(){
+		if(!!this.$store.getters.getStorage){
+			// console.log(this.$store.getters.getStorage)
+			this.watchUserCheck()
+		}
+	},
 	methods:{
+		// 签到之后改变签到按钮的状态
+		changeMemberState(data,open){
+			if(data == 0){
+				this.alreadyOrdinaryMember = open
+			}else{
+				this.alreadySuperMember = open
+			}
+		},
+		// 查看签到状态
+		watchUserCheck(){
+			var _this = this
+			_this.$fetch('/account/signStatus')
+			.then((response) => {
+				// console.log(response)
+				if(response.flag){
+					if(response.data.svipSign && response.data.sign){
+						// 如果都签到则显示 超级会员 标识
+						this.superMemberUserBtn = true
+					}
+				}else{
+					console.log('查询签到状态异常')
+				}
+			})
+		},
+		// 该用户今日是否已全部签到
+		superMemberUser(data){
+			this.superMemberUserBtn = data
+		},
+		// 获得普通签到的金币值
+		ordinaryCheck(num,show){
+			this.ordinaryNum  = num
+			this.checkSuccessBtn = show
+		},
+		// 打开会员界面
+		openCheckPage(){
+			var _this = this
+			// 查询该用户是否是会员
+			// console.log(_this.$store.getters.getIsMember.data)
+			// 保存该用户是否是超级会员
+			if(_this.$store.getters.getIsMember.data.isMember == 2){
+				// 是超级会员
+				_this.superMemberVip = true
+			}else{
+				// 不是超级会员
+				_this.superMemberVip = false
+			}
+
+			if(_this.superMemberUserBtn){
+				return 
+			}
+
+			_this.checkAlertBtn = true
+			
+			// 查看签到状态
+			_this.$fetch('/account/signStatus')
+			.then((response) => {
+				// console.log(response)
+				if(response.flag){
+					// 超级会员是否签到
+					_this.alreadySuperMember = response.data.svipSign
+					// 普通会员是否签到
+					_this.alreadyOrdinaryMember = response.data.sign
+					if(response.data.svipSign && response.data.sign){
+						this.superMemberUserBtn = true
+					}
+				}else{
+					console.log('查询签到状态异常')
+				}
+			})	
+		},
+		// 关闭签到成功界面
+		closeCheckSuccessAlert(data){
+			this.checkSuccessBtn = data
+		},
+		// 关闭会员签到界面
+		closeCheckAlert(data){
+			this.checkAlertBtn = data
+		},
 		imgError(){
 			this.logoImgIsType = 'svg'
 		},
@@ -168,7 +268,7 @@ export default {
 		searchGame(){
 			this.$fetch('/game/searchStatistics',{'gameName':this.searchGameName})
 				.then((response) => {
-					console.log(response)
+					// console.log(response)
 					JumpTo(1,{gameName:this.searchGameName});
 				})
 			
@@ -189,6 +289,7 @@ export default {
 			}
 			if( !this.$store.getters.getLoginCode ){
 				if(!!this.openRegister){
+					console.log(this.openRegister)
 					this.openRegister(true)
 				}else{
 					console.log('没得openRegister方法')
@@ -250,9 +351,6 @@ export default {
 			}
 		},
 	},
-	computed: {
-
-  	},
 }
 </script>
 <style lang="scss" scoped>
@@ -352,7 +450,7 @@ export default {
 			height:41px;
 			text-align: center;
 			line-height: 41px;
-			margin-left: 25px;
+			margin-left: 5px;
 			opacity: 0.6;
 			transition: all 0.2s ease;
 		}
@@ -370,7 +468,7 @@ export default {
 			justify-content: space-between;
 			align-items: center;
 			.hraderSearch{
-				width: 300px;
+				width: 240px;
 				height: 100%;
 				display: block;
 				outline: none;
@@ -389,6 +487,7 @@ export default {
 				width: 40px;
 				height: 100%;
 				border-radius:0 2px 2px 0;
+				margin-right: 60px;
 			}
 		}
 		// 登陆按钮
@@ -397,7 +496,8 @@ export default {
 			height:40px;
 			text-align: center;
 			line-height: 40px;
-			margin-left: 15px;
+			// margin-right: 25px;
+			right: 35px;
 			position: relative;
 			.loginUserBox{
 				width:100%;
@@ -435,6 +535,14 @@ export default {
 				}
 			}
 			
+		}
+		// 签到按钮
+		.checkBtn {
+			width: 99px;
+			height: 29px;
+			position: relative;
+			right: 15px;
+			cursor: pointer;
 		}
 		// 没有登录
 		.noLogin:hover{background-color:rgba(76, 107, 34, 1);color: rgba(255, 255, 255, 1);}

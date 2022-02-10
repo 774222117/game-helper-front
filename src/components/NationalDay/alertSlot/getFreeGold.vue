@@ -2,12 +2,12 @@
     <!-- 恭喜获得新春好礼 -->
     <div class="alertSlotBox">
         <!-- title -->
-        <!-- <div class="title getFreeGold_bg"></div> -->
+        <div class="title getFreeGold_bg"></div>
         <!-- 免费金币 -->
-        <!-- <div class="freeGold gold10_bg"></div> -->
+        <div class="freeGold gold10_bg"></div>
         <!-- 好的 -->
-        <div class="ready rotate_bg" @click="freeGoldCoin">
-            <!-- <div class="BtnClick getGold_bg" ></div> -->
+        <div class="ready" @click="freeGoldCoin">
+            <div class="BtnClick getGold_bg" ></div>
         </div>
     </div>
 </template>
@@ -58,33 +58,34 @@ export default {
         left: 0px;
         // 文案
         .title {
-            width: 690px;
-            height: 50px;
+            width: 691px;
+            height: 46px;
             margin-top: 21px;
         }
         // 免费领取金币图标
         .freeGold {
-            width: 153px;
-            height: 153px;
+            width: 181px;
+            height: 166px;
             margin: 66px auto 0;
         }
         // 好的
         .ready {
-            width: 506px;
-            height: 545px;
+            width: 294px;
+            height: 135px;
             position: relative;
             display: flex;
-            left: 50px;
+            left: 200px;
+            top: 10px;
             justify-content: center;
             align-items: center;
             cursor: pointer;
-            // .BtnClick {
-            //     width: 240px;
-            //     height: 75px;
-            //     position: absolute;
-            //     z-index: 3;
-            //     cursor: pointer;
-            // }
+            .BtnClick {
+                width: 294px;
+                height: 135px;
+                position: absolute;
+                z-index: 3;
+                cursor: pointer;
+            }
         }  
     }
 </style>

@@ -67,16 +67,15 @@ export default {
         left: 0px;
         // 文案
         .title {
-            width: 302px;
-            height: 76px;
-            margin-top: 11px;
-            margin-left: 198px;
+            width: 688px;
+            height: 45px;
+            margin-top: 20px;
         }
         // 内容
         .content {
             width: 100%;
             // height: 76px;
-            margin-top: 47px;
+            margin-top: 37px;
             // 游戏盒子
             .gameContent {
                 // width: 533px;
@@ -88,7 +87,7 @@ export default {
                 .gameItemBox {
                     width: 163px;
                     height: 77px;
-                    border: 1px solid #FED47E;
+                    border: 1px solid black;
                     margin-right: 19px;
                     margin-bottom: 20px;
                 }
@@ -98,24 +97,28 @@ export default {
         .price {
             width: 100%;
             height: 32px;
-            margin-top: 20px;
+            // margin-top: 20px;
             .mygold {
-                width: 150px;
+                width: 132px;
                 height: 32px;
                 margin: 0 auto;
-                color:rgba(0,0,0,0.85);
+                color:#FDFFA9;
                 display: flex;
                 align-items: center;
+                position: relative;
+                bottom: -10px;
+                left: -6px;
+                display: flex;
                 .gold {
                     min-width: 72px;
                     line-height: 32px;
-                    padding-left: 6px;
+                    // padding-left: 6px;
                 }
                 .myprice {
                     min-width: 58px;
-                    height: 32px;
-                    margin-left: -2px;
-                    color: rgba(255,162,0,1);
+                    line-height: 32px;
+                    color: #FDFFA9;
+                    // right: 24px;
                 }
             }
         }

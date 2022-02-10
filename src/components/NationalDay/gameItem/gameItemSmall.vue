@@ -1,12 +1,12 @@
 <template>
     <!-- 游戏展示 -->
-    <div class="gameBox smallSpider_bg" v-if="true">
+    <div class="gameBox" v-if="true">
         <!-- 游戏图 -->
         <div class="gamePic">
             <img :src="item.image" alt="">
         </div>
         <!-- 游戏价格 -->
-        <div class="gamePrice gamePrice_bg ft12">
+        <div class="gamePrice gamePrice2_bg ft12">
             价值:￥<span class="ft12">{{item.steamPrce}}</span>
         </div>
         <!-- 游戏背景渐变 -->
@@ -49,20 +49,20 @@ export default {
 
 <style lang="scss" scoped>
     .gameBox {
-        width: 167px;
-        height: 74px;
+        width: 165px;
+        height: 79px;
         position: relative;
         // 背景图
         .gamePic {
-            width: 161px;
-            height: 64px;
+            width: 167px;
+            height: 74px;
             position: absolute;
             right: 0;
             top: 0;
             img {
                 position: absolute;
-                width: 161px;
-                height: 64px;
+                width: 167px;
+                height: 74px;
             }
         }
         // 游戏价格
@@ -72,15 +72,15 @@ export default {
             position: absolute;
             right: 0px;
             top: 0;
-            color: rgba(255,224,92,1);
+            color: #FFE05C;
             text-align: center;
         }
         // 背景渐变
         .Gradual {
-            width: 162px;
+            width: 167px;
             height: 54px;
             position: absolute;
-            bottom: 10px;
+            bottom: 0px;
             right: 0;
         }
         // 游戏名字
@@ -89,9 +89,9 @@ export default {
             line-height: 32px;
             position: absolute;
             z-index: 2;
-            bottom: 12px;
-            left: 10px;
-            color: rgba(255,216,9,1);
+            bottom: 0px;
+            left: 4px;
+            color: #FFD809;
             font-weight: 600;
             text-align: left;
             display: flex;

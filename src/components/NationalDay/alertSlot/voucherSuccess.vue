@@ -7,8 +7,8 @@
         <div class="text1 ft24 font_weight">充值成功！</div>
         <div class="text2 ft24 font_weight">快去开福袋吧！</div>
         <!-- 好的 -->
-        <div class="ready">
-            <div class="BtnClick ready_bg" @click="close"></div>
+        <div class="ready mygold_bg">
+            <div class="BtnClick" @click="close"></div>
         </div>
     </div>
 </template>
@@ -58,28 +58,33 @@ export default {
             width: 120px;
             height: 32px;
             margin: 22px 0 0 364px;
-            color: rgba(133,45,0,1);
+            background-image: linear-gradient(93deg,#ff947c 0%, rgba(254,255,191,0.88) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .text2 {
             width: 168px;
             height: 32px;
             margin: 10px 0 0 340px;
-            color: rgba(133,45,0,1);
+            background-image: linear-gradient(93deg,#ff947c 0%, rgba(254,255,191,0.88) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         // 好的
         .ready {
             width: 294px;
             height: 135px;
-            margin: 6px 0 0 273px;
+            margin: 6px 0 0 266px;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             .BtnClick {
-                width: 240px;
-                height: 75px;
+                width: 179px;
+                height: 79px;
                 position: absolute;
                 z-index: 3;
+                left: 50px;
                 cursor: pointer;
             }
         }  

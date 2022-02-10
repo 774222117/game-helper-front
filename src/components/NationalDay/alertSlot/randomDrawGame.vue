@@ -95,22 +95,21 @@ export default {
     .alertSlotBox {
         width: 691px;
         height: 466px;
-        border: 1px red;
+        border: 1px red solid;
         position: relative;
         top: 97px;
         left: 0px;
         // 文案
         .title {
-            width: 302px;
-            height: 76px;
-            margin-top: 10px;
-            margin-left: 188px;
+            width: 691px;
+            height: 46px;
+            margin-top: 20px;
         }
                 .freeGoldCoin{
                 width: 636px;
                 height: 260px;
                 margin: 0 auto;
-                margin-top: 12px;
+                margin-top: 24px;
                 .gameItem {
                     height: 173px;
                     display: flex;
@@ -120,9 +119,9 @@ export default {
                         height: 260px;
                         position: absolute;
                         .leftBtn {
-                            width: 25px;
-                            height: 40px;
-                            margin-top: 110px;
+                            width: 30px;
+                            height: 30px;
+                            margin: 110px 0 0 5px;
                             cursor: pointer;
                         }
                     }
@@ -132,7 +131,7 @@ export default {
                     position: absolute;
                     left: 76px;
                     overflow: hidden;
-                    top: 94px;
+                    top: 84px;
                     // 中间游戏框
                         .centerShow {
                             min-width: 536px;
@@ -148,7 +147,7 @@ export default {
                                 flex-wrap: wrap;
                                 justify-content: space-between;
                                 align-content: space-between;
-                                
+                                margin-left: -1px;
                                     .gameItemHBox {
                                     width: 163px;
                                     height: 77px;
@@ -173,9 +172,9 @@ export default {
                         position: absolute;
                         right: 28px;
                         .rightBtn {
-                            width: 25px;
-                            height: 40px;
-                            margin: 110px 0 0 19px;
+                            width: 30px;
+                            height: 30px;
+                            margin: 110px 0 0 15px;
                             cursor: pointer;
                         }
                     }
@@ -192,9 +191,9 @@ export default {
                     .pointBox {
                         display: flex;
                         .point {
-                            width: 9px;
-                            height: 9px;
-                            border-radius: 50%;
+                            width: 15px;
+                            height: 3px;
+                            // border-radius: 50%;
 
                             margin-right: 6px;
                             cursor: pointer;
@@ -204,7 +203,7 @@ export default {
     }
 
 // 选中
-.ischange {background: rgba(255,219,9,1);border: 1px solid #000000;}
+.ischange {background: #FFE6B2;}
 // 未选中
-.unchange {background: rgba(0,0,0,1);}
+.unchange {background: #FFC850;}
 </style>

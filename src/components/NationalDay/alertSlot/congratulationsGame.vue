@@ -10,8 +10,8 @@
             </div>
         </div>
         <!-- 好的 -->
-        <div class="ready">
-            <div class="BtnClick ready_bg"  @click="close"></div>
+        <div class="ready mygold_bg">
+            <div class="BtnClick"  @click="close"></div>
         </div>
        
     </div>
@@ -80,7 +80,7 @@ export default {
             height: 240px;
             // left: 74px;
             // top: 80px;
-            margin: 24px 0 0 22px;
+            margin: 14px 0 0 22px;
             // border: 1px white solid;
             // position: absolute;
             display: flex;
@@ -99,28 +99,28 @@ export default {
         }
         // 文案
         .title {
-            width: 302px;
-            height: 76px;
-            margin-top: 10px;
-            margin-left: 200px;
+            width: 691px;
+            height: 46px;
+            margin-top: 20px;
         }
         // 好的
         .ready {
             width: 294px;
             height: 135px;
             // margin: 58px 0 0 199px;
-            left: 199px;
-            top: 304px;
+            left: 204px;
+            top: 274px;
             position: absolute;
             display: flex;
             justify-content: center;
             // align-items: center;
             .BtnClick {
-                width: 240px;
-                height: 75px;
+                width: 179px;
+                height: 79px;
                 position: absolute;
                 z-index: 3;
-                top: 50px;
+                top: 16px;
+                left: 64px;
                 cursor: pointer;
             }
         }

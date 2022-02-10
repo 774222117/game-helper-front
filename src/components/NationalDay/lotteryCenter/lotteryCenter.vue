@@ -6,7 +6,7 @@
             <!-- 第一排奖品 -->
             <div class="firstPrize">
                 <div class="prizeItem pos" v-for="(data,index) in topGame" @click="togetherPlay1(data)">
-                    <div class="leftTopHot leftTopHot_bg" v-if="index == 0 || index == 4"></div>
+                    <!-- <div class="leftTopHot leftTopHot_bg" v-if="index == 0 || index == 4"></div> -->
                     <gameItemBig :item='data' />
                 </div>
             </div>
@@ -36,14 +36,18 @@
                         <div class="goldBox">
                             <!-- 我的金币 -->
                             <div class="mygold">
-                                <div class="gold ft14"><span class="befGold"></span> 我的金币:<span class="ft14 font_weight">{{balanceCard.balance}}</span></div>
+                                <div class="gold ft18"><span class="befGold"></span> 我的金币:<span class="ft18 font_weight">{{balanceCard.balance}}</span></div>
                                 <!-- 充值 -->
-                                <div class="voucher Recharge_bg" @click="voucher"></div>
+                                <div class="voucher" @click="voucher">
+                                    <svg-icon iconClass='Recharge' class="svg_icon"></svg-icon>
+                                </div>
                             </div>
                             <!-- 福袋记录 -->
                             <div class="luckyRecord" @click="luckyRecord">
                                 <div class="bag ft14">福袋记录</div>
-                                <div class="arrow arrow_bg"></div>
+                                <div class="arrow">
+                                    <svg-icon iconClass="arrow1" class="svg_icon"></svg-icon>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,7 +64,7 @@
             <!-- 第三排奖品 -->
             <div class="thirdPrize">
                 <div class="prizeItem pos" v-for="(data,index) in bottomGame" @click="togetherPlay1(data)">
-                    <div class="leftTopHot leftTopHot_bg" v-if="index == 0 || index == 4"></div>
+                    <!-- <div class="leftTopHot leftTopHot_bg" v-if="index == 0 || index == 4"></div> -->
                     <gameItemBig :item='data' />
                 </div>
             </div>
@@ -117,6 +121,7 @@ export default {
         },
         //抽奖
         luckDrawNum(luckDrawNumModel){
+            // return this.$emit('changex',true,'') //单独测试动画，推送时注销
             let _this = this;
             if(!!_this.$store.getters.getStorage){
                 switch (luckDrawNumModel) {
@@ -226,17 +231,16 @@ export default {
 <style lang="scss" scoped>
     // 抽奖中心
     .lotteryCenterBack {
-        width: 1101px;
-        height: 533px;
+        width: 1038px;
+        height: 429px;
         position: relative;
         top: 570px;
-        left: -30px;
         // 奖品盒子
         .prizeBox {
             width: 972px;
             height: 388px;
-            left: 66px;
-            top: 72px;
+            left: 32px;
+            top: 18px;
             position: absolute;
             // 第一排奖品
             .firstPrize {
@@ -248,7 +252,7 @@ export default {
                 .prizeItem {
                     width: 176px;
                     height: 82px;
-                    border: 1px solid #FED47E;
+                    // border: 1px solid #FED47E;
                     cursor: pointer;
                 }
             }
@@ -264,7 +268,7 @@ export default {
                     .prizeItem1 {
                         width: 176px;
                         height: 82px;
-                        border: 1px solid #FED47E;
+                        // border: 1px solid #FED47E;
                         cursor: pointer;
                         margin-bottom: 14px;
                     }
@@ -296,7 +300,7 @@ export default {
                             // background-image: linear-gradient(to right,#FDFFA9,#FFD99F);
                             // -webkit-background-clip: text;
                             // -webkit-text-fill-color: transparent;
-                            color: #894b07;
+                            color: #840909;
                             span {
                                 margin-left: 10px;
                             }
@@ -307,14 +311,15 @@ export default {
                             height: 82px;
                             margin-top: 12px;
                             .openBagBtn {
-                                width: 237px;
-                                height: 85px;
+                                width: 280px;
+                                height: 68px;
                                 cursor: pointer;
                                 position: relative;
                                 z-index: 3;
-                                left: 0;
+                                left: 6px;
                                 right: 0;
-                                margin: 0 auto;
+                                top: -4px;
+                                // margin: 0 auto;
                             }
                         }
                         // 我的金币
@@ -332,9 +337,9 @@ export default {
                                 display: flex;
                                 align-items: center;
                                 justify-content: space-between;
-                                color: #894b07;
+                                color: #840909;
                                 span {
-                                    margin-left: 4px;
+                                    margin-left: 12px;
                                 }
                                 .gold {
                                     min-width: 103px;
@@ -343,11 +348,11 @@ export default {
                                     align-items: center;
                                 }
                                 .voucher {
-                                    width: 105px;
-                                    height: 40px;
+                                    width: 50px;
+                                    height: 33px;
                                     cursor: pointer;
                                     position: relative;
-                                    margin-left: 2px;
+                                    left: 14px;
                                     z-index: 44;
                                 }
                             }
@@ -360,16 +365,17 @@ export default {
                                 cursor: pointer;
                                 position: relative;
                                 z-index: 44;
-                                color: #894b07;
-                                left: 20px;
+                                color: #840909;
+                                left: 10px;
                                 .bag {
                                     width: 56px;
                                     line-height: 32px;
                                     // color: #FFE6B3;
                                 }
                                 .arrow {
-                                    width: 32px;
-                                    height: 32px;
+                                    width: 16px;
+                                    height: 16px;
+                                    margin-left: 6px;
                                 }
                             }
                         }
@@ -382,7 +388,7 @@ export default {
                     .prizeItem1 {
                         width: 176px;
                         height: 82px;
-                        border: 1px solid #FED47E;
+                        // border: 1px solid #FED47E;
                         cursor: pointer;
                         margin-bottom: 14px;
                     }
@@ -398,7 +404,7 @@ export default {
                 .prizeItem {
                     width: 176px;
                     height: 82px;
-                    border: 1px solid #FED47E;
+                    // border: 1px solid #FED47E;
                     cursor: pointer;
                 }
             }

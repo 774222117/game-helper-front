@@ -862,7 +862,7 @@ export default {
       if (this.todayRealNameState == 2 && getStore({ name: "loginRealName" }).isAdopt !== 1) {
         this.openRealName = true;
       } else {
-        if (getStore({ name: "loginRealName" }).userBirthday !== "") {
+        if (getStore({ name: "loginRealName" }).userBirthday !== "" && getStore({ name: "loginRealName" }).userBirthday != undefined) {
           var userInfo = getStore({ name: "loginRealName" });
           var birthTime = userInfo.userBirthday.substring(6, 14); //保存用户出生年月日
           var birthYear = birthTime.substring(0, 4); //保存用户出生年份
@@ -871,9 +871,9 @@ export default {
           var nowTimeYear = new Date().getFullYear(); //当前年
           var nowTimeMonth = new Date().getMonth() + 1; //当前月
           var nowTimeDay = new Date().getDate(); //当前天
-
-          if (nowTimeYear - birthYear < 18) {
-            this.holidayPlayGame()
+          if (nowTimeYear - birthYear >= 18) {
+            // this.holidayPlayGame()
+             this.gotoPlay(index,data)
           } else {
             if (nowTimeYear - birthYear == 18 && nowTimeMonth < birthMonth) {
               this.holidayPlayGame()
@@ -887,6 +887,7 @@ export default {
             }
           }
         } else {
+          console.log(birthYear)
           // 没有身份证信息，继续提示实名认证窗口
           // this.openRealName = true;
           this.gotoPlay(index,data)
@@ -944,7 +945,7 @@ export default {
             //最后验证 百度节假日查看今日是不是可以正常游玩时间
             axios.get('https://timor.tech/api/holiday/info').then((response) => {
               // console.log(response.data)
-              if(response.data.holiday){
+              if(response.data.holiday != true ){
                 // console.log('可以游玩')
                 this.todayGameTiming()
               }else{
