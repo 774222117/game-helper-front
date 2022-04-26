@@ -4,14 +4,14 @@
             <!-- 关闭按钮 -->
             <div class="serchClose serchClose_bg" @click="close"></div>
             <div class="serchGameText">
-                <div class="text1 ft24">选择游戏</div>
-                <div class="text2 ft14">Select the game</div>
+                <div class="text1 ft20">选择游戏</div>
+                <!-- <div class="text2 ft14">Select the game</div> -->
             </div>
             <!-- 排行与搜索 -->
             <div class="rankAndSerch">
                 <!-- 排行切换 -->
                 <div class="rankingContent">
-                    <div class="rankingItem ft16" v-for="(item,index) in toggleOptions" :class="currentIndex == index ? 'rankingItem_bg ischange' : 'nochange' " @click="handRankGame(index,item.orderType)" :key='index'>{{item.title}}</div>
+                    <div class="rankingItem ft14" v-for="(item,index) in toggleOptions" :class="currentIndex == index ? 'rankingItem_bg ischange ischange2_bg' : 'nochange1_bg' " @click="handRankGame(index,item.orderType)" :key='index'>{{item.title}}</div>
                 </div>
                 <!-- 搜索框 -->
                 <div class="serchInputContent">
@@ -22,7 +22,8 @@
             
             <!-- 游戏展示区 -->
             <div class="gameContent">
-                <div class="gameItem gameBorder_bg" v-for="(item,index) in steryGame" @click="changeGameItem(item)" :key='index'>
+                <div class="gameItem" v-for="(item,index) in steryGame" @click="changeGameItem(item)" :key='index'>
+                    <div class="gameItem1 gameBorder_bg"></div>
                     <!-- 游戏图 -->
                     <img :src="item.image" alt="" class="gamePic" />
                     <!-- 底部阴影 -->
@@ -32,6 +33,7 @@
                     <!-- 游戏价格 -->
                     <div class="gamePrice gamePrice_bg ft12">￥{{item.steamPrce}}</div>
                 </div>
+                
             </div>
             <!-- 按钮切换 -->
             <div class="changeBtn">
@@ -148,12 +150,12 @@ export default {
             margin: 0 auto;
             // 关闭按钮
             .serchClose {
-                width: 33px;
-                height: 40px;
+                width: 24px;
+                height: 24px;
                 cursor: pointer;
                 position: absolute;
-                top: 0;
-                right: 80px;
+                top: -40px;
+                right: -24px;
             }
             .serchGameText {
                 width: 234px;
@@ -162,9 +164,9 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 .text1 {
-                    color: #e8be94;
+                    color: #e8d694;
                     font-family: PingFang SC, PingFang SC-Semibold;
-                    font-weight: 600;
+                    // font-weight: 600;
                 }
                 .text2 {
                     width: 134px;
@@ -200,6 +202,7 @@ export default {
                         text-align: center;
                         letter-spacing: 0.28px;
                         cursor: pointer;
+                        color: #e8d594;
                     }
                 }
                 .serchInputContent {
@@ -211,9 +214,9 @@ export default {
                     .serchGame {
                         width: 212px;
                         height: 32px;
-                        background: rgba(96,46,42,0.90);
+                        background: rgba(40,36,56,0.90);
                         padding-left: 45px;
-                        color: #f6a382;
+                        color: #a19684;
                         outline: none;
                         -webkit-appearance: none;//去掉浏览器默认样式
                         border: 0;
@@ -222,7 +225,7 @@ export default {
                     .serchBtn {
                         width: 88px;
                         line-height: 28px;
-                        background: rgba(96,46,42,0.90);
+                        background: rgba(68,59,101,0.9);
                         border: 2px solid;
                         border-image: linear-gradient(180deg, #d6a77d, #a76754 100%) 2 2;
                         font-family: PingFang SC, PingFang SC-Regular;
@@ -243,6 +246,7 @@ export default {
                 // justify-content: space-around;
                 // align-content: space-around;
                 // border: 1px white solid;
+                
                 .gameItem {
                     width: 165px;
                     height: 79px;
@@ -250,6 +254,12 @@ export default {
                     left: 6px;
                     margin: 2px 10px 2px 10px;
                     cursor: pointer;
+                    .gameItem1 {
+                        width: 165px;
+                        height: 82px;
+                        position: absolute;
+                        z-index: 5;
+                    }
                     // 游戏图
                     .gamePic {
                         width: 100%;
@@ -285,10 +295,10 @@ export default {
                         top: 0;
                         right: 0;
                         font-family: Microsoft YaHei UI, Microsoft YaHei UI-Regular;
-                        font-weight: 400;
+                        font-weight: 700;
                         text-align: center;
-                        color: #ffe8ac;
-                        text-shadow: 0px 1px 1px 0px #4d0200; 
+                        color: #ffffff;
+                        text-shadow: 0px 1px 0.5px 0px #1a003a; 
                     }
                 }
             }
@@ -311,7 +321,7 @@ export default {
                         width: 45px;
                         height: 20px;
                         line-height: 20px;
-                        background: #341516;
+                        background: #282438;
                         border-radius: 2px;
                         cursor: pointer;
                         // margin-right: 10px;
@@ -337,7 +347,7 @@ export default {
                         height: 20px;
                         width: 45px;
                         line-height: 20px;
-                        background: #341516;
+                        background: #282438;
                         border-radius: 2px;
                         cursor: pointer;
                         text-align: center;
@@ -356,10 +366,11 @@ export default {
     // 输入框默认字体颜色
     input::-webkit-input-placeholder,
     textarea::-webkit-input-placeholder {
-        color: #f6a382;
+        color: #a19684;
     }
-    .nochange {color: #F6A382;}
-    .ischange {font-weight: bold;color: #FFD4A4;}
+    // .nochange {color: #F6A382;}
+    // .ischange {font-weight: bold;color: #FFD4A4;}
+    .ischange {font-weight: bold;}
     .rankingItem_bg {
         position: relative;
     }
@@ -370,6 +381,7 @@ export default {
         display: block;
         position: absolute;
         background: url('../../assets/discountNewYear/images/rankingItem.png') no-repeat;
+        background-size: cover;
         bottom: -8px;
         left: 0;
     }

@@ -45,7 +45,7 @@
                             </div>
 
                             <!-- 昨日游玩人数 -->
-                            <div class="playNumber">
+                            <div class="playNumber" v-if="activeCouponCard">
                                 <div class="ft14 color_white_1 margin_right_4">昨日</div>
                                 <div class="peoplePhoto ft12 color_white_1 margin_right_4">
                                     <div><img :src="randomInt.randomInt1Img" alt=""></div>
@@ -55,6 +55,21 @@
                                 <div class="ft14 color3" v-if="gameInfo.playersDay>1">{{gameInfo.playersDay}} </div>
                                 <div class="ft14 color3" v-else>{{yesterdayPlayPeople}} </div>
                                 <div class="ft14 color_white_1">人游玩 </div>
+                            </div>
+                            <!-- 优惠券 -->
+                            <div class="couponCard couponCard_bg" v-else>
+                                <div class="firstCoupon">
+                                    <span class="ft14 color_white_1">￥</span>
+                                    <div class="couponPrice ft20 ft_weight">{{cardInfo.cardPrice}}</div>
+                                    <div class="couponType ft14">{{cardInfo.cardType == 2 ? '畅享券' : '独享券'}}</div>
+                                </div>
+                                <div class="secondCoupon ft12 color_white_1">
+                                    <div class="hour">{{dataTime.date_h}}</div>:
+                                    <div class="minute">{{dataTime.date_m}}</div>:
+                                    <div class="second">{{dataTime.date_s}}</div>:
+                                    <div class="millisecond">{{dataTime.date_ms}}</div>
+                                    <div class="couponText">后到期</div>
+                                </div>
                             </div>
                         </div>
                         <!-- 英文名字 -->
@@ -406,7 +421,21 @@ export default {
             isDetailsPlayBag:false,//是否存在合玩包
             packData:'',//合玩包整体数据
             createOrderData:'',//合玩订单数据
-            yesterdayPlayPeople:0//昨日游玩认识 默认值渲染
+            yesterdayPlayPeople:0,//昨日游玩认识 默认值渲染
+            cardInfo:{
+                cardPrice:'',//价格
+                cardType:'',//类型
+                cardTime:'',//到期时间
+            },
+            dataTime:{
+                date_d:'',
+                date_h:'00',
+                date_m:'00',
+                date_s:'00',
+                date_ms:'00',
+            },
+            activeCouponCard:true,//右上角优惠券开关
+            timerSeckill:null,//优惠券右上角定时器
         }
     },
     activated(){
@@ -427,6 +456,8 @@ export default {
         if(!!this.$store.getters.getStorage){
             this.fiveSecondsShowFirstOrderTimerFun()
         }
+
+        
         
     },
     updated(){
@@ -439,6 +470,7 @@ export default {
         this.randomInt.randomInt2Img = require('@/assets/image/headPortrait/img ('+this.randomInt.randomInt2+').png') 
         this.randomInt.randomInt3Img = require('@/assets/image/headPortrait/img ('+this.randomInt.randomInt3+').png') 
         this.yesterdayPlayPeople = Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000
+
     },
     watch:{
         //监听是否点击了首单全免的下单按钮
@@ -456,19 +488,6 @@ export default {
         }
     },
     methods:{
-        // 切换略缩图事件
-        changeSwiper(index,itemSrc){
-            this.swiperActive = index
-            this.itemSrc = itemSrc
-            if(itemSrc.indexOf('.mp4') > 0){
-                this.isPlayVideo = true
-            }else{
-                this.isPlayVideo = false
-            }
-        },
-        btnClick(num){
-            this.gameInfoContentActive = num
-        },
         inits(){
             var _this = this;
             _this.queryWeb = _this.$route.query.appId  //获取页面路径传来的参数
@@ -512,6 +531,41 @@ export default {
                     }else{
                         _this.isActive = 'try'
                         _this.gamePriceData = _this.tryData
+                    }
+                    
+                    // 进入页面，查看该用户是否有券领取 
+                    // console.log(_this.$route.query.appId)
+                   if(!!_this.$store.getters.getStorage){
+                         // 判断是否有券领
+                            _this.$fetch('/product/rolls/join',{'appId':_this.$route.query.appId})
+                            .then((response) => {
+                                // console.log(response)
+                                // 更新顶部我的卡券数量
+                                _this.$store.commit('setCouponNumber',response.data.count)
+                                // 存取详情页弹窗信息
+                                _this.$store.commit('setAlertGameInfo',response.data)
+                                //  5秒之后弹领券框
+                                if(response.data.available == 1){
+                                    setTimeout(function(){
+                                        _this.$store.commit('setGameCouponAlert',true)
+                                    },5000)
+                                }else{
+                                    // 判断是否有优惠券显示
+                                    _this.getRollsInfo()
+                                }
+                            })
+                   }else{
+                       // 没登陆调用登陆窗口
+                       _this.openRegister(true)
+                   }
+
+                    // 如果从卡券按钮进来，则默认选择卡券的游戏购买类型
+                    if(_this.$store.getters.getGameUsedCouponList[_this.$route.query.gameNumber]){
+                        if(_this.$store.getters.getGameUsedCouponList[_this.$route.query.gameNumber].type == 2){
+                            _this.isActive = 'together'
+                        }else if(_this.$store.getters.getGameUsedCouponList[_this.$route.query.gameNumber].type == 1){
+                            _this.isActive = 'account'
+                        }
                     }
                 })
             // 游戏评测  comment
@@ -558,6 +612,7 @@ export default {
                     console.log('黑名单没有库存')
                     return
                 }
+                
                 this.$fetch('/order/stock',{'productId':this.gamePriceData.productId,'appId':this.$route.query.appId})
                 .then((response) => {
                     // console.log(response)
@@ -674,7 +729,43 @@ export default {
                 clearInterval(fiveSecondsShowFirstOrderTimer)
             }, 5000);
         },
-
+        // 判断是否有优惠券显示
+        getRollsInfo(){
+            var _this = this
+            _this.$fetch('/product/rolls/getRollsInfo',{'appId':_this.$route.query.appId})
+            .then((response) => {
+                // console.log(response)
+                //  有可使用券
+                if(response.flag){
+                    if(response.data.status == 1){
+                        // 优惠券价格
+                        _this.cardInfo.cardPrice = response.data.money
+                        // 到期时间
+                        _this.cardInfo.cardType = response.data.type
+                        // 卡券类型
+                        _this.cardInfo.cardTime = response.data.time
+                        //启动优惠券倒计时
+                        _this.countTime()
+                        _this.activeCouponCard = false
+                    }else{
+                        console.log(response.message)
+                    }
+                }
+            })
+        },
+        // 切换略缩图事件
+        changeSwiper(index,itemSrc){
+            this.swiperActive = index
+            this.itemSrc = itemSrc
+            if(itemSrc.indexOf('.mp4') > 0){
+                this.isPlayVideo = true
+            }else{
+                this.isPlayVideo = false
+            }
+        },
+        btnClick(num){
+            this.gameInfoContentActive = num
+        },
         // 生成随机数
         getRandomInt(min, max) {
             this.randomInt={
@@ -682,9 +773,59 @@ export default {
                 randomInt2:Math.floor(Math.random() * (max - min + 1)) + min,
                 randomInt3:Math.floor(Math.random() * (max - min + 1)) + min,
             }
-        }
+        },
+        // 优惠倒计时
+        countTime() {
+            // var date = new Date()
+            if(this.$route.path !== '/gameDetails'){
+                clearInterval(this.timerSeckill)
+                this.timerSeckill = null
+                return
+            }
+            var now = new Date().getTime()
+            var end = this.cardInfo.cardTime// 在data中定义的,后台拿到的结束时间戳
+            var leftTime = end - now //时间差
+            var d, h, m, s, ms
+            if (leftTime > 100) {
+                d = Math.floor(leftTime / 1000 / 60 / 60 / 24)
+                h = Math.floor(((leftTime / 1000 / 60 / 60) % 24) + 24 * d)
+                m = Math.floor((leftTime / 1000 / 60) % 60)
+                s = Math.floor((leftTime / 1000) % 60)
+                ms = Math.floor(leftTime % 1000 / 100)
+                if (ms < 10) {
+                ms = ms
+                }
+                if (s < 10) {
+                s = '0' + s
+                }
+                if (m < 10) {
+                m = '0' + m
+                }
+                // if(h < 10) {
+                h =   h
+                // }
+
+                    //将倒计时赋值到div中
+                // this.dataTime.date_d = d  //这里是渲染的天数
+                this.dataTime.date_h = h  //这里是渲染的小时
+                this.dataTime.date_m = m  //这里是渲染的分钟
+                this.dataTime.date_s = s  //这里是渲染的秒数
+                this.dataTime.date_ms = ms  //这里是渲染的毫秒
+                //递归每秒调用countTime方法，显示动态时间效果
+                this.timerSeckill = setTimeout(this.countTime, 50)
+                
+            } else {
+                this.dataTime.date_h = '00' 
+                this.dataTime.date_m = '00' 
+                this.dataTime.date_s = '00'  
+                this.dataTime.date_ms = '00'
+                this.timerSeckill = null
+                // 关闭优惠券
+                this.activeCouponCard = true
+                console.log('已截止')
+            }
+        },
     },
-    
     filters:{
         capitalize: function (value) {
             if (!value) return ''
@@ -837,6 +978,81 @@ export default {
                                         height: 100%;
                                         display: block;
                                     }
+                                }
+                            }
+                        }
+                        .couponCard {
+                            width: 188px;
+                            height: 77px;
+                            position: absolute;
+                            top: 22px;
+                            right: 16px;
+                            .firstCoupon {
+                                min-width: 90px;
+                                height: 27px;
+                                margin: 10px 0 0 16px;
+                                display: flex;
+                                .couponPrice {
+                                    color: #fffef0;
+                                    text-align: center;
+                                    line-height: 22px;
+                                }
+                                .couponType {
+                                    text-align: center;
+                                    line-height: 24px;
+                                    color: #ceeeff;
+                                    margin-left: 5px;
+                                }
+                            }
+                            .secondCoupon {
+                                width: 140px;
+                                height: 20px;
+                                margin: 4px 0 0 16px;
+                                line-height: 20px;
+                                display: flex;
+                                .hour {
+                                    width: 20px;
+                                    height: 20px;
+                                    background: rgba(18,55,75,0.55);
+                                    border-radius: 1px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    color: #fdfed0;
+                                }
+                                .minute {
+                                    width: 20px;
+                                    height: 20px;
+                                    background: rgba(18,55,75,0.55);
+                                    border-radius: 1px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    color: #fdfed0;
+                                }
+                                .second {
+                                    width: 20px;
+                                    height: 20px;
+                                    background: rgba(18,55,75,0.55);
+                                    border-radius: 1px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    color: #fdfed0;
+                                }
+                                .millisecond {
+                                    width: 20px;
+                                    height: 20px;
+                                    background: rgba(18,55,75,0.55);
+                                    border-radius: 1px;
+                                    line-height: 20px;
+                                    text-align: center;
+                                    color: #fdfed0;
+                                }
+                                .couponText {
+                                    width: 36px;
+                                    height: 20px;
+                                    line-height: 20px;
+                                    color: #a3d1e9;
+                                    text-align: center;
+                                    margin-left: 6px;
                                 }
                             }
                         }

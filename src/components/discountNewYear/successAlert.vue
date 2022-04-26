@@ -1,6 +1,6 @@
 <template>
     <div class="alertContent">
-        <div class="voucherContent successBottom_bg">
+        <div class="voucherContent voucherContent_bg">
             <!-- 关闭按钮 -->
             <div class="close serchClose_bg" @click="close"></div>
             <div class="success success_bg"></div>
@@ -48,14 +48,14 @@ export default {
             left: 0;
             right: 0;
             margin: 0 auto;
-            overflow: hidden;
+            // overflow: hidden;
             // 关闭按钮
             .close {
                 width: 33px;
                 height: 40px;
                 position: absolute;
-                top: 0;
-                right: 30px;
+                top: -40px;
+                right: -30px;
                 cursor: pointer;
             }
             .success {
@@ -81,8 +81,10 @@ export default {
                 margin: 61px auto;
                 cursor: pointer;
                 text-align: center;
-                background: #c06c50;
+                background: linear-gradient(180deg,#fc7628, #f89352 100%);
                 border: 1px solid #ffe8ac;
+                border: 1px solid;
+                border-image: linear-gradient(180deg, #ffe8ac, rgba(255,232,172,0.49) 100%) 1 1;
                 border-radius: 4px;
                 color: #ffe8ac;
                 letter-spacing: 0.04px;

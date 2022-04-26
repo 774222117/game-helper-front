@@ -153,6 +153,7 @@ export default {
       removeStore({name:'loginRealName'})
       removeStore({name:'loginTurn101'})
       removeStore({name:'loginNewYear'})
+      removeStore({name:'myGameSortData'})
       window.location.reload()
     },
     //开机启动设置

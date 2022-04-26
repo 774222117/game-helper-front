@@ -105,16 +105,6 @@
     background:url('../../discountNewYear/images/gameBox.png') no-repeat center;
     background-size: cover;
 }
-/* 游戏底部阴影 */
-.bottomShad_bg{
-    background:url('../../discountNewYear/images/bottomShad.png') no-repeat center;
-    background-size: cover;
-}
-/* 游戏价格背景图 */
-.gameTopPrice_bg{
-    background:url('../../discountNewYear/images/gameTopPrice.png') no-repeat center;
-    background-size: cover;
-}
 /* 删除游戏的样式 */
 .removeGame_bg{
     background:url('../../discountNewYear/images/removeGame.png') no-repeat center;
@@ -153,5 +143,35 @@
 /* 没有游戏显示的图 */
 .noGamePic_bg {
     background:url('../../discountNewYear/images/noGamePic.png') no-repeat center;
+    background-size: cover;
+}
+/* 包裹游戏的外框 */
+.gameItemBorder_bg {
+    background:url('../../discountNewYear/images/gameItemBorder.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏图阴影 */
+.gameItemShadow_bg {
+    background:url('../../discountNewYear/images/gameItemShadow.png') no-repeat center;
+    background-size: cover;
+}
+/* 游戏价格阴影 */
+.gamePriceShadow_bg {
+    background:url('../../discountNewYear/images/gamePriceShadow.png') no-repeat center;
+    background-size: cover;
+}
+/* 几件几折 */
+.gameDiscountPic_bg {
+    background:url('../../discountNewYear/images/gameDiscountPic.png') no-repeat center;
+    background-size: cover;
+}
+/* 选中 */
+.ischange2_bg {
+    background:url('../../discountNewYear/images/ischange2.png') no-repeat center;
+    background-size: cover;
+}
+/* 未选中 */
+.nochange1_bg {
+    background:url('../../discountNewYear/images/nochange1.png') no-repeat center;
     background-size: cover;
 }

@@ -1,0 +1,50 @@
+/* 关闭按钮 */
+.couponClose_bg {
+    background:url('../../gameCouponIndex/images/couponClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 抢券按钮 */
+.grabTicketBtn_bg {
+    background:url('../../gameCouponIndex/images/grabTicketBtn.png') no-repeat center;
+    background-size: cover;
+}
+/* 我的卡券关闭 */
+.myCardClose_bg {
+    background:url('../../gameCouponIndex/images/myCardClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 已过期 */
+.expired_bg {
+    background:url('../../gameCouponIndex/images/expired.png') no-repeat center;
+    background-size: cover;
+}
+/* 已使用 */
+.used_bg {
+    background:url('../../gameCouponIndex/images/used.png') no-repeat center;
+    background-size: cover;
+}
+/* 详情游戏图阴影 */
+.leftMask_bg {
+    background:url('../../gameCouponIndex/images/leftMask.png') no-repeat center;
+    background-size: cover;
+}
+/* 没抢到券关闭按钮 */
+.elseClose_bg {
+    background:url('../../gameCouponIndex/images/elseClose.png') no-repeat center;
+    background-size: cover;
+}
+/* 没抢到券图 */
+.noCouponPage_bg {
+    background:url('../../gameCouponIndex/images/noCouponPage.png') no-repeat center;
+    background-size: cover;
+}
+/* 优惠券背景图 */
+.couponCard_bg {
+    background:url('../../gameCouponIndex/images/couponCard.png') no-repeat center;
+    background-size: cover;
+}
+/* 没有优惠券 */
+.noCouponCard_bg {
+    background:url('../../gameCouponIndex/images/noCouponCard.png') no-repeat center;
+    background-size: cover;
+}

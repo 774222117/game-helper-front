@@ -8,6 +8,10 @@
       <register v-if="isRegister"></register>
       <firstOrderFloat v-if="$store.getters.getFirstOrder" :firstOrderType="$store.getters.getFirstOrderType"></firstOrderFloat>
       <alertMember v-if="$store.getters.getDisplayOpenMember" />
+      <!-- 我的卡券 -->
+	    <myCardBag v-if="$store.getters.getOpenMyCardBag" />
+      <!-- 优惠券弹窗入口 -->
+	    <gameCouponIndex v-if="$store.getters.getGameCouponAlert" />
     </div>
   </div>
 </template>
@@ -17,13 +21,17 @@ import HeaderBox from "./views/header";
 import register from "./views/register";
 import firstOrderFloat from "@/components/firstOrderFloat/firstOrderFloat";  //首单活动浮框
 import alertMember from '@/components/alertMember/alertMember'  //会员支付弹框
+import myCardBag from '@/components/gameCoupon/myCardBag';//我的卡券弹窗
+import gameCouponIndex from '@/components/gameCoupon/gameCouponIndex';//首页优惠券弹窗
 import store from "@/store";
 export default {
   components: {
     HeaderBox,
     register,
     firstOrderFloat,
-    alertMember
+    alertMember,
+    myCardBag,
+    gameCouponIndex
   },
   store,
   provide () {

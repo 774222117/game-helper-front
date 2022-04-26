@@ -431,6 +431,10 @@ html,body{font-size: 100px;font-family: "Microsoft YaHei";}
     background:url('../images/userLoginSuccess.png') no-repeat center;
     background-size: cover;
 }
+.couponPoint_bg{
+    background:url('../images/couponPoint.png') no-repeat center;
+    background-size: cover;
+}
 .playTogetherExplainModel_bg{
     background:url('../images/playTogetherExplainModel.png') no-repeat center;
     background-size: cover;

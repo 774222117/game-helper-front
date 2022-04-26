@@ -122,8 +122,20 @@ export default {
   destroyed() {
    
   },
-  mounted() {},
+  mounted() {
+      this.getCouponNumber()
+  },
   methods: {
+    // 请求优惠券接口获取卡券数量
+    getCouponNumber(){
+        var _this = this
+        _this.$fetch('/product/rolls/join')
+         .then((response) => {
+            //  console.log(response)
+            //  重新赋值用户的卡券数量
+            _this.$store.commit('setCouponNumber',response.data.count)
+         })
+    },
     // 取消关闭按钮
     cancel() {
       this.$emit('change',false,'close')

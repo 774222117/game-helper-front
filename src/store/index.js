@@ -25,9 +25,34 @@ export default new Vuex.Store({
     isMember:{}, //是否是会员
     reductionOrder:{},//详情页面购买会员出现的本单立减多少钱
     blackList:{},//黑名单
+    alertGameInfo:{},//弹窗优惠券信息
+    couponNumber:0,//商品券数量
+    openMyCardBag:false,//打开卡包
+    gameUsedCouponList:{},//保存可使用的卡券数据
+    gameCouponAlert:false,//领取优惠券弹窗
     alreadyCertified:getStore({name:'loginRealName'}) && getStore({name:'loginRealName'}).isAdopt == 1 ? true : false,//个人信息中已认证
   },
   mutations: {
+    // 领取优惠券弹窗
+    setGameCouponAlert(state,value){
+      state.gameCouponAlert = value
+    },
+    // 打开卡包
+    setOpenMyCardBag(state,value){
+      state.openMyCardBag = value
+    },
+    // 弹窗优惠券信息
+    setAlertGameInfo(state,value){
+      state.alertGameInfo = value
+    },
+    // 保存可使用的卡券数据
+    setGameUsedCouponList(state,value){
+      state.gameUsedCouponList = value
+    },
+    // 商品券ID
+    setCouponNumber(state,value){
+      state.couponNumber = value
+    },
     pushToken(state, payload) {
       state.cancelTokenArr.push(payload.cancelToken)
     },
@@ -108,6 +133,26 @@ export default new Vuex.Store({
     
   },
   getters: {
+    // 领取优惠券弹窗
+    getGameCouponAlert:function(state){
+      return state.gameCouponAlert
+    },
+    // 打开卡包
+    getOpenMyCardBag:function(state){
+      return state.openMyCardBag
+    },
+    // 弹窗优惠券信息
+    getAlertGameInfo:function(state){
+      return state.alertGameInfo
+    },
+    // 保存可使用的卡券数据
+    getGameUsedCouponList:function(state){
+      return state.gameUsedCouponList
+    },
+    // 商品券ID
+    getCouponNumber:function(state){
+      return state.couponNumber
+    },
     //   类似计算属性，用于取值
     getStorage:function(state){
       state.loginData = getStore({name:'loginData',type:false})

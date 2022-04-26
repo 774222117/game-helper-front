@@ -8,7 +8,7 @@
           <!-- 头部title -->
           <div class="myGameTitle">
             <div class="leftMyGame">
-              <div class="ft26 color_white_1 ft_weight">{{ dataNum || 0 }}</div>
+              <div class="ft26 color_white_1 ft_weight">{{ isPlaySort? myGameListData.length || 0 : dataNum || 0 }}</div>
               <div class="ft26 color_white_1 ft_weight margin_left_8">
                 全部游戏
               </div>
@@ -17,24 +17,25 @@
                   <div
                     class="recentBtn ft12 color_white_1 opc_hover8"
                     :class="isActive == 1 ? 'screenBtnActive' : ''"
-                    @click="screenBtnClick(1)"
+                    @click="screenBtnClick(true)"
                   >
-                    最近购买
+                    最近游玩
                   </div>
                   <div
                     class="allBtn ft12 color_white_1 opc_hover8 margin_left_2"
                     :class="isActive == 2 ? 'screenBtnActive' : ''"
-                    @click="screenBtnClick(2)"
+                    @click="screenBtnClick(false)"
                   >
-                    字母排序
+                    最近购买
                   </div>
                 </div>
-                <div class="searchBtn" v-if="true">
+                <div class="searchBtn">
                   <input
                     type="text"
                     class="searchInput"
                     placeholder="搜索我的游戏"
                     v-model="gameListData.name"
+                    @input="inputSearch"
                     @keyup.enter="inputSearch"
                   />
                   <div class="searchIconBtn opc_hover8" @click="inputSearch">
@@ -83,7 +84,7 @@
           <!-- 我的游戏内容 -->
           <div
             class="myGameListBox"
-            v-if="myGameListData.length > 0 && isPageActive"
+            v-if="myGameListDataTest.length > 0 && isPageActive"
           >
             <!-- 已发货可以打开 待发货待刷新  -->
             <div
@@ -94,7 +95,7 @@
                   ? 'myGameListItemHover'
                   : ''
               "
-              v-for="(item, index) in myGameListData"
+              v-for="(item, index) in myGameListDataTest"
               :key="index"
             >
               <div
@@ -162,7 +163,7 @@
             <div
               class="myGameListItem myGameListItemHover"
               v-if="item.status == -2"
-              v-for="(item, index) in myGameListData"
+              v-for="(item, index) in myGameListDataTest"
               :key="index"
             >
               <div
@@ -228,7 +229,7 @@
             <div
               class="myGameListItem myGameListItemHover"
               v-if="item.status == -3"
-              v-for="(item, index) in myGameListData"
+              v-for="(item, index) in myGameListDataTest"
             >
               <div class="topImg">
                 <div class="topImgBox">
@@ -269,7 +270,7 @@
           </div>
           <div
             class="myGameListBox"
-            v-if="myGameListData.length > 0 && !isPageActive"
+            v-if="myGameListDataTest.length > 0 && !isPageActive"
           >
             <loading :text="'游戏正在启动中'" />
           </div>
@@ -287,7 +288,7 @@
             </div>
           </div>
           <!-- 没有我的游戏 -->
-          <div class="myGameListBoxNodata" v-if="myGameListData.length <= 0">
+          <div class="myGameListBoxNodata" v-if="myGameListDataTest.length <= 0">
             <div class="myGameListEmpty myGameEmpty_bg">
               <div class="ft20 color_white_04">您的游戏库中没有游戏 >-<！</div>
               <div class="ft14 color_white_02" style="margin-bottom: 100px">
@@ -529,6 +530,9 @@ export default {
         orderBy: "", // 排序方式 空 默认 1 按英文名排序
       },
       myGameListData: [], //我的游戏列表
+      myGameListDataTest:[],//我的游戏当前展示的数据
+      myGameListDataCache:getStore({ name: "myGameSortData", type: false }) || [],//缓存的排序数据
+      
       nowGame: {}, //当前的游戏
 
       message: "活动入口",
@@ -562,8 +566,7 @@ export default {
       acceleratorModelGameName: "", //传递给弹框的游戏名称
       itemClickFun2QueryDatas: {}, //保存启动游戏需要的参数传递
       compatiblExtreme: ["极速模式", "高速模式", "兼容模式"],
-      choiceCompatiblExtreme:
-        getStore({ name: "choiceCompatiblExtreme", type: false }) || 0, //当前选择的模式 getStore({name:'isAcceleratorModel',type:true}
+      choiceCompatiblExtreme:getStore({ name: "choiceCompatiblExtreme", type: false }) || 0, //当前选择的模式 getStore({name:'isAcceleratorModel',type:true}
       displaySevenWy7yuAlert: false, //网易七鱼客服系统
       currentIndex: -1, //记录鼠标移入的当前游戏index
       showFeedBack: false, //打开反馈投诉界面
@@ -581,6 +584,7 @@ export default {
       }, //保存本地实名认证localstorage
       todayRealNameState: 0, //当天实名认证模式
       showUnderAge:false,//显示隐藏未成年人弹窗
+      isPlaySort:true,//是否按照最近游玩排序
     };
   },
   activated() {
@@ -593,25 +597,16 @@ export default {
     }
   },
   mounted() {
-    // setStore({name:'loginRealName',content:this.localRealName})
-
-    // window.addEventListener("scroll", this.scrollBtm);
     let _this = this;
     window["testFun"] = () => {
       _this.testFun();
     };
-
     _this.checkRealName();
-
-      _this.$nextTick(()=>{
+    _this.$nextTick(()=>{
       EventBus.$on('toRealName',function(data){
         _this.openRealName = data
       })
     })
-
-
-    
-
     if (getStore({ name: "isAcceleratorModel", type: true }) === "1") {
       return;
     } else if (getStore({ name: "isAcceleratorModel", type: true }) === "0") {
@@ -624,16 +619,16 @@ export default {
     // 进入我的游戏页面,检查实名认证
     checkRealName() {
       if(getStore({ name: "loginRealName" })){//查看有没有本地缓存
-        console.log("有本地数据");
+        // console.log("有本地数据");
         if (getStore({ name: "loginRealName" }).isAdopt == 1){//是否认证
-          console.log('已认证')
+          // console.log('已认证')
         }else{
-          console.log("没有认证");
+          // console.log("没有认证");
           // 发送请求查询当天的认证模式
           this.todayRealNameWay();
         }
       }else{
-        console.log('没有本地数据')
+        // console.log('没有本地数据')
         setStore({name:'loginRealName',content:this.localRealName})//建立本地数据
         // 将已经认证过的用户信息记录到localstore中
         this.recordInfo()
@@ -706,7 +701,6 @@ export default {
     // 游戏显示隐藏投诉界面
     openFeedBack(index, item) {
       this.currentIndex = index;
-      console.log(item.createTime);
     },
     leaveFeedBack(index) {
       this.currentIndex = -1;
@@ -717,7 +711,6 @@ export default {
     },
     leaveOverFeed(index, item) {
       this.currentIndex = -1;
-      console.log(item.createTime);
     },
     // 打开反馈投诉界面
     openItemFeedback(index) {
@@ -778,25 +771,58 @@ export default {
     //分页初始化
     pageInit() {
       let _this = this;
-      _this.gameListData = { current: 1, limit: 12, orderType: 1 }; //每次进来重新赋值
+      if(_this.isPlaySort){
+        _this.gameListData = {'current':1,'limit':1200,'orderType':1}  //每次进来重新赋值
+      }else{
+        _this.gameListData = {'current':1,'limit':12,'orderType':1}  //每次进来重新赋值
+      }
       // 我的游戏列表
       _this
         .$fetch("/account/findGames", _this.gameListData)
         .then((response) => {
           if (response.flag) {
-            _this.dataNum = response.data.total; //总数据条数
-            _this.all = Math.ceil(
-              response.data.total / _this.gameListData.limit
-            ); //总页数
-            _this.cur = response.data.current;
-            _this.$nextTick(() => {
-              _this.ifpagings = true;
-            });
-            _this.myGameListData = response.data.rows;
-          } else if (
-            response.flag == false &&
-            response.message == "请重新登陆"
-          ) {
+            if(_this.isPlaySort){
+              _this.dataNum = response.data.total; //总数据条数
+              _this.all = Math.ceil( response.data.total / 12 ); //总页数
+              _this.cur = 1;
+              _this.$nextTick(() => {
+                _this.ifpagings = true;
+              });
+              _this.myGameListData = response.data.rows; //保存用户拥有的最新的数据
+              
+              if(_this.myGameListDataCache <= 0){
+                _this.myGameListData.forEach((val)=>{
+                  val.lastPlayTime = val.createTime
+                })
+              }else{
+                //合并缓存的数据与线上数据
+                _this.myGameListData.forEach((val)=>{
+                  val.lastPlayTime = val.createTime
+                  _this.myGameListDataCache.forEach((data)=>{
+                    if(val.appId == data.appId){
+                      val.lastPlayTime = data.lastPlayTime
+                    }
+                  })
+                })
+              }
+              // 排序数据
+              _this.myGameListDataCache = _this.myGameListData.sort(function(a,b){
+                return b.lastPlayTime - a.lastPlayTime
+              })
+              _this.myGameListDataCache = _this.myGameListData
+              setStore({ name: "myGameSortData", content:  _this.myGameListDataCache, type: false });
+              _this.myGameListDataTest = _this.myGameListDataCache.slice(0,12)  //展示出来的数据
+            }else{
+              _this.dataNum = response.data.total  //总数据条数
+              _this.all = Math.ceil(response.data.total / _this.gameListData.limit)   //总页数
+              _this.cur = response.data.current
+              _this.$nextTick(()=>{
+                _this.ifpagings = true
+              })
+              // _this.myGameListData = response.data.rows;
+              _this.myGameListDataTest = response.data.rows;
+            }
+          } else if ( response.flag == false && response.message == "请重新登陆" ) {
             _this.$store.commit("REOMVE_SET_LOGINDATA");
             _this.$store.commit("REOMVE_SET_LOGINCODE");
             window.location.reload();
@@ -804,58 +830,74 @@ export default {
         });
     },
     //子级传值到父级上来的动态拿去
-    pageChange: function (page) {
+    pageChange(page) {
       let _this = this;
-      if (_this.isPageActive || _this.cur != page) {
-        _this.isPageActive = false;
+      if(_this.isPlaySort){
         _this.cur = page;
-        _this.gameListData.current = page;
-        _this
-          .$fetch("/account/findGames", _this.gameListData)
+        if(!!_this.gameListData.name){
+          _this.myGameListDataTest = _this.myGameListDataCache.filter(item => item.chinaName.includes(_this.gameListData.name))
+        }else{
+          _this.myGameListDataTest = _this.myGameListDataCache
+        }
+        _this.all = Math.ceil(_this.myGameListDataTest.length / 12); //总页数
+        _this.dataNum = _this.myGameListDataTest.length
+        _this.myGameListDataTest = _this.myGameListDataTest.slice((page-1)*12,page*12)
+      }else{
+        if(_this.isPageActive || _this.cur != page){
+          _this.isPageActive = false
+          _this.cur = page
+          _this.gameListData.current = page
+          _this.$fetch('/account/findGames',_this.gameListData)
           .then((response) => {
-            _this.dataNum = response.data.total; //总数据条数
-            _this.all = Math.ceil(
-              response.data.total / _this.gameListData.limit
-            ); //总页数
-            _this.cur = response.data.current;
-            _this.myGameListData = response.data.rows;
-            _this.$nextTick(() => {
+            _this.dataNum = response.data.total  //总数据条数
+            _this.all = Math.ceil(response.data.total / _this.gameListData.limit)   //总页数
+            _this.cur = response.data.current
+            // _this.myGameListData = response.data.rows;
+            _this.myGameListDataTest = response.data.rows;
+
+            _this.$nextTick( ()=>{
               // _this.ifpagings = true
-              _this.isPageActive = true;
-            });
-          });
-      } else {
-        return;
+              _this.isPageActive = true 
+            } )
+            
+          })
+        }else{
+          return
+        }
       }
+      
     },
     btnClick() {
       this.isShow = !this.isShow;
     },
     screenBtnClick(num) {
       let _this = this;
-      _this.isActive = num;
-      if (num == 1) {
-        _this.gameListData.orderBy = "";
-      } else if (num == 2) {
-        _this.gameListData.orderBy = 1;
-      }
       _this.gameListData.current = 1;
-      _this
-        .$fetch("/account/findGames", _this.gameListData)
-        .then((response) => {
-          if (response.flag) {
-            _this.dataNum = response.data.total; //总数据条数
-            _this.all = Math.ceil(
-              response.data.total / _this.gameListData.limit
-            ); //总页数
-            _this.cur = response.data.current;
-            _this.$nextTick(() => {
-              _this.ifpagings = true;
-            });
-            _this.myGameListData = response.data.rows;
-          }
-          console.log(response.data);
-        });
+      _this.isPlaySort = num
+      if(_this.isPlaySort){
+        _this.isActive = 1
+      }else{
+        _this.isActive = 2
+        
+        // _this
+        // .$fetch("/account/findGames", _this.gameListData)
+        // .then((response) => {
+        //   if (response.flag) {
+        //     _this.dataNum = response.data.total; //总数据条数
+        //     _this.all = Math.ceil(
+        //       response.data.total / _this.gameListData.limit
+        //     ); //总页数
+        //     _this.cur = response.data.current;
+        //     _this.$nextTick(() => {
+        //       _this.ifpagings = true;
+        //     });
+        //     _this.myGameListData = response.data.rows;
+        //   }
+        //   console.log(response.data);
+        // });
+      }
+      _this.pageInit();
+      
     },
     //开始游戏函数
     itemClickFun(index, data) {
@@ -887,7 +929,7 @@ export default {
             }
           }
         } else {
-          console.log(birthYear)
+          // console.log(birthYear)
           // 没有身份证信息，继续提示实名认证窗口
           // this.openRealName = true;
           this.gotoPlay(index,data)
@@ -976,6 +1018,20 @@ export default {
       // 设置刷新按钮为不可刷新
       this.$store.commit("setIsRefreshFun", false);
       this.nowGame = data;
+
+      // 向原始数组中添加或者修改最后游玩的时间
+      this.myGameListDataCache.forEach((v,i)=>{
+        if(v.appId == data.appId){
+          v.lastPlayTime = +new Date()
+        }
+      })
+      // 排序数据
+      this.myGameListDataCache = this.myGameListDataCache.sort(function(a,b){
+        return b.lastPlayTime - a.lastPlayTime
+      })
+      // 将数据保存到本地
+      setStore({ name: "myGameSortData", content: this.myGameListDataCache, type: false });
+
       // 发送消息客户端打开游戏
       callNative("openGame", {
         peopleId: data.peopleId,
@@ -1007,28 +1063,18 @@ export default {
         return;
       }
     },
-    // 我的游戏搜索
+    // 我的游戏搜索改前台搜索后
     inputSearch() {
       let _this = this;
-      _this.gameListData.current = 1; //每次进来重新赋值
-      // 我的游戏列表
-      _this.ifpagings = false;
-      _this
-        .$fetch("/account/findGames", _this.gameListData)
-        .then((response) => {
-          console.log(response.data);
-          if (response.flag) {
-            _this.dataNum = response.data.total; //总数据条数
-            _this.all = Math.ceil(
-              response.data.total / _this.gameListData.limit
-            ); //总页数
-            _this.cur = response.data.current;
-            _this.$nextTick(() => {
-              _this.ifpagings = true;
-            });
-            _this.myGameListData = response.data.rows;
-          }
-        });
+      _this.cur = 1;
+      if(!!_this.gameListData.name){
+        _this.myGameListDataTest = _this.myGameListDataCache.filter(item => item.chinaName.includes(_this.gameListData.name))
+      }else{
+        _this.myGameListDataTest = _this.myGameListDataCache
+      }
+      _this.all = Math.ceil(_this.myGameListDataTest.length / 12); //总页数
+      _this.dataNum = _this.myGameListDataTest.length
+      _this.myGameListDataTest = _this.myGameListDataTest.slice(0,12)
     },
     //我的游戏已失效点击继续游玩购买游戏
     continuePlay(index, item) {
@@ -1056,7 +1102,6 @@ export default {
       this.ifMyGameInvalid = data;
       this.init();
     },
-
     // 以下三个与enter相关的方法只会在元素由隐藏变为显示的时候才会执行
     // el:指的是当前调用这个方法的元素对象
     // done:用来决定是否要执行后续的代码如果不执行这个方法，那么将来执行完before执行完enter以后动画就会停止

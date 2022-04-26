@@ -4,26 +4,33 @@
         <div class="discountNewYearBox discountNewYearBox_bg">
             <!-- 选择游戏框 -->
             <div class="discountContent">
-                <template v-for="(item,index) in list">
-                    <div class="gameItem activeChange_bg" @click="changeGame(index)" :key="index">
+                <!-- 包裹 -->
+                <div class="gameItemBorder" v-for="(item,index) in list">
+                    <!-- 背景图单独一个div -->
+                    <div class="gameItemBorderPic gameItemBorder_bg" @click="changeGame(index)" :class=" alreadyGameContent.length > index?'isRemoveGame':''">
+                        <!-- 删除样式 -->
+                         <div class="removeGameContent removeGame_bg" @click.stop="removeContentGame(index)"></div>
+                    </div>
+                   
+                    <div class="gameItemPic activeChange_bg" :key="index" >
                         <!-- 有数据的盒子 -->
-                        <div class="changeGameGoods ft14" v-if="!!alreadyGameContent.length" :class=" alreadyGameContent.length > index?'isRemoveGame':''">
-                            <!-- 删除样式 -->
-                            <div class="removeGameContent removeGame_bg" @click.stop="removeContentGame(index)"></div>
+                        <div class="changeGameGoods ft14" v-if="!!alreadyGameContent.length">     
                             <!-- 游戏图 -->
                             <img v-if="alreadyGameContent.length > index" :src="alreadyGameContent[index]['libraryCapsule']  || noGamePic" alt="">
                             <!-- 遮罩层 -->
                             <div class="shadowPic gameBox_bg" v-if="alreadyGameContent.length > index"></div>
                             <!-- 底部遮罩 -->
-                            <div class="bottomShadow bottomShad_bg ft14" v-if="alreadyGameContent.length > index">{{alreadyGameContent[index]['chinaName'] || alreadyGameContent[index]['englishName']}}</div>
+                            <div class="gameItemShadow gameItemShadow_bg ft14" v-if="alreadyGameContent.length > index">{{alreadyGameContent[index]['chinaName'] || alreadyGameContent[index]['englishName']}}</div>
                             <!-- 价格 -->
-                            <div class="gameTopPrice gameTopPrice_bg ft12" v-if="alreadyGameContent.length > index">￥{{alreadyGameContent[index]['steamPrce']}}</div>
+                            <div class="gameTopPrice gamePriceShadow_bg ft14" v-if="alreadyGameContent.length > index"><span class="ft12">￥</span><span class="ft_weight">{{alreadyGameContent[index]['steamPrce']}}</span></div>
                         </div>
                     </div>
-                </template>
+                    <!-- 几件几折 -->
+                    <div class="gameDiscountPic gameDiscountPic_bg ft14" >{{discountText[index].name}}</div>
+                </div>
             </div>
             <!-- 已选游戏框 -->
-            <div class="alreadyGameContent ft24">已选{{alreadyGameNum}}件，立享{{alreadyDiscount}}折！仅需￥{{finallyPrice}}</div>
+            <div class="alreadyGameContent ft24">已选<div class="bigSize">{{alreadyGameNum}}</div>件，立享<div class="bigSize">{{alreadyDiscount}}</div>折！仅需￥{{finallyPrice}}</div>
             <!-- 按钮框 -->
             <div class="btnContent">
                 <!-- 试试手气 -->
@@ -72,7 +79,7 @@ export default {
             list:5,
             tryHand:false,//试试手气默认未选中状态
             playOrder:false,//立即下单默认未选中状态
-            detailText:['1.本活动仅春节活动期间可参与，活动期间内可多次参与。','2.本轮活动获取的游戏均为畅享版游戏。畅享版游戏为游戏的永久使用权，在W4PLAY中可以一键启动游玩游戏，不是游戏账号、代充服务或游戏CDKEY','3.活动商品为特殊电子商品，售出后24小时内且游玩不超过2小时可退。退款时需整单退款，无法拆分退款。'],
+            detailText:['1.本活动仅五一活动期间可参与，活动期间内可多次参与。','2.本轮活动获取的游戏均为畅享版游戏。畅享版游戏为游戏的永久使用权，在W4PLAY中可以一键启动游玩游戏，不是游戏账号、代充服务或游戏CDKEY','3.活动商品为特殊电子商品，售出后24小时内且游玩不超过2小时可退。退款时需整单退款，无法拆分退款。'],
             serchType:false,//搜索游戏框开关
             voucherType:false,//充值中心开关
             handleGame:false,//用户是否已选游戏
@@ -88,6 +95,14 @@ export default {
             finallyPrice:0,//仅需的价格
             serchItemGame:'',//记录当前选中的游戏appid，看该游戏是否能被选
             noGamePic:require('../../assets/discountNewYear/images/noGamePic.png'),//没有游戏图片时显示
+            showRemovePic:false,//显示删除游戏按钮
+            discountText:[
+                    {name:'选2件8折'},
+                    {name:'选2件8折'},
+                    {name:'选3件7折'},
+                    {name:'选4件6折'},
+                    {name:'选5件5折'}
+                ],
         }
     },
     mounted(){
@@ -103,6 +118,21 @@ export default {
         }
     },
     methods:{
+        ccc(){
+            console.log('321321')
+        },
+        aaa(){
+            if(this.alreadyGameContent.length > 0){
+                console.log('true')
+                this.showRemovePic = true
+                console.log(this.showRemovePic)
+            }else{
+                console.log('false')
+            }
+        },
+        bbb(){
+            this.showRemovePic = false
+        },
         // 请勿重复购买游戏
         replayGame(data,message){
             this.changeReplayAlert = data
@@ -347,131 +377,246 @@ export default {
             // 内容层
             .discountContent {
                 width: 714px;
-                height: 428px;
+                height: 490px;
                 overflow: hidden;
                 margin: 190px 0 0 282px;
                 display: flex;
                 flex-wrap: wrap;
-                // 游戏盒
-                .gameItem {
-                    width: 135px;
-                    height: 141px;
-                    overflow: hidden;
-                    -webkit-border-radius: 10px 10px 0px 0px;
-                    cursor: pointer;
+                // 包裹游戏的外框
+                
+                .gameItemBorder {
+                    width: 161px;
+                    height: 238px;
                     position: relative;
-                    // 删除游戏界面
-                    .removeGameGoods {
-                        width: 135px;
-                        height: 141px;
+                    .gameDiscountPic {
+                        width: 98px;
+                        height: 28px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 33px;
+                        z-index: 36;
+                        line-height: 28px;
+                        color: #fff1d4;
+                        text-align: center;
                     }
-                    // 删除框
-                    .removeGame {
-                        width: 135px;
-                        height: 141px;
-                        background-color: blue;
-                    }
-                    .changeGameGoods.isRemoveGame:hover .removeGameContent{display: block;}
-                    .changeGameGoods {
-                        width: 135px;
-                        height: 141px;
-                        img {
-                            width: 100%;
-                            // height: 100%;
-                            position: absolute;
-                            z-index: 1;
-                        }
+                    
+                    
+                    .gameItemBorderPic.isRemoveGame:hover .removeGameContent{display: block;}
+                    .gameItemBorderPic {
+                        width: 161px;
+                        height: 238px;
+                        position: absolute;
+                        z-index: 35;
+                        cursor: pointer;
+                        // 删除样式
                         .removeGameContent {
-                            width: 135px;
-                            height: 141px;
+                            width: 132px;
+                            height: 198px;
                             position: absolute;
-                            z-index: 39;
+                            z-index: 37;
+                            left: 16px;
+                            bottom: 24px;
                             display: none;
-                        }
-                        .shadowPic {
-                            width: 135px;
-                            height: 141px;
-                            position: absolute;
-                            z-index: 22;
-                        }
-                        // 底部遮罩
-                        .bottomShadow {
-                            width: 135px;
-                            height: 30px;
-                            line-height: 34px;
-                            position: absolute;
-                            bottom: 0;
-                            z-index: 33;
-                            font-family: PingFang SC, PingFang SC-Semibold;
-                            font-weight: 600;
-                            text-align: center;
-                            color: #ffe6b2;
-                        }
-                        // 游戏价格
-                        .gameTopPrice {
-                            width: 53px;
-                            height: 22px;
-                            position: absolute;
-                            top: 0;
-                            right: 0;
-                            z-index: 22;
-                            font-family: PingFang SC, PingFang SC-Medium;
-                            font-weight: 500;
-                            text-align: center;
-                            color: #ffe8ac;
-                            line-height: 20px;
-                            text-shadow: 0px 1px 1px 0px #4d0200; 
+                            border: red;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                position: absolute;
+                                z-index: 44;
+                            }
                         }
                     }
                     
+                    .gameItemShadow {
+                        width: 132px;
+                        height: 45px;
+                        z-index: 32;
+                        position: absolute;
+                        bottom: 0px;
+                        left: 0px;
+                        text-align: center;
+                        color: #ffe6b2;
+                        line-height: 45px;
+                    }
+                    .gameItemPic {
+                        width: 132px;
+                        height: 198px;
+                        position: absolute;
+                        top: 16px;
+                        left: 16px;
+                        z-index: 33;
+                        
+                        .changeGameGoods{
+                            width: 132px;
+                            height: 198px;
+                            position: absolute;
+                            z-index: 34;
+                        }
+                        
+
+
+
+                        .gameTopPrice {
+                            width: 62px;
+                            height: 27px;
+                            position: absolute;
+                            top: 10px;
+                            right: 1px;
+                            z-index: 35;
+                            color: #ffe8ac;
+                            line-height: 27px;
+                            text-align: center;
+                        }
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            z-index: 21;
+                        }
+                    }
                 }
-                .gameItem:nth-child(1){
-                    margin: 6px 0 0 7px;
+                
+                .gameItemBorder:nth-child(1){
+
                 }
-                .gameItem:nth-child(2){
-                    margin: 7px 0 0 148px;
+                .gameItemBorder:nth-child(2){
+                    margin: 122px 0 0 120px;
                 }
-                .gameItem:nth-child(3){
-                    margin: 6px 0 0 148px;
+                .gameItemBorder:nth-child(3){
+                    margin: 0 0 0 110px;
                 }
-                .gameItem:nth-child(4){
-                    margin: 19px 0 0 146px;
+                .gameItemBorder:nth-child(4){
+                    margin: -109px 0 0 0;
                 }
-                .gameItem:nth-child(5){
-                    margin: 19px 0 0 155px;
+                .gameItemBorder:nth-child(5){
+                    margin: -109px 0 0 392px;
                 }
+                // 游戏盒
+                // .gameItem {
+                //     width: 132px;
+                //     height: 198px;
+                //     overflow: hidden;
+                //     -webkit-border-radius: 10px 10px 0px 0px;
+                //     cursor: pointer;
+                //     position: relative;
+                //     // border: 1px black solid;
+                //     // 删除游戏界面
+                //     .removeGameGoods {
+                //         width: 135px;
+                //         height: 141px;
+                //     }
+                //     // 删除框
+                //     .removeGame {
+                //         width: 135px;
+                //         height: 141px;
+                //         background-color: blue;
+                //     }
+                //     .changeGameGoods.isRemoveGame:hover .removeGameContent{display: block;}
+                //     .changeGameGoods {
+                //         width: 135px;
+                //         height: 141px;
+                //         img {
+                //             width: 100%;
+                //             // height: 100%;
+                //             position: absolute;
+                //             z-index: 1;
+                //         }
+                //         .removeGameContent {
+                //             width: 135px;
+                //             height: 141px;
+                //             position: absolute;
+                //             z-index: 39;
+                //             display: none;
+                //         }
+                //         .shadowPic {
+                //             width: 135px;
+                //             height: 141px;
+                //             position: absolute;
+                //             z-index: 22;
+                //         }
+                //         // 底部遮罩
+                //         .bottomShadow {
+                //             width: 135px;
+                //             height: 30px;
+                //             line-height: 34px;
+                //             position: absolute;
+                //             bottom: 0;
+                //             z-index: 33;
+                //             font-family: PingFang SC, PingFang SC-Semibold;
+                //             font-weight: 600;
+                //             text-align: center;
+                //             color: #ffe6b2;
+                //         }
+                //         // 游戏价格
+                //         .gameTopPrice {
+                //             width: 53px;
+                //             height: 22px;
+                //             position: absolute;
+                //             top: 0;
+                //             right: 0;
+                //             z-index: 22;
+                //             font-family: PingFang SC, PingFang SC-Medium;
+                //             font-weight: 500;
+                //             text-align: center;
+                //             color: #ffe8ac;
+                //             line-height: 20px;
+                //             text-shadow: 0px 1px 1px 0px #4d0200; 
+                //         }
+                //     }
+                    
+                // }
+                // .gameItem:nth-child(1){
+                //     margin: 9px 0 0 12px;
+                // }
+                // .gameItem:nth-child(2){
+                //     margin: 136px 0 0 148px;
+                // }
+                // .gameItem:nth-child(3){
+                //     margin: 10px 0 0 142px;
+                // }
+                // .gameItem:nth-child(4){
+                //     margin: -100px 0 0 12px;
+                // }
+                // .gameItem:nth-child(5){
+                //     margin: -100px 0 0 424px;
+                // }
                 // 已选游戏盒子
             }
             // 已选游戏框
             .alreadyGameContent {
-                min-width: 331px;
-                height: 34px;
+                min-width: 340px;
+                display: flex;
+                align-items: center;
+                margin: 0 auto;
+                
+                height: 46px;
                 position: absolute;
-                bottom: 229px;
-                left: 475px;
+                bottom: 278px;
+                left: 464px;
                 font-family: PingFang SC, PingFang SC-Semibold;
                 font-weight: 600;
                 text-align: center;
-                color: #fff0e4;
-                text-shadow: 0px 1px 2px 0px #2d1414; 
+                color: #121227;
+                text-shadow: 0px 1px 2px 0px #2d1414;
+                // border: 1px black solid;
             }
             // 按钮框
             .btnContent {
-                width: 540px;
+                width: 378px;
                 height: 45px;
                 position: absolute;
-                left: 370px;
-                bottom: 164px;
+                left: 450px;
+                bottom: 224px;
                 display: flex;
                 justify-content: space-between;
                 .leftBtn {
-                    width: 217px;
-                    height: 45px;
+                    width: 157px;
+                    height: 56px;
                     cursor: pointer;
                 }
                 .rightBtn {
-                    width: 217px;
-                    height: 45px;
+                    width: 157px;
+                    height: 56px;
                     cursor: pointer;
                 }
             }
@@ -480,13 +625,14 @@ export default {
                 width: 686px;
                 height: 145px;
                 position: absolute;
-                bottom: 14px;
-                left: 303px;
+                bottom: 10px;
+                left: 250px;
                 font-family: Roboto, Roboto-Medium;
                 font-weight: 500;
                 text-align: left;
                 color: rgba(255,241,214,0.70);
                 letter-spacing: 0.05px;
+                // border: 1px white solid;
                 .activityIntro {
                     width: 74px;
                     line-height: 24px;
@@ -512,5 +658,8 @@ export default {
                 }
             }
         }
+    }
+    .bigSize {
+        font-size: 32px;
     }
 </style>

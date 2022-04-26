@@ -72,6 +72,15 @@
                         <div class="ft14 color_white_08">使用 {{credit || 0}}</div>
                     </div>
                 </div>
+                <!-- 我的优惠券 -->
+                <div class="accountBalance publicCenter marB13" v-if="rollsMoney == 0 ? false : true">
+                    <div class="ft14 color_white_04">优惠券</div>
+                    <div class="checkBox" v-if="true"> 
+                        <div class="checkMark" v-if="true"><svg-icon v-if="true" iconClass="whiteHookUp" class="svg_icon"></svg-icon></div>
+                        <div class="ft14 color_white_08">使用 ¥{{rollsMoney}}</div>
+                    </div>
+                    <div class="checkBox ft14 color_white_1" v-else> -- </div>
+                </div>
             </div>
             <!-- 右边的支付信息 -->
             <div class="rightPaymentInfo" v-if="enough == 2">
@@ -493,7 +502,7 @@ export default {
             displayPaymentQrCode:true,//支付二维码是否显示
             qrCodeSrc:'', //支付的二维码图片
             enough:'', //0不可以使用余额 1可以使用但不足 2可以使用且足够 在勾选余额时需要payType=1
-
+            rollsMoney:'',//卡券优惠的金额
             isQueryFirstOrderImmunity:false,//是否首单
             queryFirstOrderImmunityData:{},//首单数据
 
@@ -571,6 +580,7 @@ export default {
                     _this.awaitPayment = response.data.unpay; //待付款金额
                     _this.qrCodeSrc = response.data.qrcode; //二维码
                     _this.orderId = response.data.orderId; //订单id
+                    _this.rollsMoney = response.data.rollsMoney //卡券优惠金额
                 });
             }else{
                 if(_this.allOrderData.model == 3){  //试玩购买 不管是不是首单
@@ -588,6 +598,7 @@ export default {
                             _this.credit = response.data.credit //P币
                             _this.enough = response.data.enough //不可以使用余额 1 可以使用但不足 2 可以使用且足够
                             _this.orderId = response.data.orderId //订单id
+                            _this.rollsMoney = response.data.rollsMoney //卡券优惠金额
                         });
                     }
                 }else{
@@ -598,6 +609,7 @@ export default {
                          _this.credit = response.data.credit //P币
                         _this.enough = response.data.enough //不可以使用余额 1 可以使用但不足 2 可以使用且足够
                         _this.orderId = response.data.orderId //订单id
+                        _this.rollsMoney = response.data.rollsMoney //卡券优惠金额
                     });
                 }
             }

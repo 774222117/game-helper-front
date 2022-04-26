@@ -53,8 +53,8 @@ export default {
         z-index: 51;
         background-color: rgba(13, 22, 30, 0.7);
         .redBagBox {
-            width: 350px;
-            height: 434px;
+            width: 370px;
+            height: 409px;
             box-sizing: border-box;
             border-radius: 6px;
             position: absolute;
@@ -66,8 +66,8 @@ export default {
             .close {
                 width: 43px;
                 height: 43px;
-                bottom: -80px;
-                left: 160px;
+                top: -40px;
+                right: -60px;
                 position: absolute;
                 cursor: pointer;
                 z-index: 22;
@@ -75,8 +75,8 @@ export default {
         }
     }
     .smallalert {
-        width: 124px;
-        height: 154px;
+        width: 132px;
+        height: 147px;
         position: fixed;
         bottom: 83px;
         // right: 23px;

@@ -38,6 +38,17 @@
             </div>
             <div class="userMyOrderIcon2 arrow1_bg"></div>
         </div>
+
+        <div class="userMyOrder" @click="openMyCard">
+            <div class="opc_hover">
+                <div class="userMyOrderIcon"><svg-icon iconClass='cardCoupon' className='svg_icon'></svg-icon></div>
+                <div class="userMyOrderText ft14 color_white_1">我的卡券</div>
+            </div>
+            <!-- 卡券余额 -->
+            <div class="userCardBalance ft14" :class="$store.getters.getCouponNumber > 0 ? 'hoverCoupon' : 'noCoupon' ">{{$store.getters.getCouponNumber}}张可使用</div>
+            <div class="userMyOrderIcon2 arrow1_bg"></div>
+        </div>
+
         <div class="userMyOrder" @click="goRealName">
             <div class="opc_hover">
                 <div class="userMyOrderIcon"><svg-icon iconClass='realNameAuthentication' className='svg_icon'></svg-icon></div>
@@ -116,6 +127,11 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        position: relative;
+        .userCardBalance {
+            position: absolute;
+            left: 240px;
+        }
         &>div{
             width: 100%;
             height: 100%;
@@ -174,12 +190,21 @@
     .userMyOrder:hover .userMyOrderIcon3{
         opacity: 1;
     }
+    
+}
+
+.hoverCoupon {
+    color: yellowgreen;
+}
+.noCoupon {
+    color: #ffffff;
 }
 </style>
 <script>
 import { EventBus } from "@/utils/eventBus.js";
 import { setStore, getStore, removeStore } from "@/utils/storage";
-import JumpTo from '@/utils/jumpTo'
+import JumpTo from '@/utils/jumpTo';
+import store from '@/store';
 export default {
     name: 'headerUserInfo',
     components: {
@@ -198,6 +223,10 @@ export default {
         this.userIsMember()
 	},
     methods:{
+        // 打开我的卡包
+        openMyCard(){
+            this.$store.commit('setOpenMyCardBag',true)
+        },
         //查看设置按钮
         setUpBtn(){
             // console.log(this.$store.getters.getStorage)
@@ -234,7 +263,6 @@ export default {
         // 跳转到 我的游戏 - 认证界面
         goRealName(){
             JumpTo(3)
-            console.log('aaaa')
             if(getStore({name:'loginRealName'}).isAdopt !== 1){
                 EventBus.$emit('toRealName',true)
             }

@@ -8,7 +8,7 @@
             <div class="leftContent">
                 <div class="gameNameContent">
                     <div class="gameNameText ft16">游戏名称</div>
-                    <div class="bagText ft14">新春畅享包</div>
+                    <div class="bagText ft14">五一畅享包</div>
                 </div>
                 <!-- 购买的游戏名称 -->
                 <div class="gameBagName gameBagName_bg">
@@ -25,7 +25,7 @@
                 <div class="changeDiscountText ft16">选择优惠</div>
                 <!-- 新春活动价格 -->
                 <div class="newYearContent newYearContent_bg">
-                    <div class="yearActivityText ft16">新春活动价</div>
+                    <div class="yearActivityText ft16">五一活动价</div>
                     <div class="yearPriceContent ft14">
                         <!-- 立省 -->
                         <div class="establish">立省￥{{discount}}</div>
@@ -285,7 +285,7 @@ export default {
         left: 0;
         right: 0;
         bottom: 0;
-        z-index: 1000;
+        z-index: 58;
         margin: auto;
         background-color: rgba(13, 22, 30, 0.7);
         .voucherContent {
@@ -301,8 +301,8 @@ export default {
                 width: 33px;
                 height: 40px;
                 position: absolute;
-                top: 0;
-                right: 30px;
+                top: -45px;
+                right: -20px;
                 cursor: pointer;
             }
             // 左边内容
@@ -624,14 +624,15 @@ export default {
                 .payforContent2 {
                     width: 298px;
                     line-height: 43px;
-                    background: #c06c50;
-                    border: 1px solid #ffe8ac;
+                    background: linear-gradient(180deg,#fc7628, #f89352 100%);
+                    border: 1px solid;
+                    border-image: linear-gradient(180deg, #ffe8ac, rgba(255,232,172,0.49) 100%) 1;
                     border-radius: 4px;
                     margin: 10px auto;
                     font-family: PingFang SC, PingFang SC-Semibold;
                     font-weight: 600;
                     text-align: center;
-                    color: #ffe8ac;
+                    color: #37273c;
                     letter-spacing: 0.22px;
                     cursor: pointer;
                 }

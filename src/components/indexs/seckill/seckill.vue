@@ -52,6 +52,7 @@
         <alertSeckill :dataType="dataType" :times="dataTime.date_m" v-if="displaySeckill" @change="displaySeckillFun" />
         
   </div>
+  <div class="seckillContent seckillDefault_bg" v-else></div>
 </template>
 
 <script>

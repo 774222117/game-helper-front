@@ -30,7 +30,10 @@
 				<div class="loginUserBox" @click="loginBtn">
 					<div class="header_user_icon opc_hover8"> 
 						<!-- <svg-icon v-if="!isUserLogin" iconClass="user" className='svg_icon'></svg-icon> -->
-						<div class="userLoginSuccess_bg userLoginSuccess"></div>
+						<div class="userLoginSuccess_bg userLoginSuccess">
+							<!-- 提示有优惠券 -->
+							<div class="haveCoupon couponPoint_bg" v-if="$store.getters.getCouponNumber > 0 ? true : false"></div>
+						</div>
 					</div>
 					<!-- <div class="header_user_name textOver opc_hover6">{{$store.getters.getStorage.userName}}</div>
 					<div class="header_user_downIcon"></div>  -->
@@ -510,6 +513,14 @@ export default {
 					.userLoginSuccess{
 						width: 100%;
 						height: 100%;
+						position: relative;
+						.haveCoupon {
+							width: 7px;
+							height: 7px;
+							position: absolute;
+							bottom: 5px;
+							right: 0;
+						}
 					}
 				}
 				.header_user_name{
@@ -628,7 +639,7 @@ export default {
 		// 用户信息
 		.userInfoMainBox{
 			width: 352px;
-			height: 368px;
+			height: 418px;
 			// background:rgba(3, 23, 38, 1);
 			background:rgba(3,23,38,1);
 			box-shadow:0px 20px 40px 0px rgba(0,0,0,0.2);

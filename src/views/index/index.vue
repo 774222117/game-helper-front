@@ -19,7 +19,6 @@
 					<div class="seckillContent" v-if="partialrefresh">
 						<seckill />
 					</div>
-					<div class="seckillContent seckillDefault_bg" v-else></div>
 				</div>
 				<!-- 今日特惠 -->
 				<div class="todaySpecial">
@@ -76,7 +75,8 @@
 		</div>
 	</div>
 	<rollVideo v-if="displayRollVideo" :appids="appidData[appidIndex]" @change="displayRollVideoFun" @wheel.native="handleScroll" />
-	<discountNewYearAlert v-if="discountNewYearAlert" /> 
+	<!-- 春节折扣活动入口 -->
+	<!-- <discountNewYearAlert v-if="true" />  -->
 	<!-- <nationalDayAlert v-if="isActiveJoin" :loginState='isActiveJoin' :dailyLogin='activityAlert' :item='userInfo' @change="closeNewYear"></nationalDayAlert> -->
 </div>
 </template>
@@ -96,6 +96,7 @@ import JumpTo from '@/utils/jumpTo'  //跳转函数
 // import nationalDayAlert from '@/components/NationalDay/nationalDayAlert';//新年活动弹窗
 import discountNewYearAlert from '@/components/discountNewYear/discountNewYearAlert';//2022年折扣活动弹窗
 import {setStore,getStore,removeStore}  from '@/utils/storage'
+import store from '@/store'
 export default {
 	components: {
 		JumpTo,
@@ -109,11 +110,11 @@ export default {
 		hotSaleAddDiscount,
 		rollVideo,
 		// nationalDayAlert
-		discountNewYearAlert
+		discountNewYearAlert,
 	},
 	inject:['reload','openRegister'],
 	data(){
-		return { 
+		return {
 			partialrefresh:true,//刷新banner
 			hotSale:[], //热销游戏
 			discount:[], //折扣游戏
@@ -128,10 +129,9 @@ export default {
 			isActiveJoin:true,//是否登录
 			userInfo:false,
 			activityAlert:true,//新年活动弹窗显示隐藏状态
-
+			discountNewYearAlert:true,
 			receiveBtnShow:1,//底部按钮划上效果切换
 			footerBoxShow:false, //底部默认不显示
-			discountNewYearAlert:true,//2022新年折扣活动弹窗开关
 		}
 	},
 	watch:{
@@ -165,6 +165,27 @@ export default {
 		inits(){
 			// hotSaleAddDiscount
 			var _this = this;
+			if(!!_this.$store.getters.getStorage){
+				// // 领取优惠券
+				_this.$fetch('/product/rolls/join')
+				.then((response) => {
+					// 进页面就需要获取商品券信息（用户有几张商品券）
+					_this.$store.commit('setCouponNumber',response.data.count)
+					if(response.flag){
+						// console.log(response.data)
+						// 弹出弹窗
+						if(response.data.available == 1){
+							_this.$store.commit('setGameCouponAlert',true)
+						}
+						_this.$store.commit('setAlertGameInfo',response.data)
+					}else{
+						console.log(response.message)
+					}
+				})
+			}else{
+				// 没登陆调用登陆窗口
+                _this.openRegister(true)
+			}
 			// 热销游戏 无参数
 			_this.$fetch('/index/hotSales')
 				.then((response) => {
